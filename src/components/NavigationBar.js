@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const logoUrl = process.env.PUBLIC_URL + "/logo.png?v=apollo";
-
 function NavigationBar() {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => {
@@ -11,14 +9,12 @@ function NavigationBar() {
 
   useEffect(() => {
     const navbar = document.getElementById("navbar");
-    const logo = document.querySelector(".navbar__logo img");
-
-    if (offsetY > 0) {
-      navbar.classList.add("onScroll");
-      logo.style.height = "11vh";
-    } else {
-      navbar.classList.remove("onScroll");
-      logo.style.height = "18vh";
+    if (navbar) {
+      if (offsetY > 0) {
+        navbar.classList.add("onScroll");
+      } else {
+        navbar.classList.remove("onScroll");
+      }
     }
   }, [offsetY]);
 
@@ -89,9 +85,9 @@ function NavigationBar() {
     <nav className="navbar" id="navbar">
       <div className="navbar__all">
         <Link to="/" className="navbar__logo">
-          <img src={logoUrl} alt="logo" className="navbar__logoImg" />
+          Apollo Tech Solutions
         </Link>
-
+        <div className="navbar__separator" aria-hidden="true" />
         <div className="navbar__hamburger">
           <div className="navbar__line"></div>
           <div className="navbar__line"></div>
