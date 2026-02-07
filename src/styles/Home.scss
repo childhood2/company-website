@@ -22,6 +22,29 @@
     font-size: 50px;
   }
 
+  .home__heroTitle {
+    font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, #0f62fe 0%, #8a3ffc 50%, #d12771 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5em;
+  }
+
+  .home__heroText {
+    font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #525252;
+    max-width: 32em;
+  }
+
   p {
     line-height: 1.6;
     font-size: 20px;

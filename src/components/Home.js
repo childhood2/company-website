@@ -16,12 +16,13 @@ function Home() {
       <div className="app__jumbotron">
         <div className="home__main">
           <div className="home__mainDesc">
-            <h1>Delivering IT solutions right at your fingertips</h1>
-            <p>
-              Apollo Tech Solutions takes pride in delivering IT solutions in an
-              agile way. We develop and launch your products and services in no
-              time. Our goal is to delight you and your customers by helping you
-              discover and deliver true value in sustainable ways.
+            <h1 className="home__heroTitle">
+              Lead with technology
+              <br />
+              that delivers
+            </h1>
+            <p className="home__heroText">
+              Build and launch products fast. We help you deliver real value to your customers.
             </p>
             <Link to="/contact-us">
               <input
