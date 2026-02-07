@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import aboutJumbo from "../assets/about/about_jumbo.svg";
 import aucyn from "../assets/members/aucyn.svg";
 import gene from "../assets/members/gene.svg";
 import audezza from "../assets/members/audezza.svg";
