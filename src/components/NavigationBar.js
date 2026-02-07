@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const logoUrl = process.env.PUBLIC_URL + "/logo.png";
+const logoUrl = process.env.PUBLIC_URL + "/logo.png?v=apollo";
 
 function NavigationBar() {
   const [offsetY, setOffsetY] = useState(0);

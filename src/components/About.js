@@ -36,7 +36,7 @@ function About() {
               />
             </Link>
           </div>
-          <img src={process.env.PUBLIC_URL + "/logo.png"} alt="About" className="home__jumboImg" />
+          <img src={process.env.PUBLIC_URL + "/logo.png?v=apollo"} alt="About" className="home__jumboImg" />
         </div>
       </div>
 

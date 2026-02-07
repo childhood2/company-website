@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../assets/footer_logo.png";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -9,7 +8,7 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer__row">
-        <img src={logo} alt="logo" />
+        <img src={process.env.PUBLIC_URL + "/logo.png?v=apollo"} alt="Apollo Tech Solutions" />
         <p>Apollo Tech Solutions © 2020</p>
       </div>
       <div className="footer__row left">
