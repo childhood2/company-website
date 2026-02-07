@@ -10,7 +10,6 @@ import rampel from "../assets/members/rampel.svg";
 import zed from "../assets/members/zed.svg";
 import kez from "../assets/members/kez.svg";
 import marielet from "../assets/members/marielet.svg";
-import logo from "../assets/logo.svg";
 
 function About() {
   useEffect(() => {
@@ -37,7 +36,7 @@ function About() {
               />
             </Link>
           </div>
-          <img src={logo} alt="AboutJumbo" className="home__jumboImg" />
+          <img src={process.env.PUBLIC_URL + "/logo.png"} alt="About" className="home__jumboImg" />
         </div>
       </div>
 

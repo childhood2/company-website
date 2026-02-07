@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.svg";
+
+const logoUrl = process.env.PUBLIC_URL + "/logo.png";
 
 function NavigationBar() {
   const [offsetY, setOffsetY] = useState(0);
@@ -88,7 +89,7 @@ function NavigationBar() {
     <nav className="navbar" id="navbar">
       <div className="navbar__all">
         <Link to="/" className="navbar__logo">
-          <img src={logo} alt="logo" height={64} />
+          <img src={logoUrl} alt="logo" height={64} />
         </Link>
 
         <div className="navbar__hamburger">
