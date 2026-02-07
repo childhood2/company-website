@@ -1,8 +1,8 @@
-# Chamaeleon Software
+# Apollo Tech Solutions
 
 _September 07, 2020_
 
-This is a commisioned build for a Startup IT Company, Chamaeleon Software, as their companies' website landing page and showcase of their products.
+This is a commisioned build for a Startup IT Company, Apollo Tech Solutions, as their companies' website landing page and showcase of their products.
 
 The build is deployed [here](https://chamaeleon.io).
 
@@ -44,5 +44,5 @@ Here are some Screenshots of the application. [See More](https://www.figma.com/f
 
 <div align="center">
     <p>COPYRIGHT © 2020</p>
-    <p>Chamaeleon Software, All Rights Reservered</p>
+    <p>Apollo Tech Solutions, All Rights Reserved</p>
 </div>

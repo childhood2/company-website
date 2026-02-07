@@ -24,7 +24,7 @@ function About() {
           <div className="home__mainDesc">
             <h1>About Us</h1>
             <p>
-              Chamaeleon Software IT Consulting Inc. is an IT startup company
+              Apollo Tech Solutions is an IT startup company
               founded in June 2019 based in the Philippines and Singapore and
               currently catering clients in the banking, retail and online
               retail industries.

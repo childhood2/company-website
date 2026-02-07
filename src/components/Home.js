@@ -18,7 +18,7 @@ function Home() {
           <div className="home__mainDesc">
             <h1>Delivering IT solutions right at your fingertips</h1>
             <p>
-              Chamaeleon Software takes pride in delivering IT solutions in an
+              Apollo Tech Solutions takes pride in delivering IT solutions in an
               agile way. We develop and launch your products and services in no
               time. Our goal is to delight you and your customers by helping you
               discover and deliver true value in sustainable ways.
@@ -61,7 +61,7 @@ function Home() {
 
       <div className="app__jumbotron">
         <div className="home__whyChoose">
-          <h1>Why Choose Chamaeleon Software?</h1>
+          <h1>Why Choose Apollo Tech Solutions?</h1>
           <div className="home__whyChooseGrid">
             <img src={whyChoose1} alt="One" />
             <div className="home__whyChooseDesc">

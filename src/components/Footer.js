@@ -10,7 +10,7 @@ function Footer() {
     <div className="footer">
       <div className="footer__row">
         <img src={logo} alt="logo" />
-        <p>Chamaeleon Software IT Consulting Inc. © 2020</p>
+        <p>Apollo Tech Solutions © 2020</p>
       </div>
       <div className="footer__row left">
         <div className="footer__smList">
