@@ -15,10 +15,10 @@ function NavigationBar() {
 
     if (offsetY > 0) {
       navbar.classList.add("onScroll");
-      logo.style.height = "9vh";
+      logo.style.height = "11vh";
     } else {
       navbar.classList.remove("onScroll");
-      logo.style.height = "14vh";
+      logo.style.height = "18vh";
     }
   }, [offsetY]);
 
