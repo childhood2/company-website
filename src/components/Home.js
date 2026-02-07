@@ -22,7 +22,7 @@ function Home() {
               that delivers
             </h1>
             <p className="home__heroText">
-              Build and launch products fast. We help you deliver real value to your customers.
+              Brief in. We build. Product delivered on time and done right.
             </p>
             <Link to="/contact-us">
               <input
