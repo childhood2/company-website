@@ -29,11 +29,11 @@
     line-height: 1.2;
     letter-spacing: -0.02em;
     background: linear-gradient(90deg, #00fff7 0%, #00d4ff 25%, #7b2ff7 50%, #f107a3 75%, #00fff7 100%);
-    background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    text-shadow: none;
     margin-bottom: 0.5em;
   }
 
