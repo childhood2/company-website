@@ -1,12 +1,13 @@
 .navbar {
-  padding-top: 14px;
-  padding-bottom: 14px;
   position: sticky;
   top: 0;
   background: white;
   z-index: 10;
   transition: all 0.3s;
   border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: stretch;
+  min-height: 56px;
 }
 
 .navbar.onScroll {
@@ -23,11 +24,11 @@
 
 .navbar__all {
   display: flex;
-  min-height: 44px;
+  align-items: stretch;
   width: 80%;
   max-width: 1200px;
   margin: auto;
-  align-items: stretch;
+  min-height: 100%;
 }
 
 .navbar__logo {
@@ -39,6 +40,7 @@
   white-space: nowrap;
   font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.2;
+  align-self: center;
   /* IBM-style horizontal stripe wordmark - thin white gaps */
   background: repeating-linear-gradient(
     to bottom,
@@ -71,6 +73,7 @@
   background: #c6c6c6;
   margin: 0 28px 0 24px;
   flex-shrink: 0;
+  align-self: center;
 }
 
 .navbar__links li {
@@ -84,10 +87,10 @@
   font-size: 17px;
   font-weight: 500;
   line-height: 22px;
-  padding: 14px 24px;
-  margin: -14px 0;
+  padding: 0 24px;
   display: flex;
   align-items: center;
+  height: 100%;
   transition: background 0.2s ease;
   cursor: pointer;
   border-radius: 0;
