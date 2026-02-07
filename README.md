@@ -18,6 +18,8 @@ The build is deployed [here](https://chamaeleon.io).
 
 **Local development:** Use `npm run dev` for the React dev server (hot reload). Use `npm start` only after `npm run build` to test the production build locally.
 
+**Note:** The repo is deployed without `package-lock.json` so Railway runs `npm install` (avoids `npm ci` sync errors). For a reproducible lock file locally, run `npm install` and commit `package-lock.json`; Railway will then use `npm ci` on future deploys.
+
 ### Technologies used
 
 - ReactJS - Front-end
