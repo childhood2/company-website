@@ -31,8 +31,11 @@
 .navbar__logo {
   z-index: 5;
 
-  img {
-    height: 10vh;
+  img,
+  .navbar__logoImg {
+    height: 14vh;
+    min-height: 52px;
+    max-height: 80px;
     transition: all 0.3s;
   }
 }
@@ -114,8 +117,10 @@
   }
 
   .navbar__logo {
-    img {
-      height: 7vh;
+    img,
+    .navbar__logoImg {
+      height: 10vh;
+      min-height: 44px;
     }
   }
 }

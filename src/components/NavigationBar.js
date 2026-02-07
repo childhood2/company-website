@@ -15,10 +15,10 @@ function NavigationBar() {
 
     if (offsetY > 0) {
       navbar.classList.add("onScroll");
-      logo.style.height = "5vh";
+      logo.style.height = "9vh";
     } else {
       navbar.classList.remove("onScroll");
-      logo.style.height = "10vh";
+      logo.style.height = "14vh";
     }
   }, [offsetY]);
 
@@ -89,7 +89,7 @@ function NavigationBar() {
     <nav className="navbar" id="navbar">
       <div className="navbar__all">
         <Link to="/" className="navbar__logo">
-          <img src={logoUrl} alt="logo" height={64} />
+          <img src={logoUrl} alt="logo" className="navbar__logoImg" />
         </Link>
 
         <div className="navbar__hamburger">
