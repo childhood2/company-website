@@ -64,8 +64,9 @@ function Home() {
         <div className="home__whyChoose">
           <h1>Why Choose Apollo Tech Solutions?</h1>
           <div className="home__whyChooseGrid">
-            <img src={whyChoose1} alt="One" />
-            <div className="home__whyChooseDesc">
+            <div className="home__whyChooseItem">
+              <img src={whyChoose1} alt="One" />
+              <div className="home__whyChooseDesc">
               <h2>We only hire experienced IT professionals</h2>
               <p>
                 Everyone we hire brings a wealth of IT experience to the table.
@@ -73,20 +74,24 @@ function Home() {
                 strategies that work and those that don’t; we want to share the
                 most effective ones with you.
               </p>
+              </div>
             </div>
-            <img src={whyChoose2} alt="Two" />
-            <div className="home__whyChooseDesc">
-              <h2>We create a 100% custom solution for any problem</h2>
+            <div className="home__whyChooseItem">
+              <img src={whyChoose2} alt="Two" />
+              <div className="home__whyChooseDesc">
+                <h2>We create a 100% custom solution for any problem</h2>
               <p>
                 Our team provides a 100% unique, handcrafted solution to fit
                 your specific IT needs. We won't design a new infrastructure
                 from scratch; we'll take the system you have now and find
                 cost-effective ways to make it more capable and secure.
               </p>
+              </div>
             </div>
-            <img src={whyChoose3} alt="Three" />
-            <div className="home__whyChooseDesc">
-              <h2>We take a holistic approach to IT and Security</h2>
+            <div className="home__whyChooseItem">
+              <img src={whyChoose3} alt="Three" />
+              <div className="home__whyChooseDesc">
+                <h2>We take a holistic approach to IT and Security</h2>
               <p>
                 We embrace a collaborative approach to meet your IT needs. That
                 means we’ll work with you to get your input about business
@@ -94,6 +99,7 @@ function Home() {
                 the future. We’ll take that input and turn it into a capable,
                 cost-effective system that can grow with you.
               </p>
+              </div>
             </div>
           </div>
         </div>
