@@ -26,7 +26,7 @@ p {
 }
 
 .app__jumbotronSmall {
-  background: rgba(46, 213, 115, 0.1);
+  background: transparent;
   border-radius: 0;
   width: 80%;
   max-width: 1200px;
@@ -38,15 +38,22 @@ p {
 .btn__blue {
   background: #1e90ff;
   border-radius: 0;
-  border: none;
+  border: 2px solid transparent;
   color: white;
-  padding: 13px 25px;
+  padding: 11px 23px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
   max-width: 200px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    background: white;
+    border-color: #1e90ff;
+    color: #1e90ff;
+  }
 }
 
 .app__spacer {
