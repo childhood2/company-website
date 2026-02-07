@@ -1,15 +1,16 @@
 .navbar {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   position: sticky;
   top: 0;
   background: white;
   z-index: 10;
   transition: all 0.3s;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .navbar.onScroll {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
 }
 
 .navbar__links {
@@ -30,19 +31,20 @@
 
 .navbar__logo {
   z-index: 5;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   text-decoration: none;
   letter-spacing: -0.02em;
   white-space: nowrap;
   font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  /* IBM-style 8-bar striped wordmark */
+  line-height: 1.2;
+  /* IBM-style 8-bar striped wordmark - thicker bars for clarity */
   background: repeating-linear-gradient(
     to bottom,
     #383838 0px,
-    #383838 2px,
-    transparent 2px,
-    transparent 5px
+    #383838 3px,
+    transparent 3px,
+    transparent 7px
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -54,9 +56,9 @@
   background: repeating-linear-gradient(
     to bottom,
     #212529 0px,
-    #212529 2px,
-    transparent 2px,
-    transparent 5px
+    #212529 3px,
+    transparent 3px,
+    transparent 7px
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -64,18 +66,18 @@
 
 .navbar__separator {
   width: 1px;
-  height: 24px;
-  background: #8c8c8c;
-  margin: 0 24px 0 20px;
+  height: 28px;
+  background: #c6c6c6;
+  margin: 0 28px 0 24px;
   flex-shrink: 0;
 }
 
 .navbar__link {
   color: #212529;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 400;
-  margin-left: 50px;
+  font-size: 17px;
+  font-weight: 500;
+  margin-left: 40px;
   line-height: 22px;
   border-bottom: none;
   padding-bottom: 4px;
@@ -147,11 +149,11 @@
   }
 
   .navbar__logo {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .navbar__separator {
     margin: 0 16px 0 12px;
-    height: 20px;
+    height: 24px;
   }
 }
