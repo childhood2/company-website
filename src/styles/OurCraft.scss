@@ -4,6 +4,20 @@
   cursor: pointer;
 }
 
+.app__jumbotronSmall.ourCraft__jumbotronPanels {
+  padding: 0;
+}
+
+.ourCraft__descItem {
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  padding: 3%;
+
+  &:first-child {
+    border-top: 1px solid #e0e0e0;
+  }
+}
+
 .ourCraft__apps {
   width: 90%;
   max-width: 1200px;
