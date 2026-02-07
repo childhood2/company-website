@@ -28,11 +28,12 @@
     font-size: 48px;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    background: linear-gradient(90deg, #0f62fe 0%, #8a3ffc 50%, #d12771 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
+    color: #00fff7;
+    text-shadow:
+      0 0 10px #00fff7,
+      0 0 20px #00fff7,
+      0 0 40px #00fff7,
+      0 0 80px #00d4ff;
     margin-bottom: 0.5em;
   }
 
