@@ -17,9 +17,9 @@ function Home() {
         <div className="home__main">
           <div className="home__mainDesc">
             <h1 className="home__heroTitle">
-              Lead with technology
+              From concept
               <br />
-              that delivers
+              to completion
             </h1>
             <p className="home__heroText">
               Brief in. We build. Product delivered on time and done right.

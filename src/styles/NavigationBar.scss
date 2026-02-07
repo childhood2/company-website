@@ -38,11 +38,30 @@
   white-space: nowrap;
   font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.2;
-  color: #161616;
+  /* IBM-style horizontal stripe wordmark - coarse stripes for readability */
+  background: repeating-linear-gradient(
+    to bottom,
+    #161616 0px,
+    #161616 4px,
+    transparent 4px,
+    transparent 10px
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .navbar__logo:hover {
-  color: #000000;
+  background: repeating-linear-gradient(
+    to bottom,
+    #000000 0px,
+    #000000 4px,
+    transparent 4px,
+    transparent 10px
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .navbar__separator {
