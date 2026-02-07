@@ -38,13 +38,13 @@
   white-space: nowrap;
   font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.2;
-  /* IBM-style horizontal stripe wordmark - coarse stripes for readability */
+  /* IBM-style horizontal stripe wordmark - thin white gaps */
   background: repeating-linear-gradient(
     to bottom,
     #161616 0px,
     #161616 4px,
     transparent 4px,
-    transparent 10px
+    transparent 6px
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -58,7 +58,7 @@
     #000000 0px,
     #000000 4px,
     transparent 4px,
-    transparent 10px
+    transparent 6px
   );
   -webkit-background-clip: text;
   background-clip: text;
