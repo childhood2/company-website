@@ -237,17 +237,20 @@
 }
 
 .about__stayConnectedSubmit {
-  padding: 12px 24px;
+  padding: 11px 23px;
   font-size: 16px;
   font-weight: 500;
   color: white;
   background: #1e90ff;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 0;
   cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
   &:hover {
-    background: #1873d9;
+    background: white;
+    border-color: #1e90ff;
+    color: #1e90ff;
   }
 }
 

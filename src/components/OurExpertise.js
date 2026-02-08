@@ -53,7 +53,7 @@ function OurExpertise() {
             <p className="expertise__cardDesc">
               Using pragmatic ways and continuously improving best engineering
               practices, we apply industry-proven Agile frameworks to
-              iteratively develop and quickly deliver working software—focusing
+              iteratively develop and quickly deliver working software, focusing
               on quality, faster time to market and realistic ROI.
             </p>
           </div>
@@ -89,7 +89,7 @@ function OurExpertise() {
               <img src={iconDevops} alt="" />
             </div>
             <p className="expertise__cardDesc">
-              We set up DevOps teams tailored to your needs—recommending tools,
+              We set up DevOps teams tailored to your needs, recommending tools,
               identifying metrics, automating tests and bridging the gap between
               IT operations and software development.
             </p>
@@ -103,7 +103,7 @@ function OurExpertise() {
             <p className="expertise__cardDesc">
               Experienced Agile practitioners delivering in-house and public
               trainings, Scrum and SAFe® certifications, and digital
-              transformation—helping teams grow through Agile communities and
+              transformation, helping teams grow through Agile communities and
               Community of Practice.
             </p>
           </div>
@@ -115,11 +115,35 @@ function OurExpertise() {
             </div>
             <p className="expertise__cardDesc">
               We design and manage cloud-native and hybrid infrastructure on
-              AWS, GCP and Azure—helping you scale, secure and optimize costs
+              AWS, GCP and Azure, helping you scale, secure and optimize costs
               with DevOps practices and automation.
             </p>
           </div>
         </div>
+
+        <section className="expertise__customerSuccess" aria-label="Customer Success">
+          <h2 className="expertise__customerSuccessTitle">Customer Success</h2>
+          <p className="expertise__customerSuccessSubtitle">
+            Trusted by leading organizations worldwide
+          </p>
+          <div className="expertise__customerSuccessLogos">
+            <div className="expertise__customerSuccessLogo" title="BairesDev">
+              <img src={process.env.PUBLIC_URL + "/customer-success/bairesdev.svg"} alt="BairesDev" />
+            </div>
+            <div className="expertise__customerSuccessLogo" title="Exomindset">
+              <img src={process.env.PUBLIC_URL + "/customer-success/exomindset.svg"} alt="Exomindset" />
+            </div>
+            <div className="expertise__customerSuccessLogo" title="NKey">
+              <img src={process.env.PUBLIC_URL + "/customer-success/nkey.svg"} alt="NKey" />
+            </div>
+            <div className="expertise__customerSuccessLogo" title="GLOBAL HITSS">
+              <img src={process.env.PUBLIC_URL + "/customer-success/global-hitss.svg"} alt="GLOBAL HITSS" />
+            </div>
+            <div className="expertise__customerSuccessLogo" title="Tsuru.chat">
+              <img src={process.env.PUBLIC_URL + "/customer-success/tsuru-chat.svg"} alt="Tsuru.chat" />
+            </div>
+          </div>
+        </section>
 
         <div className="expertise__recommended">
           <h2 className="expertise__recommendedTitle">Recommended for you</h2>

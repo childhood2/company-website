@@ -12,7 +12,7 @@ const EXPERIENCE_PROJECTS = [
     name: "PedeGás",
     logo: pedegasLogo,
     description:
-      "PedeGás is a complete management system for gas distribution companies in Brazil. Apollo Tech Solutions helped deliver a scalable platform that includes financial control, inventory management, WhatsApp bot integration for orders, and an online catalog—enabling distributors to run their operations efficiently from a single system.",
+      "PedeGás is a complete management system for gas distribution companies in Brazil. Apollo Tech Solutions helped deliver a scalable platform that includes financial control, inventory management, WhatsApp bot integration for orders, and an online catalog, enabling distributors to run their operations efficiently from a single system.",
     metrics: [
       { value: "24/7", label: "support and system availability" },
       { value: "1", label: "unified platform for finance, inventory & orders" },
@@ -25,7 +25,7 @@ const EXPERIENCE_PROJECTS = [
     name: "Giftsqr",
     logo: giftsqrLogo,
     description:
-      "Giftsqr is a platform for creating personalized digital surprises and generating QR codes to share them. Users can create relationship counters, birthday surprises, event photo galleries, gift lists, and more—with QR codes ready in under a minute. The platform has grown to serve thousands of users and gained traction on social media.",
+      "Giftsqr is a platform for creating personalized digital surprises and generating QR codes to share them. Users can create relationship counters, birthday surprises, event photo galleries, gift lists, and more, with QR codes ready in under a minute. The platform has grown to serve thousands of users and gained traction on social media.",
     metrics: [
       { value: "1 min", label: "to generate a personalized QR surprise" },
       { value: "8,590+", label: "users and growing" },
@@ -38,7 +38,7 @@ const EXPERIENCE_PROJECTS = [
     name: "BarterPH",
     logo: barterphLogo,
     description:
-      "BarterPH is a mobile app built to support free trading—helping farmers trade fresh goods for non-commercial items without spending money. Developed and launched in two months, the app is available to everyone for efficient, free trading. We continue to iterate based on user feedback to keep the platform free and useful.",
+      "BarterPH is a mobile app built to support free trading, helping farmers trade fresh goods for non-commercial items without spending money. Developed and launched in two months, the app is available to everyone for efficient, free trading. We continue to iterate based on user feedback to keep the platform free and useful.",
     metrics: [
       { value: "2", label: "months from concept to launch" },
       { value: "Free", label: "trading for everyone" },
@@ -66,6 +66,7 @@ function About() {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -138,60 +139,79 @@ function About() {
 
       <div className="app__spacer"></div>
 
-      <div className="app__jumbotronSmall about__sectionPanels">
-        <div className="about__sectionItem">
-          <h2>What We Do</h2>
-          <p>
-            We provide end-to-end software development and technology
-            consulting services, including:
-          </p>
-          <ul>
-            <li>SaaS product development and maintenance</li>
-            <li>Cloud-native applications and microservices</li>
-            <li>Payment systems and fintech platforms</li>
-            <li>AI-enabled and data-driven solutions</li>
-            <li>Web and mobile application development</li>
-            <li>Cloud infrastructure, DevOps, and cost optimization</li>
-          </ul>
-          <p>
-            Our technical expertise includes Python, Node.js, C#, AWS, GCP,
-            Docker, Kubernetes, PostgreSQL, MySQL, Redis, Kafka, and modern
-            frontend frameworks such as React, Next.js, and Vue.js.
-          </p>
-        </div>
-        <div className="about__sectionItem">
-          <h2>Our Approach</h2>
-          <p>
-            We follow a pragmatic and transparent development approach,
-            focusing on clean architecture, scalability, security, and
-            performance. Every project is handled with clear communication,
-            structured processes, and a strong emphasis on quality and
-            accountability.
-          </p>
-          <p>
-            We work closely with our clients as a long-term technology partner,
-            adapting to their needs and ensuring that solutions remain reliable
-            as their businesses grow.
-          </p>
-        </div>
-        <div className="about__sectionItem">
-          <h2>Why Apollo Tech Solutions</h2>
-          <ul>
-            <li>8+ years of professional software development experience</li>
-            <li>Strong expertise in cloud and distributed systems</li>
-            <li>Proven experience with SaaS and fintech platforms</li>
-            <li>Focus on scalable, maintainable, and secure solutions</li>
-            <li>Clear communication and reliable delivery</li>
-          </ul>
-        </div>
-        <div className="about__sectionItem">
-          <h2>Our Mission</h2>
-          <p>
-            Our mission is to help organizations build and operate dependable
-            software systems that support growth, efficiency, and innovation.
-            We aim to deliver technology solutions that are not only technically
-            strong, but also aligned with business goals.
-          </p>
+      <div className="about__faq">
+        <h2 className="about__faqTitle">Frequently Asked Questions</h2>
+        <div className="about__faqGrid">
+          {[
+            {
+              question: "What We Do",
+              answer: (
+                <>
+                  <p>We provide end-to-end software development and technology consulting services, including:</p>
+                  <ul>
+                    <li>SaaS product development and maintenance</li>
+                    <li>Cloud-native applications and microservices</li>
+                    <li>Payment systems and fintech platforms</li>
+                    <li>AI-enabled and data-driven solutions</li>
+                    <li>Web and mobile application development</li>
+                    <li>Cloud infrastructure, DevOps, and cost optimization</li>
+                  </ul>
+                  <p>Our technical expertise includes Python, Node.js, C#, AWS, GCP, Docker, Kubernetes, PostgreSQL, MySQL, Redis, Kafka, and modern frontend frameworks such as React, Next.js, and Vue.js.</p>
+                </>
+              ),
+            },
+            {
+              question: "Our Approach",
+              answer: (
+                <>
+                  <p>We follow a pragmatic and transparent development approach, focusing on clean architecture, scalability, security, and performance. Every project is handled with clear communication, structured processes, and a strong emphasis on quality and accountability.</p>
+                  <p>We work closely with our clients as a long-term technology partner, adapting to their needs and ensuring that solutions remain reliable as their businesses grow.</p>
+                </>
+              ),
+            },
+            {
+              question: "Why Apollo Tech Solutions",
+              answer: (
+                <ul>
+                  <li>8+ years of professional software development experience</li>
+                  <li>Strong expertise in cloud and distributed systems</li>
+                  <li>Proven experience with SaaS and fintech platforms</li>
+                  <li>Focus on scalable, maintainable, and secure solutions</li>
+                  <li>Clear communication and reliable delivery</li>
+                </ul>
+              ),
+            },
+            {
+              question: "Our Mission",
+              answer: (
+                <p>
+                  Our mission is to help organizations build and operate dependable software systems that support growth, efficiency, and innovation. We aim to deliver technology solutions that are not only technically strong, but also aligned with business goals.
+                </p>
+              ),
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className={`about__faqItem ${openFaqIndex === index ? "about__faqItem--open" : ""}`}
+            >
+              <button
+                type="button"
+                className="about__faqQuestion"
+                onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                aria-expanded={openFaqIndex === index}
+              >
+                <span className="about__faqIcon" aria-hidden="true">
+                  {openFaqIndex === index ? "−" : "+"}
+                </span>
+                <span className="about__faqQuestionText">{item.question}</span>
+              </button>
+              {openFaqIndex === index && (
+                <div className="about__faqAnswer">
+                  {item.answer}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
 

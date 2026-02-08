@@ -40,7 +40,7 @@ function OurCraft() {
       <div className="app__jumbotronSmall ourCraft__jumbotronPanels">
         <div className="ourCraft__descItem">
           <div className="about__desc">
-            <h3>The BarterPH - the true essence of free trading</h3>
+            <h3>The BarterPH, the true essence of free trading</h3>
             <p>
               In just two months, we were able to developed and launched the
               BarterPh App mobile application in our goal to help the farmers
@@ -54,7 +54,7 @@ function OurCraft() {
         </div>
         <div className="ourCraft__descItem">
           <div className="about__desc">
-            <h3>PlanetReviews - revolutionizing consumer reviews</h3>
+            <h3>PlanetReviews, revolutionizing consumer reviews</h3>
             <p>
               The PlanetReviews is still under development phase as this platform
               showcases an ecosystem where consumers are aimed to be democratized
