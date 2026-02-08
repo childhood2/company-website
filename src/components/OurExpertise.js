@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import iconAgile from "../assets/our_expertise/icon-agile.svg";
 import iconAi from "../assets/our_expertise/icon-ai.svg";
 import iconProduct from "../assets/our_expertise/icon-product.svg";
@@ -6,7 +6,60 @@ import iconDevops from "../assets/our_expertise/icon-devops.svg";
 import iconConsulting from "../assets/our_expertise/icon-consulting.svg";
 import iconCloud from "../assets/our_expertise/icon-cloud.svg";
 
+const FAQ_ITEMS = [
+  {
+    question: "What We Do",
+    answer: (
+      <>
+        <p>We provide end-to-end software development and technology consulting services, including:</p>
+        <ul>
+          <li>SaaS product development and maintenance</li>
+          <li>Cloud-native applications and microservices</li>
+          <li>Payment systems and fintech platforms</li>
+          <li>AI-enabled and data-driven solutions</li>
+          <li>Web and mobile application development</li>
+          <li>Cloud infrastructure, DevOps, and cost optimization</li>
+        </ul>
+        <p>Our technical expertise includes Python, Node.js, C#, AWS, GCP, Docker, Kubernetes, PostgreSQL, MySQL, Redis, Kafka, and modern frontend frameworks such as React, Next.js, and Vue.js.</p>
+      </>
+    ),
+  },
+  {
+    question: "Our Approach",
+    answer: (
+      <>
+        <p>We follow a pragmatic and transparent development approach, focusing on clean architecture, scalability, security, and performance. Every project is handled with clear communication, structured processes, and a strong emphasis on quality and accountability.</p>
+        <p>We work closely with our clients as a long-term technology partner, adapting to their needs and ensuring that solutions remain reliable as their businesses grow.</p>
+      </>
+    ),
+  },
+  {
+    question: "Why Apollo Technology",
+    answer: (
+      <ul>
+        <li>8+ years of professional software development experience</li>
+        <li>Strong expertise in cloud and distributed systems</li>
+        <li>Proven experience with SaaS and fintech platforms</li>
+        <li>Focus on scalable, maintainable, and secure solutions</li>
+        <li>Clear communication and reliable delivery</li>
+      </ul>
+    ),
+  },
+  {
+    question: "Our Mission",
+    answer: (
+      <p>
+        Our mission is to help organizations build and operate dependable software systems that support growth, efficiency, and innovation. We aim to deliver technology solutions that are not only technically strong, but also aligned with business goals.
+      </p>
+    ),
+  },
+];
+
 function OurExpertise({ embedded }) {
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
@@ -27,6 +80,7 @@ function OurExpertise({ embedded }) {
       )}
 
       <div className="expertise">
+        <h2 className="expertise__servicesTitle">Services</h2>
         <div className="expertise__grid">
           <div className="expertise__card">
             <h3 className="expertise__cardTitle">Backend &amp; Microservices</h3>
@@ -162,6 +216,104 @@ function OurExpertise({ embedded }) {
                 consultants, which can help you visualize consulting conversations.
               </p>
             </a>
+          </div>
+        </div>
+
+        <div className="app__spacer"></div>
+
+        <div className="about__stayConnected">
+          <div className="about__stayConnectedLeft">
+            <h2 className="about__stayConnectedTitle">Stay connected</h2>
+            <div className="about__stayConnectedGraphic">
+              <img
+                src={process.env.PUBLIC_URL + "/experience/stay-connected.png"}
+                alt=""
+                width="320"
+                height="auto"
+              />
+            </div>
+          </div>
+          <div className="about__stayConnectedRight">
+            <h3 className="about__stayConnectedSubtitle">Apollo Technology newsletter</h3>
+            <p className="about__stayConnectedDesc">
+              Subscribe to stay on top of product updates, tech insights, and
+              how we help businesses build reliable software.
+            </p>
+            <form
+              className="about__stayConnectedForm"
+              onSubmit={(e) => {
+                e.preventDefault();
+                setSubmitted(true);
+                if (!email.trim()) {
+                  setEmailError("Email is required");
+                  return;
+                }
+                setEmailError("");
+              }}
+            >
+              <div className="about__stayConnectedField">
+                <label htmlFor="expertise-newsletter-email">Business email</label>
+                <input
+                  id="expertise-newsletter-email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setEmailError("");
+                  }}
+                  onBlur={() => {
+                    if (submitted && !email.trim()) setEmailError("Email is required");
+                  }}
+                  className={`about__stayConnectedInput ${emailError ? "about__stayConnectedInput--error" : ""}`}
+                  placeholder="you@company.com"
+                  autoComplete="email"
+                />
+                {emailError && (
+                  <span className="about__stayConnectedError">{emailError}</span>
+                )}
+              </div>
+              <p className="about__stayConnectedPrivacy">
+                You can unsubscribe at any time. We respect your privacy and
+                will not share your email with third parties.
+              </p>
+              <button type="submit" className="about__stayConnectedSubmit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div className="app__spacer"></div>
+
+        <div className="about__faq">
+          <div className="about__faqHeader">
+            <h2 className="about__faqTitle">Frequently Asked Questions</h2>
+            <p className="about__faqTitleSub">Quick answers about what we do and how we work.</p>
+          </div>
+          <div className="about__faqGrid">
+            {FAQ_ITEMS.map((item, index) => (
+              <div
+                key={index}
+                className={`about__faqItem ${openFaqIndex === index ? "about__faqItem--open" : ""}`}
+              >
+                <button
+                  type="button"
+                  className="about__faqQuestion"
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                  aria-expanded={openFaqIndex === index}
+                >
+                  <span className="about__faqIcon" aria-hidden="true">
+                    {openFaqIndex === index ? "−" : "+"}
+                  </span>
+                  <span className="about__faqQuestionText">{item.question}</span>
+                </button>
+                {openFaqIndex === index && (
+                  <div className="about__faqAnswer">
+                    {item.answer}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -5,6 +5,14 @@
   margin-left: auto;
 }
 
+.expertise__servicesTitle {
+  font-size: 48px; // same as Customer Success
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 1.5rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .expertise__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
