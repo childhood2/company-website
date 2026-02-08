@@ -38,9 +38,14 @@
   max-width: 1500px;
   margin-right: auto;
   margin-left: auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0;
 }
 
 .about__experienceTitle {
+  grid-column: 1 / -1;
   font-size: 44px;
   font-weight: normal;
   margin-bottom: 1.5rem;
@@ -53,24 +58,33 @@
 
 .about__experienceTabs {
   display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
   background: #f4f5f7;
   padding: 0;
   gap: 0;
+  width: 100%;
+  max-width: 140px;
 }
 
 .about__experienceTab {
-  flex: 1;
+  flex: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.75rem;
   border: none;
+  border-bottom: 1px solid #e0e0e0;
   background: #f4f5f7;
   cursor: pointer;
   border-radius: 0;
-  border-bottom: 3px solid transparent;
+  border-left: 3px solid transparent;
   transition: background 0.2s ease, border-color 0.2s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   &:hover {
     background: #e8e8e8;
@@ -78,7 +92,7 @@
 
   &--active {
     background: white;
-    border-bottom-color: #1e90ff;
+    border-left-color: #1e90ff;
   }
 }
 
@@ -91,7 +105,7 @@
 
 .about__experienceDetail {
   border: 1px solid #e0e0e0;
-  border-top: none;
+  border-left: none;
   padding: 2rem 3%;
 }
 
@@ -120,15 +134,15 @@
 .about__experienceMetric {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: baseline;
   gap: 0.35rem;
 }
 
 .about__experienceMetricValue {
-  font-size: 28px;
+  font-size: 14px;
   font-weight: normal;
   color: #1e90ff;
-  line-height: 1.2;
+  line-height: 1.4;
   flex-shrink: 0;
 }
 
@@ -152,13 +166,38 @@
 }
 
 @media screen and (max-width: 768px) {
+  .about__experience {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
   .about__experienceTabs {
+    flex-direction: row;
     flex-wrap: wrap;
+    max-width: none;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
   }
 
   .about__experienceTab {
     flex: 1 1 50%;
     min-width: 0;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+
+    &:last-child {
+      border-bottom: 3px solid transparent;
+    }
+
+    &--active {
+      border-left: none;
+      border-bottom-color: #1e90ff;
+    }
+  }
+
+  .about__experienceDetail {
+    border-left: 1px solid #e0e0e0;
+    border-top: none;
   }
 
   .about__experienceMetrics {
@@ -174,18 +213,19 @@
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 3rem;
-  align-items: center;
+  align-items: start;
   padding: 2rem 0;
 }
 
 .about__stayConnectedTitle {
-  font-size: 54px; // 32 * 1.7
+  grid-column: 1 / -1;
+  font-size: 44px;
   font-weight: normal;
   color: #212529;
   margin-bottom: 1.5rem;
 
   @media screen and (max-width: 768px) {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 

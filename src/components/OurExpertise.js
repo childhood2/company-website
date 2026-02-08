@@ -214,8 +214,8 @@ function OurExpertise({ embedded }) {
         <div className="app__spacer"></div>
 
         <div className="about__stayConnected">
+          <h2 className="about__stayConnectedTitle">Stay connected</h2>
           <div className="about__stayConnectedLeft">
-            <h2 className="about__stayConnectedTitle">Stay connected</h2>
             <div className="about__stayConnectedGraphic">
               <img
                 src={process.env.PUBLIC_URL + "/experience/stay-connected.png"}
