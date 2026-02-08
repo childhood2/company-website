@@ -44,25 +44,35 @@ function About() {
 
       <div className="app__jumbotronSmall">
         <div className="about__desc">
-          <h1>A Purpose-Driven Team</h1>
+          <h1>Our Experience</h1>
           <p>
-            We can't change the world, but we can change ourselves and be social
-            entrepreneurs to help improve the world. We believe that things
-            happen for a reason. And our team was not formed by chance. We found
-            each other as we were all looking for solutions to our problems that
-            remain unsolved, where many might have overlooked. We wanted to
-            create social value and we believe that Social Innovation is the
-            best construct for understanding and producing lasting social
-            change. In other words, we work together despite of our present
-            challenges, in order to provide a novel solution to a social problem
-            that is more effective, efficient, sustainable for which the value
-            created flows primarily to society as a whole rather than private
-            individuals.
+            Our background includes developing and maintaining mission-critical
+            systems for global payment platforms, supporting technologies used
+            by Mastercard, Visa, and American Express, as well as delivering
+            projects for financial institutions and high-traffic digital
+            platforms.
             <br></br>
             <br></br>
-            We are a team of coffee-drinkers. Hang out with us over a cup of
-            coffee and let's chitchat on how do you think we can make the world
-            a better place to live! :)
+            We have also built and scaled multiple SaaS products, applying
+            real-world experience in product development, system design, and
+            long-term maintenance.
+          </p>
+          <p>
+            <a
+              href="https://www.pedegas.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pedegas.com
+            </a>
+            {" · "}
+            <a
+              href="https://www.giftsqr.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Giftsqr.com
+            </a>
           </p>
         </div>
       </div>
