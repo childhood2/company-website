@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const PROJECTS_PER_PAGE = 3;
 
@@ -65,6 +65,7 @@ const EXPERIENCE_PROJECTS = [
 
 function About({ embedded }) {
   const [currentPage, setCurrentPage] = useState(0);
+  const experienceRef = useRef(null);
   const totalPages = Math.ceil(EXPERIENCE_PROJECTS.length / PROJECTS_PER_PAGE);
   const start = currentPage * PROJECTS_PER_PAGE;
   const projectsOnPage = EXPERIENCE_PROJECTS.slice(start, start + PROJECTS_PER_PAGE);
@@ -72,6 +73,13 @@ function About({ embedded }) {
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
+
+  // Keep "Our projects" in view when changing page (avoids scroll jumping to Our Expertise)
+  useEffect(() => {
+    if (experienceRef.current && totalPages > 1) {
+      experienceRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [currentPage, totalPages]);
 
   return (
     <div>
@@ -95,7 +103,7 @@ function About({ embedded }) {
         </>
       )}
 
-      <div className="about__experience">
+      <div ref={experienceRef} className="about__experience">
         <h2 className="about__experienceTitle">Our projects</h2>
         <ul className="about__experienceList">
           {projectsOnPage.map((proj) => (
