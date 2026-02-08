@@ -30,10 +30,14 @@ function SinglePage({ activeTab }) {
         <div className="home__main">
           <div className="home__mainDesc">
             <h1 className="home__heroTitle">
-              From concept to completion.
+              From concept
+              <br />
+              to completion.
             </h1>
             <p className="home__heroText">
-              Flexible pay. Global time zones. Work done right.
+              Flexible pay. Global time zones.
+              <br />
+              Work done right.
             </p>
           </div>
         </div>

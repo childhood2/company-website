@@ -61,7 +61,7 @@ $cus-border: #1a4d6f;
     color: #212529;
     background: linear-gradient(to bottom, #ffffff 0%, #fafbfc 100%);
     border: 1px solid $cus-border;
-    border-radius: 4px;
+    border-radius: 0;
     box-shadow: 1px 2px 4px rgba(26, 77, 111, 0.08);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
