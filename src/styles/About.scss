@@ -38,17 +38,12 @@
   max-width: 1500px;
   margin-right: auto;
   margin-left: auto;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr;
-  gap: 0;
 }
 
 .about__experienceTitle {
-  grid-column: 1 / -1;
   font-size: 44px;
   font-weight: normal;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: #212529;
 
   @media screen and (max-width: 768px) {
@@ -56,79 +51,108 @@
   }
 }
 
-.about__experienceTabs {
+.about__experienceList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-  background: #f4f5f7;
-  padding: 0;
   gap: 0;
-  width: 100%;
-  max-width: 140px;
 }
 
-.about__experienceTab {
-  flex: none;
-  display: flex;
+.about__experienceItem {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2.5rem;
   align-items: center;
-  justify-content: center;
-  padding: 1rem 0.75rem;
-  border: none;
-  border-bottom: 1px solid #e0e0e0;
-  background: #f4f5f7;
-  cursor: pointer;
-  border-radius: 0;
-  border-left: 3px solid transparent;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e8e8e8;
 
   &:last-child {
     border-bottom: none;
   }
 
-  &:hover {
-    background: #e8e8e8;
-  }
-
-  &--active {
-    background: white;
-    border-left-color: #1e90ff;
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.75rem 0;
   }
 }
 
-.about__experienceTabLogo {
-  max-height: 36px;
-  max-width: 100%;
-  width: auto;
-  object-fit: contain;
+.about__experienceItemContent {
+  min-width: 0;
 }
 
-.about__experienceDetail {
-  border: 1px solid #e0e0e0;
-  border-left: none;
-  padding: 2rem 3%;
-}
-
-.about__experienceDetailTitle {
-  font-size: 48px; // 28 * 1.7
-  font-weight: normal;
-  color: #1e90ff;
-  margin-bottom: 1rem;
-}
-
-.about__experienceDetailDesc {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #525f7f;
-  margin-bottom: 1.5rem;
+.about__experienceItemTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
   font-weight: bold;
+  line-height: 1.3;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.about__experienceItemTitleLink {
+  color: #1e90ff;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+
+  &:hover {
+    text-decoration: underline;
+    color: #1573d4;
+  }
+}
+
+.about__experienceItemDesc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #212529;
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+}
+
+.about__experienceItemImage {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__experienceItemImageLink {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  padding: 0.75rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    border-color: #1e90ff;
+    box-shadow: 0 4px 12px rgba(30, 144, 255, 0.12);
+  }
+}
+
+.about__experienceItemImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: #f8f9fa;
 }
 
 .about__experienceMetrics {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.75rem 1.5rem;
+  margin-bottom: 1rem;
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .about__experienceMetric {
@@ -166,40 +190,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .about__experience {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-  }
-
-  .about__experienceTabs {
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: none;
-    border-right: none;
-    border-bottom: 1px solid #e0e0e0;
-  }
-
-  .about__experienceTab {
-    flex: 1 1 50%;
-    min-width: 0;
-    border-left: none;
-    border-bottom: 3px solid transparent;
-
-    &:last-child {
-      border-bottom: 3px solid transparent;
-    }
-
-    &--active {
-      border-left: none;
-      border-bottom-color: #1e90ff;
-    }
-  }
-
-  .about__experienceDetail {
-    border-left: 1px solid #e0e0e0;
-    border-top: none;
-  }
-
   .about__experienceMetrics {
     grid-template-columns: 1fr;
   }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 const pedegasLogo = process.env.PUBLIC_URL + "/experience/pedegas.ico";
 const giftsqrLogo = process.env.PUBLIC_URL + "/experience/giftsqr.ico";
@@ -62,12 +62,9 @@ const EXPERIENCE_PROJECTS = [
 ];
 
 function About({ embedded }) {
-  const [selectedProject, setSelectedProject] = useState(0);
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
-
-  const project = EXPERIENCE_PROJECTS[selectedProject];
 
   return (
     <div>
@@ -93,39 +90,51 @@ function About({ embedded }) {
 
       <div className="about__experience">
         <h2 className="about__experienceTitle">Our projects</h2>
-        <div className="about__experienceTabs">
-          {EXPERIENCE_PROJECTS.map((proj, index) => (
-            <button
-              key={proj.id}
-              type="button"
-              className={`about__experienceTab ${index === selectedProject ? "about__experienceTab--active" : ""}`}
-              onClick={() => setSelectedProject(index)}
-              aria-pressed={index === selectedProject}
-            >
-              <img src={proj.logo} alt={proj.name} className="about__experienceTabLogo" />
-            </button>
-          ))}
-        </div>
-        <div className="about__experienceDetail">
-          <h3 className="about__experienceDetailTitle">{project.name}</h3>
-          <p className="about__experienceDetailDesc">{project.description}</p>
-          <div className="about__experienceMetrics">
-            {project.metrics.map((m, i) => (
-              <div key={i} className="about__experienceMetric">
-                <span className="about__experienceMetricValue">{m.value}</span>
-                <span className="about__experienceMetricLabel">{m.label}</span>
+        <ul className="about__experienceList">
+          {EXPERIENCE_PROJECTS.map((proj) => (
+            <li key={proj.id} className="about__experienceItem">
+              <div className="about__experienceItemContent">
+                <h3 className="about__experienceItemTitle">
+                  <a
+                    href={proj.linkUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="about__experienceItemTitleLink"
+                  >
+                    {proj.name}
+                  </a>
+                </h3>
+                <p className="about__experienceItemDesc">{proj.description}</p>
+                <div className="about__experienceMetrics">
+                  {proj.metrics.map((m, i) => (
+                    <div key={i} className="about__experienceMetric">
+                      <span className="about__experienceMetricValue">{m.value}</span>
+                      <span className="about__experienceMetricLabel">{m.label}</span>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href={proj.linkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="about__experienceLink"
+                >
+                  {proj.linkText} →
+                </a>
               </div>
-            ))}
-          </div>
-          <a
-            href={project.linkUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="about__experienceLink"
-          >
-            {project.linkText} →
-          </a>
-        </div>
+              <div className="about__experienceItemImage">
+                <a
+                  href={proj.linkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="about__experienceItemImageLink"
+                >
+                  <img src={proj.logo} alt={proj.name} className="about__experienceItemImg" />
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="app__spacer"></div>
