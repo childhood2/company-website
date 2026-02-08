@@ -8,6 +8,15 @@
   grid-column-gap: 50px;
 }
 
+.single-page__hero .home__main {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.single-page__hero .home__mainDesc {
+  align-items: center;
+}
+
 .home__jumboImg {
   width: 90%;
 }
