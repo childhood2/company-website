@@ -11,7 +11,7 @@ const EXPERIENCE_PROJECTS = [
     name: "PedeGás",
     logo: pedegasLogo,
     description:
-      "PedeGás is a complete management system for gas distribution companies in Brazil. Apollo Tech Solutions helped deliver a scalable platform that includes financial control, inventory management, WhatsApp bot integration for orders, and an online catalog, enabling distributors to run their operations efficiently from a single system.",
+      "PedeGás is a complete management system for gas distribution companies in Brazil. Apollo Technology helped deliver a scalable platform that includes financial control, inventory management, WhatsApp bot integration for orders, and an online catalog, enabling distributors to run their operations efficiently from a single system.",
     metrics: [
       { value: "24/7", label: "support and system availability" },
       { value: "1", label: "unified platform for finance, inventory & orders" },
@@ -65,8 +65,6 @@ function About({ embedded }) {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [openFaqIndex, setOpenFaqIndex] = useState(null);
-
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
@@ -82,13 +80,13 @@ function About({ embedded }) {
               <div className="home__mainDesc">
                 <h1>About Us</h1>
                 <p>
-                  Apollo Tech Solutions is an IT startup company
+                  Apollo Technology is an IT startup company
                   founded in June 2019 based in Brazil and
                   currently catering to clients in the banking, retail and online
                   retail industries.
                 </p>
               </div>
-              <img src={process.env.PUBLIC_URL + "/logo.png?v=apollo"} alt="About" className="home__jumboImg" />
+              <img src={process.env.PUBLIC_URL + "/logo.png?v=2"} alt="About" className="home__jumboImg" />
             </div>
           </div>
           <div className="app__spacer"></div>
@@ -96,7 +94,7 @@ function About({ embedded }) {
       )}
 
       <div className="about__experience">
-        <h2 className="about__experienceTitle">Smarter business. Real impact.</h2>
+        <h2 className="about__experienceTitle">Our projects</h2>
         <div className="about__experienceTabs">
           {EXPERIENCE_PROJECTS.map((proj, index) => (
             <button
@@ -134,87 +132,6 @@ function About({ embedded }) {
 
       <div className="app__spacer"></div>
 
-      <div className="about__faq">
-        <div className="about__faqHeader">
-          <h2 className="about__faqTitle">Frequently Asked Questions</h2>
-          <p className="about__faqTitleSub">Quick answers about what we do and how we work.</p>
-        </div>
-        <div className="about__faqGrid">
-          {[
-            {
-              question: "What We Do",
-              answer: (
-                <>
-                  <p>We provide end-to-end software development and technology consulting services, including:</p>
-                  <ul>
-                    <li>SaaS product development and maintenance</li>
-                    <li>Cloud-native applications and microservices</li>
-                    <li>Payment systems and fintech platforms</li>
-                    <li>AI-enabled and data-driven solutions</li>
-                    <li>Web and mobile application development</li>
-                    <li>Cloud infrastructure, DevOps, and cost optimization</li>
-                  </ul>
-                  <p>Our technical expertise includes Python, Node.js, C#, AWS, GCP, Docker, Kubernetes, PostgreSQL, MySQL, Redis, Kafka, and modern frontend frameworks such as React, Next.js, and Vue.js.</p>
-                </>
-              ),
-            },
-            {
-              question: "Our Approach",
-              answer: (
-                <>
-                  <p>We follow a pragmatic and transparent development approach, focusing on clean architecture, scalability, security, and performance. Every project is handled with clear communication, structured processes, and a strong emphasis on quality and accountability.</p>
-                  <p>We work closely with our clients as a long-term technology partner, adapting to their needs and ensuring that solutions remain reliable as their businesses grow.</p>
-                </>
-              ),
-            },
-            {
-              question: "Why Apollo Tech Solutions",
-              answer: (
-                <ul>
-                  <li>8+ years of professional software development experience</li>
-                  <li>Strong expertise in cloud and distributed systems</li>
-                  <li>Proven experience with SaaS and fintech platforms</li>
-                  <li>Focus on scalable, maintainable, and secure solutions</li>
-                  <li>Clear communication and reliable delivery</li>
-                </ul>
-              ),
-            },
-            {
-              question: "Our Mission",
-              answer: (
-                <p>
-                  Our mission is to help organizations build and operate dependable software systems that support growth, efficiency, and innovation. We aim to deliver technology solutions that are not only technically strong, but also aligned with business goals.
-                </p>
-              ),
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className={`about__faqItem ${openFaqIndex === index ? "about__faqItem--open" : ""}`}
-            >
-              <button
-                type="button"
-                className="about__faqQuestion"
-                onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                aria-expanded={openFaqIndex === index}
-              >
-                <span className="about__faqIcon" aria-hidden="true">
-                  {openFaqIndex === index ? "−" : "+"}
-                </span>
-                <span className="about__faqQuestionText">{item.question}</span>
-              </button>
-              {openFaqIndex === index && (
-                <div className="about__faqAnswer">
-                  {item.answer}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="app__spacer"></div>
-
       <div className="about__stayConnected">
         <div className="about__stayConnectedLeft">
           <h2 className="about__stayConnectedTitle">Stay connected</h2>
@@ -228,7 +145,7 @@ function About({ embedded }) {
           </div>
         </div>
         <div className="about__stayConnectedRight">
-          <h3 className="about__stayConnectedSubtitle">Apollo Tech Solutions newsletter</h3>
+          <h3 className="about__stayConnectedSubtitle">Apollo Technology newsletter</h3>
           <p className="about__stayConnectedDesc">
             Subscribe to stay on top of product updates, tech insights, and
             how we help businesses build reliable software.

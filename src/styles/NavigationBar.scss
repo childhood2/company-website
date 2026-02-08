@@ -33,41 +33,23 @@
 
 .navbar__logo {
   z-index: 5;
-  font-size: 28px;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.2;
   align-self: center;
   border: none;
   cursor: pointer;
   padding: 0;
-  /* IBM-style horizontal stripe wordmark - thin white gaps */
-  background: repeating-linear-gradient(
-    to bottom,
-    #161616 0px,
-    #161616 4px,
-    transparent 4px,
-    transparent 6px
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  background: transparent;
 }
 
-.navbar__logo:hover {
-  background: repeating-linear-gradient(
-    to bottom,
-    #000000 0px,
-    #000000 4px,
-    transparent 4px,
-    transparent 6px
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
+.navbar__logoImg {
+  display: block;
+  height: 36px;
+  width: auto;
+  max-height: 44px;
+  object-fit: contain;
+  object-position: left center;
 }
 
 .navbar__separator {
@@ -189,8 +171,9 @@
     pointer-events: all;
   }
 
-  .navbar__logo {
-    font-size: 22px;
+  .navbar__logoImg {
+    height: 32px;
+    max-height: 40px;
   }
 
   .navbar__separator {

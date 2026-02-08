@@ -60,7 +60,7 @@ function Home() {
 
       <div className="app__jumbotron">
         <div className="home__whyChoose">
-          <h1>Why Choose Apollo Tech Solutions?</h1>
+          <h1>Why Choose Apollo Technology?</h1>
           <div className="home__whyChooseGrid">
             <div className="home__whyChooseItem">
               <img src={whyChoose1} alt="One" />

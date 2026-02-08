@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import iconAgile from "../assets/our_expertise/icon-agile.svg";
 import iconAi from "../assets/our_expertise/icon-ai.svg";
 import iconProduct from "../assets/our_expertise/icon-product.svg";
@@ -6,7 +6,57 @@ import iconDevops from "../assets/our_expertise/icon-devops.svg";
 import iconConsulting from "../assets/our_expertise/icon-consulting.svg";
 import iconCloud from "../assets/our_expertise/icon-cloud.svg";
 
+const FAQ_ITEMS = [
+  {
+    question: "What We Do",
+    answer: (
+      <>
+        <p>We provide end-to-end software development and technology consulting services, including:</p>
+        <ul>
+          <li>SaaS product development and maintenance</li>
+          <li>Cloud-native applications and microservices</li>
+          <li>Payment systems and fintech platforms</li>
+          <li>AI-enabled and data-driven solutions</li>
+          <li>Web and mobile application development</li>
+          <li>Cloud infrastructure, DevOps, and cost optimization</li>
+        </ul>
+        <p>Our technical expertise includes Python, Node.js, C#, AWS, GCP, Docker, Kubernetes, PostgreSQL, MySQL, Redis, Kafka, and modern frontend frameworks such as React, Next.js, and Vue.js.</p>
+      </>
+    ),
+  },
+  {
+    question: "Our Approach",
+    answer: (
+      <>
+        <p>We follow a pragmatic and transparent development approach, focusing on clean architecture, scalability, security, and performance. Every project is handled with clear communication, structured processes, and a strong emphasis on quality and accountability.</p>
+        <p>We work closely with our clients as a long-term technology partner, adapting to their needs and ensuring that solutions remain reliable as their businesses grow.</p>
+      </>
+    ),
+  },
+  {
+    question: "Why Apollo Technology",
+    answer: (
+      <ul>
+        <li>8+ years of professional software development experience</li>
+        <li>Strong expertise in cloud and distributed systems</li>
+        <li>Proven experience with SaaS and fintech platforms</li>
+        <li>Focus on scalable, maintainable, and secure solutions</li>
+        <li>Clear communication and reliable delivery</li>
+      </ul>
+    ),
+  },
+  {
+    question: "Our Mission",
+    answer: (
+      <p>
+        Our mission is to help organizations build and operate dependable software systems that support growth, efficiency, and innovation. We aim to deliver technology solutions that are not only technically strong, but also aligned with business goals.
+      </p>
+    ),
+  },
+];
+
 function OurExpertise({ embedded }) {
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
@@ -29,77 +79,62 @@ function OurExpertise({ embedded }) {
       <div className="expertise">
         <div className="expertise__grid">
           <div className="expertise__card">
-            <h3 className="expertise__cardTitle">Agile Software Development</h3>
+            <h3 className="expertise__cardTitle">Backend &amp; Microservices</h3>
             <div className="expertise__cardIcon">
               <img src={iconAgile} alt="" />
             </div>
             <p className="expertise__cardDesc">
-              Using pragmatic ways and continuously improving best engineering
-              practices, we apply industry-proven Agile frameworks to
-              iteratively develop and quickly deliver working software, focusing
-              on quality, faster time to market and realistic ROI.
+              Node.js, TypeScript, Python, C#, NestJS, FastAPI, Django, Spring Boot; REST &amp; GraphQL APIs; scalable event-driven architectures with Kafka, RabbitMQ, Redis, PostgreSQL, MySQL, MongoDB.
             </p>
           </div>
 
           <div className="expertise__card">
-            <h3 className="expertise__cardTitle">AI-Powered Data Engines</h3>
+            <h3 className="expertise__cardTitle">Frontend &amp; Full-Stack Solutions</h3>
             <div className="expertise__cardIcon">
               <img src={iconAi} alt="" />
             </div>
             <p className="expertise__cardDesc">
-              We apply AI where it matters most: efficiency, detection and
-              prediction. We use the Python AI ecosystem, TensorFlow and PyTorch
-              to help customers uncover deeper problems and set sustainable,
-              learning solutions.
+              React, Next.js, Vue, Nuxt.js, Three.js for 3D web visualization, Material-UI, TailwindCSS, Zustand, Redux, TypeScript for type-safe, maintainable frontend applications.
             </p>
           </div>
 
           <div className="expertise__card">
-            <h3 className="expertise__cardTitle">Agile Product Delivery</h3>
+            <h3 className="expertise__cardTitle">Cloud &amp; DevOps</h3>
             <div className="expertise__cardIcon">
               <img src={iconProduct} alt="" />
             </div>
             <p className="expertise__cardDesc">
-              We foster Social Enterprise Thinking and design products using
-              Design Thinking and Human Centered Design to deliver valuable
-              prototypes and practical solutions that create lasting change.
+              AWS, GCP, Azure, Digital Ocean; Docker, Kubernetes, Terraform, GitHub Actions, CI/CD pipelines; monitoring &amp; observability with Prometheus, Grafana, ELK Stack.
             </p>
           </div>
 
           <div className="expertise__card">
-            <h3 className="expertise__cardTitle">DevOps and Automation Testing</h3>
+            <h3 className="expertise__cardTitle">SaaS &amp; Digital Products</h3>
             <div className="expertise__cardIcon">
               <img src={iconDevops} alt="" />
             </div>
             <p className="expertise__cardDesc">
-              We set up DevOps teams tailored to your needs, recommending tools,
-              identifying metrics, automating tests and bridging the gap between
-              IT operations and software development.
+              End-to-end SaaS development for web and mobile platforms; subscription &amp; payment integration; AI/ML-powered dashboards and analytics; QR code and digital engagement tools.
             </p>
           </div>
 
           <div className="expertise__card">
-            <h3 className="expertise__cardTitle">IT Consulting</h3>
+            <h3 className="expertise__cardTitle">Emerging Tech &amp; AI/ML</h3>
             <div className="expertise__cardIcon">
               <img src={iconConsulting} alt="" />
             </div>
             <p className="expertise__cardDesc">
-              Experienced Agile practitioners delivering in-house and public
-              trainings, Scrum and SAFe® certifications, and digital
-              transformation, helping teams grow through Agile communities and
-              Community of Practice.
+              Generative AI, NLP, computer vision, chatbots, automation tools, predictive analytics, and intelligent recommendation engines.
             </p>
           </div>
 
           <div className="expertise__card">
-            <h3 className="expertise__cardTitle">Cloud &amp; Infrastructure</h3>
+            <h3 className="expertise__cardTitle">Remote Software Engineering</h3>
             <div className="expertise__cardIcon">
               <img src={iconCloud} alt="" />
             </div>
             <p className="expertise__cardDesc">
-              We design and manage cloud-native and hybrid infrastructure on
-              AWS, GCP and Azure, helping you scale, secure and optimize costs
-              with DevOps practices and automation.
+              We work with businesses across APAC, EMEA, and the US, providing fully remote development services with strong collaboration across time zones. Our mission is to deliver reliable, scalable, and innovative software solutions that accelerate business growth and digital transformation.
             </p>
           </div>
         </div>
@@ -177,6 +212,38 @@ function OurExpertise({ embedded }) {
                 consultants, which can help you visualize consulting conversations.
               </p>
             </a>
+          </div>
+        </div>
+
+        <div className="about__faq">
+          <div className="about__faqHeader">
+            <h2 className="about__faqTitle">Frequently Asked Questions</h2>
+            <p className="about__faqTitleSub">Quick answers about what we do and how we work.</p>
+          </div>
+          <div className="about__faqGrid">
+            {FAQ_ITEMS.map((item, index) => (
+              <div
+                key={index}
+                className={`about__faqItem ${openFaqIndex === index ? "about__faqItem--open" : ""}`}
+              >
+                <button
+                  type="button"
+                  className="about__faqQuestion"
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                  aria-expanded={openFaqIndex === index}
+                >
+                  <span className="about__faqIcon" aria-hidden="true">
+                    {openFaqIndex === index ? "−" : "+"}
+                  </span>
+                  <span className="about__faqQuestionText">{item.question}</span>
+                </button>
+                {openFaqIndex === index && (
+                  <div className="about__faqAnswer">
+                    {item.answer}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -38,9 +38,13 @@ function NavigationBar({ activeTab, setActiveTab }) {
           type="button"
           className="navbar__logo"
           onClick={() => handleNavClick("about")}
-          aria-label="Apollo Tech Solutions home"
+          aria-label="Apollo Technology home"
         >
-          Apollo Tech Solutions
+          <img
+            src={`${process.env.PUBLIC_URL}/logo.png?v=2`}
+            alt="Apollo Technology"
+            className="navbar__logoImg"
+          />
         </button>
         <div className="navbar__separator" aria-hidden="true" />
         <button

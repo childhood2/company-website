@@ -6,8 +6,8 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer__row">
-        <img src={process.env.PUBLIC_URL + "/logo.png?v=apollo"} alt="Apollo Tech Solutions" />
-        <p>Apollo Tech Solutions © 2020</p>
+        <img src={process.env.PUBLIC_URL + "/logo.png?v=2"} alt="Apollo Technology" />
+        <p>Apollo Technology © 2020</p>
       </div>
       <div className="footer__row left">
         <div className="footer__smList">
