@@ -23,60 +23,57 @@ function NavigationBar() {
 
     const hamburger = document.querySelector(".navbar__hamburger");
     const navLinks = document.querySelector(".navbar__links");
-
     const logo = document.querySelector(".navbar__logo");
-    const ourCraft = document.querySelector("#nav__ourCraft");
     const ourExpertise = document.querySelector("#nav__ourExpertise");
     const about = document.querySelector("#nav__about");
     const contactUs = document.querySelector("#nav__contactUs");
 
-    logo.addEventListener("click", () => {
-      ourCraft.classList.remove("navbar__selected");
-      ourExpertise.classList.remove("navbar__selected");
-      about.classList.remove("navbar__selected");
-      contactUs.classList.remove("navbar__selected");
-    });
+    const clearNavSelection = () => {
+      ourExpertise?.classList.remove("navbar__selected");
+      about?.classList.remove("navbar__selected");
+      contactUs?.classList.remove("navbar__selected");
+    };
+    const closeMobileMenu = () => {
+      navLinks?.classList.remove("open");
+      hamburger?.classList.remove("open");
+    };
 
-    ourCraft.addEventListener("click", () => {
-      ourCraft.classList.add("navbar__selected");
-      ourExpertise.classList.remove("navbar__selected");
-      about.classList.remove("navbar__selected");
-      contactUs.classList.remove("navbar__selected");
-      navLinks.classList.toggle("open");
-      hamburger.classList.toggle("open");
-    });
+    if (logo) {
+      logo.addEventListener("click", () => {
+        clearNavSelection();
+      });
+    }
 
-    ourExpertise.addEventListener("click", () => {
-      ourCraft.classList.remove("navbar__selected");
-      ourExpertise.classList.add("navbar__selected");
-      about.classList.remove("navbar__selected");
-      contactUs.classList.remove("navbar__selected");
-      navLinks.classList.toggle("open");
-      hamburger.classList.toggle("open");
-    });
+    if (ourExpertise) {
+      ourExpertise.addEventListener("click", () => {
+        clearNavSelection();
+        ourExpertise.classList.add("navbar__selected");
+        closeMobileMenu();
+      });
+    }
 
-    about.addEventListener("click", () => {
-      ourCraft.classList.remove("navbar__selected");
-      ourExpertise.classList.remove("navbar__selected");
-      about.classList.add("navbar__selected");
-      contactUs.classList.remove("navbar__selected");
-      navLinks.classList.toggle("open");
-      hamburger.classList.toggle("open");
-    });
+    if (about) {
+      about.addEventListener("click", () => {
+        clearNavSelection();
+        about.classList.add("navbar__selected");
+        closeMobileMenu();
+      });
+    }
 
-    contactUs.addEventListener("click", () => {
-      ourCraft.classList.remove("navbar__selected");
-      ourExpertise.classList.remove("navbar__selected");
-      about.classList.remove("navbar__selected");
-      contactUs.classList.add("navbar__selected");
-      navLinks.classList.toggle("open");
-      hamburger.classList.toggle("open");
-    });
+    if (contactUs) {
+      contactUs.addEventListener("click", () => {
+        clearNavSelection();
+        contactUs.classList.add("navbar__selected");
+        closeMobileMenu();
+      });
+    }
 
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("open");
-      hamburger.classList.toggle("open");
-    });
+    if (hamburger && navLinks) {
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+        hamburger.classList.toggle("open");
+      });
+    }
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
