@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ourExpertiseJumbo from "../assets/our_expertise/ourExpertise_jumbo.svg";
-import one from "../assets/our_expertise/one.svg";
-import two from "../assets/our_expertise/two.svg";
-import three from "../assets/our_expertise/three.svg";
-import four from "../assets/our_expertise/four.svg";
-import five from "../assets/our_expertise/five.svg";
+import iconAgile from "../assets/our_expertise/icon-agile.svg";
+import iconAi from "../assets/our_expertise/icon-ai.svg";
+import iconProduct from "../assets/our_expertise/icon-product.svg";
+import iconDevops from "../assets/our_expertise/icon-devops.svg";
+import iconConsulting from "../assets/our_expertise/icon-consulting.svg";
+import iconCloud from "../assets/our_expertise/icon-cloud.svg";
 
 function OurExpertise() {
   useEffect(() => {
@@ -47,7 +48,7 @@ function OurExpertise() {
           <div className="expertise__card">
             <h3 className="expertise__cardTitle">Agile Software Development</h3>
             <div className="expertise__cardIcon">
-              <img src={one} alt="" />
+              <img src={iconAgile} alt="" />
             </div>
             <p className="expertise__cardDesc">
               Using pragmatic ways and continuously improving best engineering
@@ -55,13 +56,12 @@ function OurExpertise() {
               iteratively develop and quickly deliver working software—focusing
               on quality, faster time to market and realistic ROI.
             </p>
-            <span className="expertise__cardArrow" aria-hidden="true">→</span>
           </div>
 
           <div className="expertise__card">
             <h3 className="expertise__cardTitle">AI-Powered Data Engines</h3>
             <div className="expertise__cardIcon">
-              <img src={two} alt="" />
+              <img src={iconAi} alt="" />
             </div>
             <p className="expertise__cardDesc">
               We apply AI where it matters most: efficiency, detection and
@@ -69,39 +69,36 @@ function OurExpertise() {
               to help customers uncover deeper problems and set sustainable,
               learning solutions.
             </p>
-            <span className="expertise__cardArrow" aria-hidden="true">→</span>
           </div>
 
           <div className="expertise__card">
             <h3 className="expertise__cardTitle">Agile Product Delivery</h3>
             <div className="expertise__cardIcon">
-              <img src={three} alt="" />
+              <img src={iconProduct} alt="" />
             </div>
             <p className="expertise__cardDesc">
               We foster Social Enterprise Thinking and design products using
               Design Thinking and Human Centered Design to deliver valuable
               prototypes and practical solutions that create lasting change.
             </p>
-            <span className="expertise__cardArrow" aria-hidden="true">→</span>
           </div>
 
           <div className="expertise__card">
             <h3 className="expertise__cardTitle">DevOps and Automation Testing</h3>
             <div className="expertise__cardIcon">
-              <img src={four} alt="" />
+              <img src={iconDevops} alt="" />
             </div>
             <p className="expertise__cardDesc">
               We set up DevOps teams tailored to your needs—recommending tools,
               identifying metrics, automating tests and bridging the gap between
               IT operations and software development.
             </p>
-            <span className="expertise__cardArrow" aria-hidden="true">→</span>
           </div>
 
           <div className="expertise__card">
             <h3 className="expertise__cardTitle">IT Consulting</h3>
             <div className="expertise__cardIcon">
-              <img src={five} alt="" />
+              <img src={iconConsulting} alt="" />
             </div>
             <p className="expertise__cardDesc">
               Experienced Agile practitioners delivering in-house and public
@@ -109,7 +106,18 @@ function OurExpertise() {
               transformation—helping teams grow through Agile communities and
               Community of Practice.
             </p>
-            <span className="expertise__cardArrow" aria-hidden="true">→</span>
+          </div>
+
+          <div className="expertise__card">
+            <h3 className="expertise__cardTitle">Cloud &amp; Infrastructure</h3>
+            <div className="expertise__cardIcon">
+              <img src={iconCloud} alt="" />
+            </div>
+            <p className="expertise__cardDesc">
+              We design and manage cloud-native and hybrid infrastructure on
+              AWS, GCP and Azure—helping you scale, secure and optimize costs
+              with DevOps practices and automation.
+            </p>
           </div>
         </div>
       </div>
