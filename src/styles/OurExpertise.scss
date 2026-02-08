@@ -169,9 +169,17 @@
 .expertise__customerSuccessLogos {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: 2rem 3rem;
+  gap: 2rem 2.5rem;
+}
+
+.expertise__customerSuccessItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 280px;
+  text-align: center;
 }
 
 .expertise__customerSuccessLogo {
@@ -186,6 +194,7 @@
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
 
   &:hover {
     border-color: #1e90ff;
@@ -206,15 +215,32 @@
   }
 }
 
+.expertise__customerSuccessDesc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #495057;
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
 @media screen and (max-width: 768px) {
   .expertise__customerSuccessLogos {
     gap: 1.5rem 2rem;
+  }
+
+  .expertise__customerSuccessItem {
+    max-width: 100%;
   }
 
   .expertise__customerSuccessLogo {
     min-width: 100px;
     max-width: 140px;
     height: 48px;
+  }
+
+  .expertise__customerSuccessDesc {
+    font-size: 13px;
+    margin-top: 0.75rem;
   }
 }
 
