@@ -132,7 +132,7 @@ function OurExpertise() {
                 <img src={process.env.PUBLIC_URL + "/customer-success/bairesdev.svg"} alt="BairesDev" />
               </div>
               <p className="expertise__customerSuccessDesc">
-                Developed and maintained microservices for Mastercard, Visa, and Amex with Node.js and C#.
+                BairesDev: Developed and maintained microservices for Mastercard, Visa, and Amex with Node.js and C#.
               </p>
             </div>
             <div className="expertise__customerSuccessItem">
@@ -140,7 +140,7 @@ function OurExpertise() {
                 <img src={process.env.PUBLIC_URL + "/customer-success/exomindset.png"} alt="Exomindset" />
               </div>
               <p className="expertise__customerSuccessDesc">
-                Delivered scalable SaaS and digital solutions for clients worldwide.
+                Exomindset: Delivered scalable SaaS and digital solutions for clients worldwide.
               </p>
             </div>
             <div className="expertise__customerSuccessItem">
@@ -148,7 +148,7 @@ function OurExpertise() {
                 <img src={process.env.PUBLIC_URL + "/customer-success/nkey.png"} alt="NKey" />
               </div>
               <p className="expertise__customerSuccessDesc">
-                Led health platform development with Node.js and NestJS, supporting thousands of simultaneous connections.
+                NKey: Led health platform development with Node.js and NestJS, supporting thousands of simultaneous connections.
               </p>
             </div>
             <div className="expertise__customerSuccessItem">
@@ -156,15 +156,7 @@ function OurExpertise() {
                 <img src={process.env.PUBLIC_URL + "/customer-success/global-hitss.png"} alt="GLOBAL HITSS" />
               </div>
               <p className="expertise__customerSuccessDesc">
-                Automated microservices for Bank of Brazil, reducing AWS costs by 20% with Grafana and Prometheus.
-              </p>
-            </div>
-            <div className="expertise__customerSuccessItem">
-              <div className="expertise__customerSuccessLogo" title="Tsuru.chat">
-                <img src={process.env.PUBLIC_URL + "/customer-success/tsuru-chat.png"} alt="Tsuru.chat" />
-              </div>
-              <p className="expertise__customerSuccessDesc">
-                Built bots and crawlers with Node.js and Python, developing APIs for WhatsApp and social platforms and reducing external API usage by 70%.
+                GLOBAL HITSS: Automated microservices for Bank of Brazil, reducing AWS costs by 20% with Grafana and Prometheus.
               </p>
             </div>
           </div>
