@@ -133,13 +133,11 @@ function OurExpertise() {
               <div className="expertise__recommendedImgWrap">
                 <img src={process.env.PUBLIC_URL + "/1.png"} alt="" />
               </div>
-              <div className="expertise__recommendedContent">
-                <h3 className="expertise__recommendedCardTitle">Video</h3>
-                <p className="expertise__recommendedCardDesc">
-                  Watch our latest insights and updates from Apollo Tech Solutions.
-                </p>
-                <span className="expertise__recommendedArrow">→</span>
-              </div>
+              <p className="expertise__recommendedDesc">
+                This covers the Agile methodology and Scrum workflow step-by-step,
+                which is the framework used by many software development teams in
+                the USA and globally.
+              </p>
             </a>
             <a
               href="https://www.youtube.com/watch?v=ggJaQ4I2h9w&utm_source=chatgpt.com"
@@ -150,13 +148,10 @@ function OurExpertise() {
               <div className="expertise__recommendedImgWrap">
                 <img src={process.env.PUBLIC_URL + "/2.png"} alt="" />
               </div>
-              <div className="expertise__recommendedContent">
-                <h3 className="expertise__recommendedCardTitle">Video</h3>
-                <p className="expertise__recommendedCardDesc">
-                  Discover more from our team—tips, demos and industry perspectives.
-                </p>
-                <span className="expertise__recommendedArrow">→</span>
-              </div>
+              <p className="expertise__recommendedDesc">
+                This video explains typical responsibilities and activities of IT
+                consultants, which can help you visualize consulting conversations.
+              </p>
             </a>
           </div>
         </div>
