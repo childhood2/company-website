@@ -1,14 +1,29 @@
+// Dotted background pattern
+$cus-border: #1a4d6f;
+$cus-dot: rgba(26, 77, 111, 0.12);
+
 .contactUs {
-  width: 94%;
-  max-width: 1500px;
+  width: 100%;
+  max-width: 100%;
   margin-right: auto;
   margin-left: auto;
+  padding: 2rem 0 4rem;
+  background-color: #f8fafb;
+  background-image: radial-gradient(circle, $cus-dot 1px, transparent 1px);
+  background-size: 20px 20px;
 
   h1 {
     text-align: center;
     font-size: 52px;
     font-weight: normal;
     margin-bottom: 30px;
+    color: #212529;
+  }
+
+  .cus__title p {
+    text-align: center;
+    color: #525f7f;
+    margin-bottom: 2rem;
   }
 }
 
@@ -17,6 +32,84 @@
     font-size: 52px;
     line-height: 1.6;
     font-weight: normal;
+  }
+}
+
+.cus__form {
+  width: 94%;
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cus__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  label {
+    font-size: 13px;
+    font-weight: 600;
+    color: $cus-border;
+    letter-spacing: 0.02em;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #212529;
+    background: linear-gradient(to bottom, #ffffff 0%, #fafbfc 100%);
+    border: 1px solid $cus-border;
+    border-radius: 4px;
+    box-shadow: 1px 2px 4px rgba(26, 77, 111, 0.08);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: darken($cus-border, 6%);
+      box-shadow: 1px 2px 6px rgba(26, 77, 111, 0.12);
+    }
+  }
+
+  textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  &--message textarea {
+    min-height: 160px;
+  }
+}
+
+.cus__submit {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: $cus-border;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+
+  &:hover {
+    background: darken($cus-border, 8%);
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 }
 
@@ -52,6 +145,10 @@
   .big h1 {
     font-size: 40px;
     line-height: 1.6;
+  }
+
+  .cus__form {
+    max-width: 100%;
   }
 
   .contactUs__social {
