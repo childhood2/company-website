@@ -7,7 +7,8 @@
   border-bottom: 1px solid #e0e0e0;
   display: flex;
   align-items: stretch;
-  height: 56px;
+  min-height: 56px;
+  height: 120px;
 }
 
 .navbar.onScroll {
@@ -45,9 +46,9 @@
 
 .navbar__logoImg {
   display: block;
-  height: 36px;
+  height: 108px;
   width: auto;
-  max-height: 44px;
+  max-height: 108px;
   object-fit: contain;
   object-position: left center;
 }
@@ -172,8 +173,12 @@
   }
 
   .navbar__logoImg {
-    height: 32px;
-    max-height: 40px;
+    height: 96px;
+    max-height: 96px;
+  }
+
+  .navbar {
+    height: 110px;
   }
 
   .navbar__separator {

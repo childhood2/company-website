@@ -39,6 +39,9 @@ function SinglePage({ activeTab }) {
 
       <section ref={sectionAboutRef} id="section-about" className="single-page__section" aria-label="About Us">
         <h2 className="single-page__sectionTitle">About Us</h2>
+        <p className="single-page__sectionOverview">
+          We deliver cutting-edge, full-stack software solutions for businesses worldwide. Leveraging modern and high-demand technologies, we specialize in scalable microservices, cloud-native applications, AI-powered platforms, and SaaS products that empower companies to innovate and grow efficiently.
+        </p>
         <About embedded />
       </section>
       <div className="app__spacer" aria-hidden="true" />
