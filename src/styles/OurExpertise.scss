@@ -6,8 +6,8 @@
 }
 
 .expertise__servicesTitle {
-  font-size: 48px; // same as Customer Success
-  font-weight: 600;
+  font-size: 44px;
+  font-weight: normal;
   color: #212529;
   margin: 0 0 1.5rem 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -58,7 +58,7 @@
 
 .expertise__cardTitle {
   font-size: 31px; // 18 * 1.7
-  font-weight: 600;
+  font-weight: normal;
   color: #212529;
   margin: 0 0 1rem 0;
   line-height: 1.3;
@@ -96,6 +96,7 @@
   overflow: auto;
   transition: opacity 0.25s ease;
   pointer-events: none;
+  font-weight: bold;
 }
 
 .expertise__card:hover .expertise__cardDesc {
@@ -161,8 +162,8 @@
 }
 
 .expertise__customerSuccessTitle {
-  font-size: 48px; // 28 * 1.7
-  font-weight: 600;
+  font-size: 44px;
+  font-weight: normal;
   color: #212529;
   margin: 0 0 0.5rem 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -172,6 +173,7 @@
   font-size: 26px; // 15 * 1.7
   color: #6c757d;
   margin: 0 0 2rem 0;
+  font-weight: normal;
 }
 
 .expertise__customerSuccessLogos {
@@ -191,13 +193,7 @@
 }
 
 .expertise__customerSuccessLogo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 120px;
-  max-width: 180px;
-  width: 180px;
-  height: 56px;
+  display: inline-flex;
   padding: 0;
   background: #fff;
   border: 1px solid #e0e0e0;
@@ -205,6 +201,7 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   flex-shrink: 0;
   overflow: hidden;
+  line-height: 0;
 
   &:hover {
     border-color: #1e90ff;
@@ -212,10 +209,12 @@
   }
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
+    display: block;
+    max-width: 180px;
+    max-height: 56px;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
     filter: grayscale(0.4);
     transition: filter 0.2s ease;
   }
@@ -231,9 +230,16 @@
   color: #495057;
   margin: 1rem 0 0 0;
   padding: 0;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
+  .expertise__servicesTitle,
+  .expertise__customerSuccessTitle,
+  .expertise__recommendedTitle {
+    font-size: 34px;
+  }
+
   .expertise__customerSuccessLogos {
     gap: 1.5rem 2rem;
   }
@@ -242,12 +248,9 @@
     max-width: 100%;
   }
 
-  .expertise__customerSuccessLogo {
-    min-width: 100px;
+  .expertise__customerSuccessLogo img {
     max-width: 140px;
-    width: 140px;
-    height: 48px;
-    border-radius: 0;
+    max-height: 48px;
   }
 
   .expertise__customerSuccessDesc {
@@ -261,8 +264,8 @@
 }
 
 .expertise__recommendedTitle {
-  font-size: 48px; // 28 * 1.7
-  font-weight: 600;
+  font-size: 44px;
+  font-weight: normal;
   color: #212529;
   margin: 0 0 1.5rem 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -315,6 +318,7 @@
   margin: 1rem 0 0 0;
   padding: 0;
   overflow-wrap: break-word;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {

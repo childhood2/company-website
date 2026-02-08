@@ -6,16 +6,17 @@
 
   h1 {
     text-align: center;
-    font-size: 68px; // 40 * 1.7
-    font-weight: bold;
+    font-size: 44px;
+    font-weight: normal;
     margin-bottom: 30px;
   }
 }
 
 .big {
   h1 {
-    font-size: 85px; // 50 * 1.7
+    font-size: 44px;
     line-height: 1.6;
+    font-weight: normal;
   }
 }
 
@@ -47,11 +48,10 @@
 }
 
 @media screen and (max-width: 768px) {
-  .big {
-    h1 {
-      font-size: 68px;
-      line-height: 1.6;
-    }
+  .contactUs h1,
+  .big h1 {
+    font-size: 34px;
+    line-height: 1.6;
   }
 
   .contactUs__social {
