@@ -1,6 +1,6 @@
 .expertise {
   width: 94%;
-  max-width: 1770px;
+  max-width: 1500px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -287,7 +287,8 @@
   img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
     display: block;
   }
 }
