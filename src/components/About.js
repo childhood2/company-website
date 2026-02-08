@@ -63,6 +63,9 @@ const EXPERIENCE_PROJECTS = [
 
 function About() {
   const [selectedProject, setSelectedProject] = useState(0);
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -189,6 +192,84 @@ function About() {
             We aim to deliver technology solutions that are not only technically
             strong, but also aligned with business goals.
           </p>
+        </div>
+      </div>
+
+      <div className="app__spacer"></div>
+
+      <div className="about__stayConnected">
+        <div className="about__stayConnectedLeft">
+          <h2 className="about__stayConnectedTitle">Stay connected</h2>
+          <div className="about__stayConnectedGraphic" aria-hidden="true">
+            <svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <defs>
+                <linearGradient id="stayGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#e8f4fc" />
+                  <stop offset="100%" stopColor="#1e90ff" />
+                </linearGradient>
+              </defs>
+              <rect width="240" height="160" fill="url(#stayGrad)" />
+              <circle cx="80" cy="80" r="24" stroke="white" strokeWidth="3" fill="none" />
+              <circle cx="80" cy="80" r="8" fill="white" />
+              <line x1="104" y1="80" x2="200" y2="80" stroke="white" strokeWidth="2" opacity="0.9" />
+              <line x1="104" y1="60" x2="180" y2="50" stroke="white" strokeWidth="1" opacity="0.6" />
+              <line x1="104" y1="100" x2="180" y2="110" stroke="white" strokeWidth="1" opacity="0.6" />
+              <circle cx="120" cy="40" r="2" fill="white" opacity="0.8" />
+              <circle cx="160" cy="35" r="2" fill="white" opacity="0.8" />
+              <circle cx="200" cy="45" r="2" fill="white" opacity="0.8" />
+              <circle cx="140" cy="120" r="2" fill="white" opacity="0.8" />
+              <circle cx="180" cy="125" r="2" fill="white" opacity="0.8" />
+            </svg>
+          </div>
+        </div>
+        <div className="about__stayConnectedRight">
+          <h3 className="about__stayConnectedSubtitle">Apollo Tech Solutions newsletter</h3>
+          <p className="about__stayConnectedDesc">
+            Subscribe to stay on top of product updates, tech insights, and
+            how we help businesses build reliable software.
+          </p>
+          <form
+            className="about__stayConnectedForm"
+            onSubmit={(e) => {
+              e.preventDefault();
+              setSubmitted(true);
+              if (!email.trim()) {
+                setEmailError("Email is required");
+                return;
+              }
+              setEmailError("");
+              // Placeholder: wire to your newsletter backend or Mailchimp etc.
+            }}
+          >
+            <div className="about__stayConnectedField">
+              <label htmlFor="about-newsletter-email">Business email</label>
+              <input
+                id="about-newsletter-email"
+                type="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setEmailError("");
+                }}
+                onBlur={() => {
+                  if (submitted && !email.trim()) setEmailError("Email is required");
+                }}
+                className={`about__stayConnectedInput ${emailError ? "about__stayConnectedInput--error" : ""}`}
+                placeholder="you@company.com"
+                autoComplete="email"
+              />
+              {emailError && (
+                <span className="about__stayConnectedError">{emailError}</span>
+              )}
+            </div>
+            <p className="about__stayConnectedPrivacy">
+              You can unsubscribe at any time. We respect your privacy and
+              will not share your email with third parties.
+            </p>
+            <button type="submit" className="about__stayConnectedSubmit">
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
 
