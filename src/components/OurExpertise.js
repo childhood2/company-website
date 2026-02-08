@@ -10,18 +10,10 @@ const FAQ_ITEMS = [
   {
     question: "What We Do",
     answer: (
-      <>
-        <p>We provide end-to-end software development and technology consulting services, including:</p>
-        <ul>
-          <li>SaaS product development and maintenance</li>
-          <li>Cloud-native applications and microservices</li>
-          <li>Payment systems and fintech platforms</li>
-          <li>AI-enabled and data-driven solutions</li>
-          <li>Web and mobile application development</li>
-          <li>Cloud infrastructure, DevOps, and cost optimization</li>
-        </ul>
-        <p>Our technical expertise includes Python, Node.js, C#, AWS, GCP, Docker, Kubernetes, PostgreSQL, MySQL, Redis, Kafka, and modern frontend frameworks such as React, Next.js, and Vue.js.</p>
-      </>
+      <ul>
+        <li>We deliver enterprise-grade, full-stack software solutions to organizations globally.</li>
+        <li>We combine industry-leading and in-demand technologies with deep engineering expertise to build scalable microservices, cloud-native applications, AI-enabled platforms, and SaaS products that drive innovation, operational efficiency, and sustainable growth for our clients.</li>
+      </ul>
     ),
   },
   {

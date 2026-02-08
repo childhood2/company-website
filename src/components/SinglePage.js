@@ -40,7 +40,9 @@ function SinglePage({ activeTab }) {
       <section ref={sectionAboutRef} id="section-about" className="single-page__section" aria-label="About Us">
         <h2 className="single-page__sectionTitle">About Us</h2>
         <p className="single-page__sectionOverview">
-          Apollo Technology delivers enterprise-grade, full-stack software solutions to organizations globally. We combine industry-leading and in-demand technologies with deep engineering expertise to build scalable microservices, cloud-native applications, AI-enabled platforms, and SaaS products that drive innovation, operational efficiency, and sustainable growth for our clients.
+          Building enterprise-grade, full-stack software solutions for organizations worldwide.
+          <br />
+          Delivering scalable cloud-native systems, microservices, AI-enabled platforms, and SaaS products using modern, in-demand technologies and deep engineering expertise, while driving innovation, improving operational efficiency, and supporting sustainable long-term growth.
         </p>
         <About embedded />
       </section>
