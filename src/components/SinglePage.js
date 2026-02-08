@@ -32,7 +32,7 @@ function SinglePage({ activeTab }) {
             <h1 className="home__heroTitle">
               From concept
               <br />
-              to completion.
+              <span className="home__heroTitleLine2">to completion.</span>
             </h1>
             <p className="home__heroText">
               Flexible pay. Global time zones.

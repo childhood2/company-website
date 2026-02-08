@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
+const PROJECTS_PER_PAGE = 3;
 
 const pedegasLogo = process.env.PUBLIC_URL + "/experience/pedegas.png";
 const giftsqrLogo = process.env.PUBLIC_URL + "/experience/giftsqr.png";
@@ -62,6 +64,11 @@ const EXPERIENCE_PROJECTS = [
 ];
 
 function About({ embedded }) {
+  const [currentPage, setCurrentPage] = useState(0);
+  const totalPages = Math.ceil(EXPERIENCE_PROJECTS.length / PROJECTS_PER_PAGE);
+  const start = currentPage * PROJECTS_PER_PAGE;
+  const projectsOnPage = EXPERIENCE_PROJECTS.slice(start, start + PROJECTS_PER_PAGE);
+
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
@@ -91,7 +98,7 @@ function About({ embedded }) {
       <div className="about__experience">
         <h2 className="about__experienceTitle">Our projects</h2>
         <ul className="about__experienceList">
-          {EXPERIENCE_PROJECTS.map((proj) => (
+          {projectsOnPage.map((proj) => (
             <li key={proj.id} className="about__experienceItem">
               <div className="about__experienceItemContent">
                 <h3 className="about__experienceItemTitle">
@@ -135,6 +142,42 @@ function About({ embedded }) {
             </li>
           ))}
         </ul>
+        {totalPages > 1 && (
+          <nav className="about__experiencePagination" aria-label="Our projects pagination">
+            <button
+              type="button"
+              className="about__experiencePaginationBtn"
+              onClick={() => setCurrentPage((p) => Math.max(0, p - 1))}
+              disabled={currentPage === 0}
+              aria-label="Previous page"
+            >
+              Previous
+            </button>
+            <div className="about__experiencePaginationPages">
+              {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  className={`about__experiencePaginationPage ${i === currentPage ? "about__experiencePaginationPage--current" : ""}`}
+                  onClick={() => setCurrentPage(i)}
+                  aria-label={`Page ${i + 1}`}
+                  aria-current={i === currentPage ? "page" : undefined}
+                >
+                  {i + 1}
+                </button>
+              ))}
+            </div>
+            <button
+              type="button"
+              className="about__experiencePaginationBtn"
+              onClick={() => setCurrentPage((p) => Math.min(totalPages - 1, p + 1))}
+              disabled={currentPage === totalPages - 1}
+              aria-label="Next page"
+            >
+              Next
+            </button>
+          </nav>
+        )}
       </div>
 
       <div className="app__spacer"></div>
