@@ -290,10 +290,10 @@
 }
 
 .about__stayConnected {
-  width: 94%;
-  max-width: 1500px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%;
+  max-width: none;
+  margin-right: 0;
+  margin-left: 0;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 3rem;
@@ -417,10 +417,10 @@
 
 // FAQ section — accordion with visual style
 .about__faq {
-  width: 94%;
-  max-width: 1500px;
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%;
+  max-width: none;
+  margin-right: 0;
+  margin-left: 0;
   padding: 2rem 0;
   display: grid;
   grid-template-columns: 1fr;

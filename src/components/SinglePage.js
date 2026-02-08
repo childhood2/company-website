@@ -46,13 +46,11 @@ function SinglePage({ activeTab }) {
       <div className="app__spacer"></div>
 
       <section ref={sectionAboutRef} id="section-about" className="single-page__section" aria-label="About Us">
-        <h2 className="single-page__sectionTitle">About Us</h2>
         <About embedded />
       </section>
       <div className="app__spacer" aria-hidden="true" />
 
       <section ref={sectionExpertiseRef} id="section-expertise" className="single-page__section" aria-label="Our Expertise">
-        <h2 className="single-page__sectionTitle">Our Expertise</h2>
         <OurExpertise embedded />
       </section>
       <div className="app__spacer app__spacer--small" aria-hidden="true" />

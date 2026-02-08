@@ -25,6 +25,10 @@ p {
 }
 
 .single-page__hero.app__jumbotron {
+  width: 94%;
+  max-width: 1500px;
+  margin-right: auto;
+  margin-left: auto;
   background-color: #fff;
   /* background image set via SinglePage.js from src/assets/home/hero-bg.jpg */
   background-size: cover;
