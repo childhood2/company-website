@@ -62,15 +62,7 @@ function OurCraft() {
               up wasting their hard-earned money in mediocre products and
               services. Get thrilled and be part of an awesome platform where you
               can find the biggest community of honest and reliable reviews and
-              get rewarded. Want to have a sneak peak? Checkout&nbsp;
-              <a
-                href="https://www.theplanetreviews.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="ourCraft__tpr">theplanetreviews.com</span>
-              </a>
-              for more information.
+              get rewarded.
             </p>
           </div>
         </div>
