@@ -21,6 +21,130 @@
   }
 }
 
+.about__experience {
+  width: 90%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.about__experienceTitle {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #212529;
+}
+
+.about__experienceTabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f4f5f7;
+  padding: 0;
+  gap: 0;
+}
+
+.about__experienceTab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  border: none;
+  background: #f4f5f7;
+  cursor: pointer;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    background: #e8e8e8;
+  }
+
+  &--active {
+    background: white;
+    border-bottom-color: #1e90ff;
+  }
+}
+
+.about__experienceTabLogo {
+  max-height: 36px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.about__experienceDetail {
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  padding: 2rem 3%;
+}
+
+.about__experienceDetailTitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1e90ff;
+  margin-bottom: 1rem;
+}
+
+.about__experienceDetailDesc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #525f7f;
+  margin-bottom: 1.5rem;
+}
+
+.about__experienceMetrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about__experienceMetric {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__experienceMetricValue {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1e90ff;
+  line-height: 1.2;
+}
+
+.about__experienceMetricLabel {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #525f7f;
+}
+
+.about__experienceLink {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e90ff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about__experienceTabs {
+    flex-wrap: wrap;
+  }
+
+  .about__experienceTab {
+    flex: 1 1 50%;
+    min-width: 0;
+  }
+
+  .about__experienceMetrics {
+    grid-template-columns: 1fr;
+  }
+}
+
 .app__jumbotronSmall.about__sectionPanels {
   padding: 0;
 }
