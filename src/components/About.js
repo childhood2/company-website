@@ -1,15 +1,5 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import aucyn from "../assets/members/aucyn.svg";
-import gene from "../assets/members/gene.svg";
-import audezza from "../assets/members/audezza.svg";
-import carlo from "../assets/members/carlo.svg";
-import ariel from "../assets/members/ariel.svg";
-import anne from "../assets/members/anne.svg";
-import rampel from "../assets/members/rampel.svg";
-import zed from "../assets/members/zed.svg";
-import kez from "../assets/members/kez.svg";
-import marielet from "../assets/members/marielet.svg";
 
 function About() {
   useEffect(() => {
@@ -79,69 +69,60 @@ function About() {
 
       <div className="app__spacer"></div>
 
-      <div className="about__team">
-        <div className="about__teamDesc">
-          <h1>Team</h1>
+      <div className="app__jumbotronSmall about__sectionPanels">
+        <div className="about__sectionItem">
+          <h2>What We Do</h2>
           <p>
-            Our team is a lean startup composed of IT hustlers with over two
-            decades of professional IT experiences and diverse expertise in the
-            fields of IT project management, business analysis, system design,
-            software development and cloud implementation services for
-            enterprise systems.
+            We provide end-to-end software development and technology
+            consulting services, including:
+          </p>
+          <ul>
+            <li>SaaS product development and maintenance</li>
+            <li>Cloud-native applications and microservices</li>
+            <li>Payment systems and fintech platforms</li>
+            <li>AI-enabled and data-driven solutions</li>
+            <li>Web and mobile application development</li>
+            <li>Cloud infrastructure, DevOps, and cost optimization</li>
+          </ul>
+          <p>
+            Our technical expertise includes Python, Node.js, C#, AWS, GCP,
+            Docker, Kubernetes, PostgreSQL, MySQL, Redis, Kafka, and modern
+            frontend frameworks such as React, Next.js, and Vue.js.
           </p>
         </div>
-        <div className="app__spacer"></div>
-        <div className="about__member">
-          <img src={aucyn} alt="aucyn" />
-          <h3>Aucyn Fabilonia</h3>
-          <p>Founder & CEO</p>
+        <div className="about__sectionItem">
+          <h2>Our Approach</h2>
+          <p>
+            We follow a pragmatic and transparent development approach,
+            focusing on clean architecture, scalability, security, and
+            performance. Every project is handled with clear communication,
+            structured processes, and a strong emphasis on quality and
+            accountability.
+          </p>
+          <p>
+            We work closely with our clients as a long-term technology partner,
+            adapting to their needs and ensuring that solutions remain reliable
+            as their businesses grow.
+          </p>
         </div>
-        <div className="about__teamMembers">
-          <div className="about__member">
-            <img src={gene} alt="gene" />
-            <h3>Gene D.</h3>
-            <p>Co-Founder & CTO</p>
-          </div>
-          <div className="about__member">
-            <img src={audezza} alt="audezza" />
-            <h3>Audezza Fabilonia</h3>
-            <p>Corporate Secretary</p>
-          </div>
-          <div className="about__member">
-            <img src={rampel} alt="rampel" />
-            <h3>Rampel O.</h3>
-            <p>Head of Mobile Development</p>
-          </div>
-          <div className="about__member">
-            <img src={ariel} alt="ariel" />
-            <h3>Ariel M.</h3>
-            <p>Head of Software Development</p>
-          </div>
-          <div className="about__member">
-            <img src={anne} alt="anne" />
-            <h3>Anne P.</h3>
-            <p>Head of Product Design</p>
-          </div>
-          <div className="about__member">
-            <img src={carlo} alt="carlo" />
-            <h3>Prince Carlo Juguilon</h3>
-            <p>Full Stack Developer</p>
-          </div>
-          <div className="about__member">
-            <img src={kez} alt="kez" />
-            <h3>Kez C.</h3>
-            <p>Quality Engineer</p>
-          </div>
-          <div className="about__member">
-            <img src={marielet} alt="marielet" />
-            <h3>Marielet G.</h3>
-            <p>Data Scientist</p>
-          </div>
-          <div className="about__member">
-            <img src={zed} alt="zed" />
-            <h3>Zedrick V.</h3>
-            <p>Head of Web Development</p>
-          </div>
+        <div className="about__sectionItem">
+          <h2>Why Apollo Tech Solutions</h2>
+          <ul>
+            <li>8+ years of professional software development experience</li>
+            <li>Strong expertise in cloud and distributed systems</li>
+            <li>Proven experience with SaaS and fintech platforms</li>
+            <li>Focus on scalable, maintainable, and secure solutions</li>
+            <li>Clear communication and reliable delivery</li>
+          </ul>
+        </div>
+        <div className="about__sectionItem">
+          <h2>Our Mission</h2>
+          <p>
+            Our mission is to help organizations build and operate dependable
+            software systems that support growth, efficiency, and innovation.
+            We aim to deliver technology solutions that are not only technically
+            strong, but also aligned with business goals.
+          </p>
         </div>
       </div>
 

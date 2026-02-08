@@ -21,54 +21,45 @@
   }
 }
 
-.about__team {
-  width: 90%;
-  max-width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
+.app__jumbotronSmall.about__sectionPanels {
+  padding: 0;
 }
 
-.about__teamDesc {
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 40px;
+.about__sectionItem {
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  padding: 3%;
+
+  &:first-child {
+    border-top: 1px solid #e0e0e0;
   }
 
-  p {
-    text-align: center;
-    line-height: 1.6;
-  }
-}
-
-.about__teamMembers {
-  display: grid;
-  grid-template-columns: 4fr 4fr 4fr;
-  grid-column-gap: 50px;
-  margin: auto;
-}
-
-.about__member {
-  display: flex;
-  flex-direction: column;
-
-  img {
-    margin-right: auto;
-    margin-left: auto;
-    width: 144px;
-    margin-bottom: 10px;
-  }
-
-  h3 {
-    text-align: center;
-    line-height: 1.6;
+  h2 {
     font-size: 24px;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 1rem;
   }
 
   p {
-    text-align: center;
     line-height: 1.6;
-    margin-bottom: 50px;
+    font-size: 16px;
+    margin-bottom: 1rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 16px;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
   }
 }
 
@@ -105,10 +96,6 @@
     }
   }
 
-  .about__teamMembers {
-    grid-template-columns: 12fr;
-    grid-column-gap: 0px;
-  }
 
   .about__mv {
     grid-template-columns: 12fr;
