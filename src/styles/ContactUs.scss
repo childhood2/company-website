@@ -1,12 +1,12 @@
 .contactUs {
-  width: 92%;
-  max-width: 1200px;
+  width: 94%;
+  max-width: 1500px;
   margin-right: auto;
   margin-left: auto;
 
   h1 {
     text-align: center;
-    font-size: 40;
+    font-size: 68px; // 40 * 1.7
     font-weight: bold;
     margin-bottom: 30px;
   }
@@ -14,7 +14,7 @@
 
 .big {
   h1 {
-    font-size: 50px;
+    font-size: 85px; // 50 * 1.7
     line-height: 1.6;
   }
 }
@@ -49,7 +49,7 @@
 @media screen and (max-width: 768px) {
   .big {
     h1 {
-      font-size: 40px;
+      font-size: 68px;
       line-height: 1.6;
     }
   }

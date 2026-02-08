@@ -19,8 +19,8 @@
 }
 
 .ourCraft__apps {
-  width: 92%;
-  max-width: 1280px;
+  width: 94%;
+  max-width: 1770px;
   margin-right: auto;
   margin-left: auto;
   display: grid;
@@ -41,13 +41,13 @@
 
   h1 {
     text-align: center;
-    font-size: 40px;
+    font-size: 68px; // 40 * 1.7
     line-height: 1.6;
   }
 
   p {
     text-align: center;
-    font-size: 16px;
+    font-size: 27px; // 16 * 1.7
     line-height: 1.6;
   }
 

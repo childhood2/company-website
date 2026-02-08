@@ -76,7 +76,7 @@ function About() {
 
   return (
     <div>
-      <div className="app__jumbotron">
+      <div className="app__jumbotron about__jumbotron">
         <div className="home__main">
           <div className="home__mainDesc">
             <h1>About Us</h1>

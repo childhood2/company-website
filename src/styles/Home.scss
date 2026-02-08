@@ -1,6 +1,6 @@
 .home__main {
-  width: 92%;
-  max-width: 1280px;
+  width: 94%;
+  max-width: 1770px;
   margin-right: auto;
   margin-left: auto;
   display: grid;
@@ -19,13 +19,13 @@
 
   h1 {
     font-weight: bold;
-    font-size: 50px;
+    font-size: 85px; // 50 * 1.7
   }
 
   .home__heroTitle {
     font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
     font-weight: 400;
-    font-size: 48px;
+    font-size: 82px; // 48 * 1.7
     line-height: 1.2;
     letter-spacing: -0.02em;
     background: linear-gradient(90deg, #00fff7 0%, #00d4ff 25%, #7b2ff7 50%, #f107a3 75%, #00fff7 100%);
@@ -39,7 +39,7 @@
 
   .home__heroText {
     font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 18px;
+    font-size: 31px; // 18 * 1.7
     font-weight: 400;
     line-height: 1.6;
     color: #525252;
@@ -48,7 +48,7 @@
 
   p {
     line-height: 1.6;
-    font-size: 20px;
+    font-size: 34px; // 20 * 1.7
   }
 }
 
@@ -59,25 +59,25 @@
 
   h1 {
     font-weight: bold;
-    font-size: 40px;
+    font-size: 68px; // 40 * 1.7
   }
 
   p {
     line-height: 1.6;
-    font-size: 16px;
+    font-size: 27px; // 16 * 1.7
   }
 }
 
 .home__whyChoose {
   display: flex;
   flex-direction: column;
-  width: 92%;
-  max-width: 1280px;
+  width: 94%;
+  max-width: 1770px;
   margin-right: auto;
   margin-left: auto;
 
   h1 {
-    font-size: 40px;
+    font-size: 68px; // 40 * 1.7
     margin-left: 2rem;
     margin-right: 2rem;
     margin-bottom: 1.25rem;
@@ -114,14 +114,14 @@
 
 .home__whyChooseDesc {
   h2 {
-    font-size: 24px;
+    font-size: 41px; // 24 * 1.7
     font-weight: bold;
     font-style: normal;
     margin-bottom: 30px;
   }
 
   p {
-    font-size: 16px;
+    font-size: 27px; // 16 * 1.7
     line-height: 1.6;
   }
 }
@@ -139,13 +139,13 @@
   .home__mainDesc {
     h1 {
       font-weight: bold;
-      font-size: 40px;
+      font-size: 68px;
     }
 
     p {
       margin-top: 50px;
       line-height: 1.6;
-      font-size: 20px;
+      font-size: 34px;
     }
 
     input {
@@ -162,13 +162,13 @@
     p {
       margin-top: 50px;
       line-height: 1.6;
-      font-size: 20px;
+      font-size: 34px;
     }
   }
 
   .home__whyChoose {
     h1 {
-      font-size: 32px;
+      font-size: 54px; // 32 * 1.7
       text-align: center;
     }
   }

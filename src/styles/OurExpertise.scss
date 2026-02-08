@@ -1,6 +1,6 @@
 .expertise {
-  width: 92%;
-  max-width: 1280px;
+  width: 94%;
+  max-width: 1770px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -49,7 +49,7 @@
 }
 
 .expertise__cardTitle {
-  font-size: 18px;
+  font-size: 31px; // 18 * 1.7
   font-weight: 600;
   color: #212529;
   margin: 0 0 1rem 0;
@@ -153,7 +153,7 @@
 }
 
 .expertise__customerSuccessTitle {
-  font-size: 28px;
+  font-size: 48px; // 28 * 1.7
   font-weight: 600;
   color: #212529;
   margin: 0 0 0.5rem 0;
@@ -161,7 +161,7 @@
 }
 
 .expertise__customerSuccessSubtitle {
-  font-size: 15px;
+  font-size: 26px; // 15 * 1.7
   color: #6c757d;
   margin: 0 0 2rem 0;
 }
@@ -249,7 +249,7 @@
 }
 
 .expertise__recommendedTitle {
-  font-size: 28px;
+  font-size: 48px; // 28 * 1.7
   font-weight: 600;
   color: #212529;
   margin: 0 0 1.5rem 0;
@@ -292,7 +292,7 @@
 }
 
 .expertise__recommendedDesc {
-  font-size: 15px;
+  font-size: 26px; // 15 * 1.7
   line-height: 1.5;
   color: #212529;
   margin: 1rem 0 0 0;
