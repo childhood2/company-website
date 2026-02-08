@@ -29,13 +29,13 @@ function NavigationBar() {
     const contactUs = document.querySelector("#nav__contactUs");
 
     const clearNavSelection = () => {
-      ourExpertise?.classList.remove("navbar__selected");
-      about?.classList.remove("navbar__selected");
-      contactUs?.classList.remove("navbar__selected");
+      if (ourExpertise) ourExpertise.classList.remove("navbar__selected");
+      if (about) about.classList.remove("navbar__selected");
+      if (contactUs) contactUs.classList.remove("navbar__selected");
     };
     const closeMobileMenu = () => {
-      navLinks?.classList.remove("open");
-      hamburger?.classList.remove("open");
+      if (navLinks) navLinks.classList.remove("open");
+      if (hamburger) hamburger.classList.remove("open");
     };
 
     if (logo) {
