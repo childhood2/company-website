@@ -26,7 +26,7 @@ p {
 
 .single-page__hero.app__jumbotron {
   background-color: #fff;
-  background-image: url(/background.jpg?v=3);
+  /* background image set via SinglePage.js from src/assets/home/hero-bg.jpg */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

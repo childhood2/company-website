@@ -22,7 +22,7 @@ function SinglePage({ activeTab }) {
 
   return (
     <div className="single-page">
-      <div className="app__jumbotron single-page__hero">
+      <div className="app__jumbotron single-page__hero" style={{ backgroundImage: `url(${heroBg})` }}>
         <div className="home__main">
           <div className="home__mainDesc">
             <h1 className="home__heroTitle">
