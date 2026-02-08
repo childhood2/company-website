@@ -27,9 +27,10 @@ p {
 }
 
 .single-page__hero.app__jumbotron {
-  background-image: url(/background.png);
-  background-size: cover;
-  background-position: right center;
+  background-color: #fff;
+  background-image: url(/background.jpg);
+  background-size: 55% auto;
+  background-position: 100% center;
   background-repeat: no-repeat;
 }
 
