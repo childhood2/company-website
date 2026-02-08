@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import ourExpertiseJumbo from "../assets/our_expertise/ourExpertise_jumbo.svg";
 import iconAgile from "../assets/our_expertise/icon-agile.svg";
 import iconAi from "../assets/our_expertise/icon-ai.svg";
 import iconProduct from "../assets/our_expertise/icon-product.svg";
@@ -19,25 +17,7 @@ function OurExpertise() {
         <div className="home__main">
           <div className="home__mainDesc">
             <h1>Our Expertise</h1>
-            <p>
-              Apollo Tech Solutions is an IT startup company
-              founded in June 2019 based in the Philippines and Singapore and
-              currently catering clients in the banking, retail and online
-              retail industries.
-            </p>
-            <Link to="/contact-us">
-              <input
-                type="button"
-                className="btn__blue"
-                value="Contact Us   →"
-              />
-            </Link>
           </div>
-          <img
-            src={ourExpertiseJumbo}
-            alt="ExpertiseJumbo"
-            className="home__jumboImg"
-          />
         </div>
       </div>
 

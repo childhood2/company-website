@@ -17,12 +17,10 @@ function Home() {
         <div className="home__main">
           <div className="home__mainDesc">
             <h1 className="home__heroTitle">
-              From concept
-              <br />
-              to completion
+              From concept to completion.
             </h1>
             <p className="home__heroText">
-              Brief in. We build. Product delivered on time and done right.
+              Flexible pay. Global time zones. Work done right.
             </p>
             <Link to="/contact-us">
               <input

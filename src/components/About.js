@@ -82,17 +82,10 @@ function About() {
             <h1>About Us</h1>
             <p>
               Apollo Tech Solutions is an IT startup company
-              founded in June 2019 based in the Philippines and Singapore and
-              currently catering clients in the banking, retail and online
+              founded in June 2019 based in Brazil and
+              currently catering to clients in the banking, retail and online
               retail industries.
             </p>
-            <Link to="/contact-us">
-              <input
-                type="button"
-                className="btn__blue"
-                value="Contact Us   →"
-              />
-            </Link>
           </div>
           <img src={process.env.PUBLIC_URL + "/logo.png?v=apollo"} alt="About" className="home__jumboImg" />
         </div>

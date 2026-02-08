@@ -96,11 +96,6 @@ function NavigationBar() {
 
         <ul className="navbar__links">
           <li>
-            <Link to="/our-craft" className="navbar__link" id="nav__ourCraft">
-              Our Craft
-            </Link>
-          </li>
-          <li>
             <Link
               to="/our-expertise"
               className="navbar__link"
