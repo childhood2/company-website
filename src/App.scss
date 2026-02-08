@@ -14,7 +14,7 @@ button {
 
 p {
   color: #525f7f;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .app__jumbotron {
@@ -53,6 +53,8 @@ p {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
   max-width: 200px;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -106,7 +108,7 @@ p {
   font-size: 1.125rem;
   line-height: 1.6;
   color: #212529;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 @media screen and (max-width: 768px) {
