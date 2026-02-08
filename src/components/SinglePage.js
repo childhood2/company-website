@@ -4,11 +4,19 @@ import OurExpertise from "./OurExpertise";
 import ContactUs from "./ContactUs";
 
 function SinglePage({ activeTab }) {
-  const tabContentRef = useRef(null);
+  const sectionAboutRef = useRef(null);
+  const sectionExpertiseRef = useRef(null);
+  const sectionContactRef = useRef(null);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    if (tabContentRef.current) {
-      tabContentRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    const ref = activeTab === "about" ? sectionAboutRef : activeTab === "expertise" ? sectionExpertiseRef : sectionContactRef;
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [activeTab]);
 
@@ -29,17 +37,19 @@ function SinglePage({ activeTab }) {
 
       <div className="app__spacer"></div>
 
-      <div
-        ref={tabContentRef}
-        id="tab-content"
-        className="single-page__tabs-content"
-        role="region"
-        aria-label={`${activeTab === "about" ? "About Us" : activeTab === "expertise" ? "Our Expertise" : "Contact Us"} content`}
-      >
-        {activeTab === "about" && <About embedded />}
-        {activeTab === "expertise" && <OurExpertise embedded />}
-        {activeTab === "contact" && <ContactUs />}
-      </div>
+      <section ref={sectionAboutRef} id="section-about" className="single-page__section" aria-label="About Us">
+        <About embedded />
+      </section>
+      <div className="app__spacer" aria-hidden="true" />
+
+      <section ref={sectionExpertiseRef} id="section-expertise" className="single-page__section" aria-label="Our Expertise">
+        <OurExpertise embedded />
+      </section>
+      <div className="app__spacer" aria-hidden="true" />
+
+      <section ref={sectionContactRef} id="section-contact" className="single-page__section" aria-label="Contact Us">
+        <ContactUs />
+      </section>
     </div>
   );
 }
