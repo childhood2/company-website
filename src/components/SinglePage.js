@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import About from "./About";
 import OurExpertise from "./OurExpertise";
 import ContactUs from "./ContactUs";
+import heroBg from "../assets/home/hero-bg.jpg";
 
 function SinglePage({ activeTab }) {
   const sectionAboutRef = useRef(null);
