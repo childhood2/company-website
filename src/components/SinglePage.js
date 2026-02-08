@@ -55,7 +55,7 @@ function SinglePage({ activeTab }) {
         <h2 className="single-page__sectionTitle">Our Expertise</h2>
         <OurExpertise embedded />
       </section>
-      <div className="app__spacer" aria-hidden="true" />
+      <div className="app__spacer app__spacer--small" aria-hidden="true" />
 
       <section ref={sectionContactRef} id="section-contact" className="single-page__section" aria-label="Contact Us">
         <ContactUs />

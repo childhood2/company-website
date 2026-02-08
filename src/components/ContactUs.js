@@ -7,8 +7,6 @@ function ContactUs() {
 
   return (
     <div className="contactUs">
-      <div className="app__spacer"></div>
-
       <div className="cus__title big">
         <h1>Contact Us</h1>
         <p>

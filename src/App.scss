@@ -68,6 +68,10 @@ p {
 
 .app__spacer {
   height: 100px;
+
+  &--small {
+    height: 40px;
+  }
 }
 
 .app__divider {
@@ -129,5 +133,9 @@ p {
 
   .app__spacer {
     height: 50px;
+
+    &--small {
+      height: 24px;
+    }
   }
 }

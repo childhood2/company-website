@@ -309,8 +309,6 @@ function OurExpertise({ embedded }) {
           </div>
         </div>
       </div>
-
-      <div className="app__spacer"></div>
     </div>
   );
 }
