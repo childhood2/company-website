@@ -120,6 +120,46 @@ function OurExpertise() {
             </p>
           </div>
         </div>
+
+        <div className="expertise__recommended">
+          <h2 className="expertise__recommendedTitle">Recommended for you</h2>
+          <div className="expertise__recommendedGrid">
+            <a
+              href="https://www.youtube.com/watch?v=as9IYFrTiKc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="expertise__recommendedCard"
+            >
+              <div className="expertise__recommendedImgWrap">
+                <img src={process.env.PUBLIC_URL + "/1.png"} alt="" />
+              </div>
+              <div className="expertise__recommendedContent">
+                <h3 className="expertise__recommendedCardTitle">Video</h3>
+                <p className="expertise__recommendedCardDesc">
+                  Watch our latest insights and updates from Apollo Tech Solutions.
+                </p>
+                <span className="expertise__recommendedArrow">→</span>
+              </div>
+            </a>
+            <a
+              href="https://www.youtube.com/watch?v=ggJaQ4I2h9w&utm_source=chatgpt.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="expertise__recommendedCard"
+            >
+              <div className="expertise__recommendedImgWrap">
+                <img src={process.env.PUBLIC_URL + "/2.png"} alt="" />
+              </div>
+              <div className="expertise__recommendedContent">
+                <h3 className="expertise__recommendedCardTitle">Video</h3>
+                <p className="expertise__recommendedCardDesc">
+                  Discover more from our team—tips, demos and industry perspectives.
+                </p>
+                <span className="expertise__recommendedArrow">→</span>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
 
       <div className="app__spacer"></div>
