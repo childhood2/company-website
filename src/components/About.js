@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import barterphLogo from "../assets/our_craft/barter_ph.png";
-import planetreviewsLogo from "../assets/our_craft/planet_reviews.png";
 
 const pedegasLogo = process.env.PUBLIC_URL + "/experience/pedegas.ico";
 const giftsqrLogo = process.env.PUBLIC_URL + "/experience/giftsqr.ico";
+const tsuruChatLogo = process.env.PUBLIC_URL + "/experience/chatsuru.png";
+const bankAwsLogo = process.env.PUBLIC_URL + "/experience/bank-aws.png";
 
 const EXPERIENCE_PROJECTS = [
   {
@@ -33,30 +33,31 @@ const EXPERIENCE_PROJECTS = [
     linkText: "Visit Giftsqr",
   },
   {
-    id: "barterph",
-    name: "BarterPH",
-    logo: barterphLogo,
+    id: "tsuruchat",
+    name: "Tsuru Chat",
+    logo: tsuruChatLogo,
     description:
-      "BarterPH is a mobile app built to support free trading, helping farmers trade fresh goods for non-commercial items without spending money. Developed and launched in two months, the app is available to everyone for efficient, free trading. We continue to iterate based on user feedback to keep the platform free and useful.",
+      "Tsuru Chat delivers automation and integrations for messaging platforms.",
     metrics: [
-      { value: "2", label: "months from concept to launch" },
-      { value: "Free", label: "trading for everyone" },
+      { value: "•", label: "Built bots and crawlers with Node.js, Python, Puppeteer." },
+      { value: "•", label: "Developed APIs for WhatsApp, Instagram, Facebook." },
+      { value: "•", label: "Reduced external API usage by 70%." },
     ],
-    linkUrl: "https://play.google.com/store/apps/details?id=com.chamaeleon.barterapp",
-    linkText: "Get BarterPH on Google Play",
+    linkUrl: "https://app.tsuru.chat/?utm_source=chatgpt.com",
+    linkText: "Open Tsuru Chat",
   },
   {
-    id: "planetreviews",
-    name: "PlanetReviews",
-    logo: planetreviewsLogo,
+    id: "bankaws",
+    name: "Bank & AWS",
+    logo: bankAwsLogo,
     description:
-      "PlanetReviews is an in-development platform aimed at democratizing consumer reviews. The goal is to build a community of honest, reliable reviews so people can make better decisions and avoid wasting money on mediocre products and services. The ecosystem will reward contributors and help buyers find trustworthy information.",
+      "Cloud and microservices delivery for banking.",
     metrics: [
-      { value: "100%", label: "focus on honest reviews" },
-      { value: "Community", label: "driven and reward-based" },
+      { value: "•", label: "Automated microservices to reduce AWS costs (-20%)." },
+      { value: "•", label: "Monitoring with Grafana, Prometheus." },
     ],
-    linkUrl: "https://www.theplanetreviews.com",
-    linkText: "Learn about PlanetReviews",
+    linkUrl: "https://www.bb.com.br/",
+    linkText: "Visit BB",
   },
 ];
 
