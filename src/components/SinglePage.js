@@ -2,7 +2,10 @@ import React, { useEffect, useRef } from "react";
 import About from "./About";
 import OurExpertise from "./OurExpertise";
 import ContactUs from "./ContactUs";
-import heroBg from "../assets/home/hero-bg.jpg";
+
+// Hero image: replace public/hero-bg.jpg with your image. Bump version to force reload.
+const HERO_IMAGE_VERSION = 3;
+const heroBgUrl = `${process.env.PUBLIC_URL || ""}/hero-bg.jpg?v=${HERO_IMAGE_VERSION}`;
 
 function SinglePage({ activeTab }) {
   const sectionAboutRef = useRef(null);
@@ -23,7 +26,7 @@ function SinglePage({ activeTab }) {
 
   return (
     <div className="single-page">
-      <div className="app__jumbotron single-page__hero" style={{ backgroundImage: `url(${heroBg})` }}>
+      <div className="app__jumbotron single-page__hero" style={{ backgroundImage: `url(${heroBgUrl})` }}>
         <div className="home__main">
           <div className="home__mainDesc">
             <h1 className="home__heroTitle">
