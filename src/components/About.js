@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
-const pedegasLogo = process.env.PUBLIC_URL + "/experience/pedegas.ico";
-const giftsqrLogo = process.env.PUBLIC_URL + "/experience/giftsqr.ico";
+const pedegasLogo = process.env.PUBLIC_URL + "/experience/pedegas.png";
+const giftsqrLogo = process.env.PUBLIC_URL + "/experience/giftsqr.png";
 const tsuruChatLogo = process.env.PUBLIC_URL + "/experience/chatsuru.png";
 const bankAwsLogo = process.env.PUBLIC_URL + "/experience/bank-aws.png";
 

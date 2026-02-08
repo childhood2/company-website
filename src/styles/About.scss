@@ -64,7 +64,7 @@
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: 2.5rem;
-  align-items: center;
+  align-items: stretch;
   padding: 2rem 0;
   border-bottom: 1px solid #e8e8e8;
 
@@ -76,6 +76,7 @@
     grid-template-columns: 1fr;
     gap: 1.25rem;
     padding: 1.75rem 0;
+    align-items: start;
   }
 }
 
@@ -116,17 +117,20 @@
 .about__experienceItemImage {
   flex-shrink: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 200px;
+  height: 100%;
 }
 
 .about__experienceItemImageLink {
   display: block;
   width: 100%;
   max-width: 320px;
+  height: 100%;
+  min-height: 200px;
   border: 1px solid #e0e0e0;
   background: #fff;
-  padding: 0.75rem;
+  padding: 0;
+  overflow: hidden;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 
   &:hover {
@@ -138,9 +142,10 @@
 .about__experienceItemImg {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 10;
-  object-fit: contain;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  object-position: center;
   background: #f8f9fa;
 }
 
