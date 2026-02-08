@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import iconAgile from "../assets/our_expertise/icon-agile.svg";
 import iconAi from "../assets/our_expertise/icon-ai.svg";
 import iconProduct from "../assets/our_expertise/icon-product.svg";
@@ -6,57 +6,7 @@ import iconDevops from "../assets/our_expertise/icon-devops.svg";
 import iconConsulting from "../assets/our_expertise/icon-consulting.svg";
 import iconCloud from "../assets/our_expertise/icon-cloud.svg";
 
-const FAQ_ITEMS = [
-  {
-    question: "What We Do",
-    answer: (
-      <>
-        <p>We provide end-to-end software development and technology consulting services, including:</p>
-        <ul>
-          <li>SaaS product development and maintenance</li>
-          <li>Cloud-native applications and microservices</li>
-          <li>Payment systems and fintech platforms</li>
-          <li>AI-enabled and data-driven solutions</li>
-          <li>Web and mobile application development</li>
-          <li>Cloud infrastructure, DevOps, and cost optimization</li>
-        </ul>
-        <p>Our technical expertise includes Python, Node.js, C#, AWS, GCP, Docker, Kubernetes, PostgreSQL, MySQL, Redis, Kafka, and modern frontend frameworks such as React, Next.js, and Vue.js.</p>
-      </>
-    ),
-  },
-  {
-    question: "Our Approach",
-    answer: (
-      <>
-        <p>We follow a pragmatic and transparent development approach, focusing on clean architecture, scalability, security, and performance. Every project is handled with clear communication, structured processes, and a strong emphasis on quality and accountability.</p>
-        <p>We work closely with our clients as a long-term technology partner, adapting to their needs and ensuring that solutions remain reliable as their businesses grow.</p>
-      </>
-    ),
-  },
-  {
-    question: "Why Apollo Technology",
-    answer: (
-      <ul>
-        <li>8+ years of professional software development experience</li>
-        <li>Strong expertise in cloud and distributed systems</li>
-        <li>Proven experience with SaaS and fintech platforms</li>
-        <li>Focus on scalable, maintainable, and secure solutions</li>
-        <li>Clear communication and reliable delivery</li>
-      </ul>
-    ),
-  },
-  {
-    question: "Our Mission",
-    answer: (
-      <p>
-        Our mission is to help organizations build and operate dependable software systems that support growth, efficiency, and innovation. We aim to deliver technology solutions that are not only technically strong, but also aligned with business goals.
-      </p>
-    ),
-  },
-];
-
 function OurExpertise({ embedded }) {
-  const [openFaqIndex, setOpenFaqIndex] = useState(null);
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
@@ -155,7 +105,7 @@ function OurExpertise({ embedded }) {
             </div>
             <div className="expertise__customerSuccessItem">
               <div className="expertise__customerSuccessLogo" title="Exomindset">
-                <img src={process.env.PUBLIC_URL + "/customer-success/exomindset.png"} alt="Exomindset" />
+                <img src={process.env.PUBLIC_URL + "/customer-success/exomindset.png?v=2"} alt="Exomindset" />
               </div>
               <p className="expertise__customerSuccessDesc">
                 Exomindset: Delivered scalable SaaS and digital solutions for clients worldwide.
@@ -163,7 +113,7 @@ function OurExpertise({ embedded }) {
             </div>
             <div className="expertise__customerSuccessItem">
               <div className="expertise__customerSuccessLogo" title="NKey">
-                <img src={process.env.PUBLIC_URL + "/customer-success/nkey.png"} alt="NKey" />
+                <img src={process.env.PUBLIC_URL + "/customer-success/nkey.png?v=2"} alt="NKey" />
               </div>
               <p className="expertise__customerSuccessDesc">
                 NKey: Led health platform development with Node.js and NestJS, supporting thousands of simultaneous connections.
@@ -212,38 +162,6 @@ function OurExpertise({ embedded }) {
                 consultants, which can help you visualize consulting conversations.
               </p>
             </a>
-          </div>
-        </div>
-
-        <div className="about__faq">
-          <div className="about__faqHeader">
-            <h2 className="about__faqTitle">Frequently Asked Questions</h2>
-            <p className="about__faqTitleSub">Quick answers about what we do and how we work.</p>
-          </div>
-          <div className="about__faqGrid">
-            {FAQ_ITEMS.map((item, index) => (
-              <div
-                key={index}
-                className={`about__faqItem ${openFaqIndex === index ? "about__faqItem--open" : ""}`}
-              >
-                <button
-                  type="button"
-                  className="about__faqQuestion"
-                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
-                  aria-expanded={openFaqIndex === index}
-                >
-                  <span className="about__faqIcon" aria-hidden="true">
-                    {openFaqIndex === index ? "−" : "+"}
-                  </span>
-                  <span className="about__faqQuestionText">{item.question}</span>
-                </button>
-                {openFaqIndex === index && (
-                  <div className="about__faqAnswer">
-                    {item.answer}
-                  </div>
-                )}
-              </div>
-            ))}
           </div>
         </div>
       </div>

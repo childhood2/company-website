@@ -60,11 +60,61 @@ const EXPERIENCE_PROJECTS = [
   },
 ];
 
+const FAQ_ITEMS = [
+  {
+    question: "What We Do",
+    answer: (
+      <>
+        <p>We provide end-to-end software development and technology consulting services, including:</p>
+        <ul>
+          <li>SaaS product development and maintenance</li>
+          <li>Cloud-native applications and microservices</li>
+          <li>Payment systems and fintech platforms</li>
+          <li>AI-enabled and data-driven solutions</li>
+          <li>Web and mobile application development</li>
+          <li>Cloud infrastructure, DevOps, and cost optimization</li>
+        </ul>
+        <p>Our technical expertise includes Python, Node.js, C#, AWS, GCP, Docker, Kubernetes, PostgreSQL, MySQL, Redis, Kafka, and modern frontend frameworks such as React, Next.js, and Vue.js.</p>
+      </>
+    ),
+  },
+  {
+    question: "Our Approach",
+    answer: (
+      <>
+        <p>We follow a pragmatic and transparent development approach, focusing on clean architecture, scalability, security, and performance. Every project is handled with clear communication, structured processes, and a strong emphasis on quality and accountability.</p>
+        <p>We work closely with our clients as a long-term technology partner, adapting to their needs and ensuring that solutions remain reliable as their businesses grow.</p>
+      </>
+    ),
+  },
+  {
+    question: "Why Apollo Technology",
+    answer: (
+      <ul>
+        <li>8+ years of professional software development experience</li>
+        <li>Strong expertise in cloud and distributed systems</li>
+        <li>Proven experience with SaaS and fintech platforms</li>
+        <li>Focus on scalable, maintainable, and secure solutions</li>
+        <li>Clear communication and reliable delivery</li>
+      </ul>
+    ),
+  },
+  {
+    question: "Our Mission",
+    answer: (
+      <p>
+        Our mission is to help organizations build and operate dependable software systems that support growth, efficiency, and innovation. We aim to deliver technology solutions that are not only technically strong, but also aligned with business goals.
+      </p>
+    ),
+  },
+];
+
 function About({ embedded }) {
   const [selectedProject, setSelectedProject] = useState(0);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
@@ -192,6 +242,40 @@ function About({ embedded }) {
               Subscribe
             </button>
           </form>
+        </div>
+      </div>
+
+      <div className="app__spacer"></div>
+
+      <div className="about__faq">
+        <div className="about__faqHeader">
+          <h2 className="about__faqTitle">Frequently Asked Questions</h2>
+          <p className="about__faqTitleSub">Quick answers about what we do and how we work.</p>
+        </div>
+        <div className="about__faqGrid">
+          {FAQ_ITEMS.map((item, index) => (
+            <div
+              key={index}
+              className={`about__faqItem ${openFaqIndex === index ? "about__faqItem--open" : ""}`}
+            >
+              <button
+                type="button"
+                className="about__faqQuestion"
+                onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                aria-expanded={openFaqIndex === index}
+              >
+                <span className="about__faqIcon" aria-hidden="true">
+                  {openFaqIndex === index ? "−" : "+"}
+                </span>
+                <span className="about__faqQuestionText">{item.question}</span>
+              </button>
+              {openFaqIndex === index && (
+                <div className="about__faqAnswer">
+                  {item.answer}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
 
