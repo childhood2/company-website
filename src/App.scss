@@ -26,6 +26,13 @@ p {
   padding-bottom: 5%;
 }
 
+.single-page__hero.app__jumbotron {
+  background-image: url(/background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .app__jumbotronSmall {
   background: transparent;
   border-radius: 0;

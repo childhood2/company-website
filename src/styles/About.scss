@@ -482,6 +482,10 @@
 
   li {
     margin-bottom: 0.35rem;
+
+    &::marker {
+      color: #1e90ff;
+    }
   }
 }
 

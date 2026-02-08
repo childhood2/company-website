@@ -11,8 +11,12 @@ function Footer() {
       </div>
       <div className="footer__row left">
         <div className="footer__smList">
-          <LinkedInIcon className="footer__sm" fontSize="inherit" />
-          <GitHubIcon className="footer__sm" fontSize="inherit" />
+          <a href="https://www.linkedin.com/company/apollo-technology-it-solutions/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="footer__smLink" aria-label="LinkedIn">
+            <LinkedInIcon className="footer__sm" fontSize="inherit" />
+          </a>
+          <a href="https://github.com/sostenesapollo" target="_blank" rel="noopener noreferrer" className="footer__smLink" aria-label="GitHub">
+            <GitHubIcon className="footer__sm" fontSize="inherit" />
+          </a>
         </div>
         <p>About • Our Solutions • Services Offered • Contact Us</p>
       </div>
