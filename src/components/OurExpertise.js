@@ -6,22 +6,25 @@ import iconDevops from "../assets/our_expertise/icon-devops.svg";
 import iconConsulting from "../assets/our_expertise/icon-consulting.svg";
 import iconCloud from "../assets/our_expertise/icon-cloud.svg";
 
-function OurExpertise() {
+function OurExpertise({ embedded }) {
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (!embedded) window.scrollTo(0, 0);
+  }, [embedded]);
 
   return (
     <div>
-      <div className="app__jumbotron">
-        <div className="home__main">
-          <div className="home__mainDesc">
-            <h1>Our Expertise</h1>
+      {!embedded && (
+        <>
+          <div className="app__jumbotron">
+            <div className="home__main">
+              <div className="home__mainDesc">
+                <h1>Our Expertise</h1>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div className="app__spacer"></div>
+          <div className="app__spacer"></div>
+        </>
+      )}
 
       <div className="expertise">
         <div className="expertise__grid">

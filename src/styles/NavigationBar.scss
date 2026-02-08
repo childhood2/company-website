@@ -41,6 +41,9 @@
   font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.2;
   align-self: center;
+  border: none;
+  cursor: pointer;
+  padding: 0;
   /* IBM-style horizontal stripe wordmark - thin white gaps */
   background: repeating-linear-gradient(
     to bottom,
@@ -94,6 +97,9 @@
   transition: background 0.2s ease;
   cursor: pointer;
   border-radius: 0;
+  border: none;
+  background: transparent;
+  font-family: inherit;
 }
 
 .navbar__link:hover {
@@ -112,6 +118,17 @@
 
 .navbar__selected:hover {
   background: #e0e0e0;
+}
+
+.navbar__hamburger {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {

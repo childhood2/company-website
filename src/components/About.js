@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import barterphLogo from "../assets/our_craft/barter_ph.png";
 import planetreviewsLogo from "../assets/our_craft/planet_reviews.png";
 
@@ -61,7 +60,7 @@ const EXPERIENCE_PROJECTS = [
   },
 ];
 
-function About() {
+function About({ embedded }) {
   const [selectedProject, setSelectedProject] = useState(0);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -69,29 +68,32 @@ function About() {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (!embedded) window.scrollTo(0, 0);
+  }, [embedded]);
 
   const project = EXPERIENCE_PROJECTS[selectedProject];
 
   return (
     <div>
-      <div className="app__jumbotron about__jumbotron">
-        <div className="home__main">
-          <div className="home__mainDesc">
-            <h1>About Us</h1>
-            <p>
-              Apollo Tech Solutions is an IT startup company
-              founded in June 2019 based in Brazil and
-              currently catering to clients in the banking, retail and online
-              retail industries.
-            </p>
+      {!embedded && (
+        <>
+          <div className="app__jumbotron about__jumbotron">
+            <div className="home__main">
+              <div className="home__mainDesc">
+                <h1>About Us</h1>
+                <p>
+                  Apollo Tech Solutions is an IT startup company
+                  founded in June 2019 based in Brazil and
+                  currently catering to clients in the banking, retail and online
+                  retail industries.
+                </p>
+              </div>
+              <img src={process.env.PUBLIC_URL + "/logo.png?v=apollo"} alt="About" className="home__jumboImg" />
+            </div>
           </div>
-          <img src={process.env.PUBLIC_URL + "/logo.png?v=apollo"} alt="About" className="home__jumboImg" />
-        </div>
-      </div>
-
-      <div className="app__spacer"></div>
+          <div className="app__spacer"></div>
+        </>
+      )}
 
       <div className="about__experience">
         <h2 className="about__experienceTitle">Smarter business. Real impact.</h2>

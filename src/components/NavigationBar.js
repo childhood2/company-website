@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
-function NavigationBar() {
+function NavigationBar({ activeTab, setActiveTab }) {
   const [offsetY, setOffsetY] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
   const handleScroll = () => {
     setOffsetY(window.pageYOffset);
   };
@@ -20,96 +20,70 @@ function NavigationBar() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
-    const hamburger = document.querySelector(".navbar__hamburger");
-    const navLinks = document.querySelector(".navbar__links");
-    const logo = document.querySelector(".navbar__logo");
-    const ourExpertise = document.querySelector("#nav__ourExpertise");
-    const about = document.querySelector("#nav__about");
-    const contactUs = document.querySelector("#nav__contactUs");
-
-    const clearNavSelection = () => {
-      if (ourExpertise) ourExpertise.classList.remove("navbar__selected");
-      if (about) about.classList.remove("navbar__selected");
-      if (contactUs) contactUs.classList.remove("navbar__selected");
-    };
-    const closeMobileMenu = () => {
-      if (navLinks) navLinks.classList.remove("open");
-      if (hamburger) hamburger.classList.remove("open");
-    };
-
-    if (logo) {
-      logo.addEventListener("click", () => {
-        clearNavSelection();
-      });
-    }
-
-    if (ourExpertise) {
-      ourExpertise.addEventListener("click", () => {
-        clearNavSelection();
-        ourExpertise.classList.add("navbar__selected");
-        closeMobileMenu();
-      });
-    }
-
-    if (about) {
-      about.addEventListener("click", () => {
-        clearNavSelection();
-        about.classList.add("navbar__selected");
-        closeMobileMenu();
-      });
-    }
-
-    if (contactUs) {
-      contactUs.addEventListener("click", () => {
-        clearNavSelection();
-        contactUs.classList.add("navbar__selected");
-        closeMobileMenu();
-      });
-    }
-
-    if (hamburger && navLinks) {
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-        hamburger.classList.toggle("open");
-      });
-    }
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (tab) => {
+    if (setActiveTab) setActiveTab(tab);
+    setMenuOpen(false);
+  };
+
+  const linkClass = (tab) =>
+    `navbar__link${activeTab === tab ? " navbar__selected" : ""}`;
 
   return (
     <nav className="navbar" id="navbar">
       <div className="navbar__all">
-        <Link to="/" className="navbar__logo">
+        <button
+          type="button"
+          className="navbar__logo"
+          onClick={() => handleNavClick("about")}
+          aria-label="Apollo Tech Solutions home"
+        >
           Apollo Tech Solutions
-        </Link>
+        </button>
         <div className="navbar__separator" aria-hidden="true" />
-        <div className="navbar__hamburger">
+        <button
+          type="button"
+          className={`navbar__hamburger${menuOpen ? " open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
           <div className="navbar__line"></div>
           <div className="navbar__line"></div>
           <div className="navbar__line"></div>
-        </div>
+        </button>
 
-        <ul className="navbar__links">
+        <ul className={`navbar__links${menuOpen ? " open" : ""}`}>
           <li>
-            <Link
-              to="/our-expertise"
-              className="navbar__link"
+            <button
+              type="button"
+              className={linkClass("about")}
+              id="nav__about"
+              onClick={() => handleNavClick("about")}
+            >
+              About Us
+            </button>
+          </li>
+          <li>
+            <button
+              type="button"
+              className={linkClass("expertise")}
               id="nav__ourExpertise"
+              onClick={() => handleNavClick("expertise")}
             >
               Our Expertise
-            </Link>
+            </button>
           </li>
           <li>
-            <Link to="/about" className="navbar__link" id="nav__about">
-              About Us
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact-us" className="navbar__link" id="nav__contactUs">
+            <button
+              type="button"
+              className={linkClass("contact")}
+              id="nav__contactUs"
+              onClick={() => handleNavClick("contact")}
+            >
               Contact Us
-            </Link>
+            </button>
           </li>
         </ul>
       </div>
