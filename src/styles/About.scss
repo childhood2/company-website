@@ -22,8 +22,8 @@
 }
 
 .about__experience {
-  width: 90%;
-  max-width: 1200px;
+  width: 96%;
+  max-width: 1800px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -146,8 +146,8 @@
 }
 
 .about__stayConnected {
-  width: 90%;
-  max-width: 1200px;
+  width: 96%;
+  max-width: 1800px;
   margin-right: auto;
   margin-left: auto;
   display: grid;
@@ -267,8 +267,8 @@
 
 // FAQ section — accordion with visual style
 .about__faq {
-  width: 90%;
-  max-width: 1200px;
+  width: 96%;
+  max-width: 1800px;
   margin-right: auto;
   margin-left: auto;
   padding: 2rem 0;
@@ -291,22 +291,6 @@
   @media screen and (min-width: 900px) {
     position: sticky;
     top: 2rem;
-  }
-}
-
-.about__faqVisual {
-  width: 100%;
-  max-width: 240px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #e8f2ff 0%, #f0e8ff 100%);
-  box-shadow: 0 4px 16px rgba(30, 144, 255, 0.1);
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    opacity: 0.95;
   }
 }
 
@@ -334,7 +318,7 @@
 .about__faqItem {
   background: #fff;
   border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
   transition: box-shadow 0.25s ease, border-color 0.25s ease;
 
@@ -395,7 +379,7 @@
   justify-content: center;
   background: #f4f5f7;
   color: #1e90ff;
-  border-radius: 8px;
+  border-radius: 0;
   font-size: 18px;
   font-weight: 600;
   line-height: 1;
@@ -407,12 +391,15 @@
 }
 
 .about__faqAnswer {
-  padding: 0 1.5rem 1.5rem 1.5rem;
+  padding: 1.25rem 1.5rem 1.5rem 1.5rem;
   padding-left: calc(1.5rem + 32px + 1rem); // align with text after icon
+  margin-top: 0;
+  border-top: 1px solid #e8e8e8;
   animation: about__faqAnswerIn 0.25s ease-out;
 
   @media screen and (max-width: 600px) {
     padding-left: 1.5rem;
+    padding-top: 1.25rem;
   }
 
   p,
@@ -491,8 +478,8 @@
 }
 
 .about__mv {
-  width: 90%;
-  max-width: 1200px;
+  width: 96%;
+  max-width: 1800px;
   margin-right: auto;
   margin-left: auto;
   display: grid;

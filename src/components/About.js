@@ -141,13 +141,8 @@ function About() {
 
       <div className="about__faq">
         <div className="about__faqHeader">
-          <div className="about__faqVisual" aria-hidden="true">
-            <img src={process.env.PUBLIC_URL + "/experience/stay-connected.png"} alt="" />
-          </div>
-          <div>
-            <h2 className="about__faqTitle">Frequently Asked Questions</h2>
-            <p className="about__faqTitleSub">Quick answers about what we do and how we work.</p>
-          </div>
+          <h2 className="about__faqTitle">Frequently Asked Questions</h2>
+          <p className="about__faqTitleSub">Quick answers about what we do and how we work.</p>
         </div>
         <div className="about__faqGrid">
           {[
