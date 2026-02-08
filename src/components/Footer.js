@@ -9,6 +9,10 @@ function Footer() {
         <img src={process.env.PUBLIC_URL + "/logo.png?v=3"} alt="Apollo Technology" />
         <p>Apollo Technology © 2017</p>
       </div>
+      <div className="footer__middle">
+        <p className="footer__tagline">Building reliable software for businesses worldwide.</p>
+        <p className="footer__sub">Remote-first team · Global delivery</p>
+      </div>
       <div className="footer__row left">
         <div className="footer__smList">
           <a href="https://www.linkedin.com/company/apollo-technology-it-solutions/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="footer__smLink" aria-label="LinkedIn">
