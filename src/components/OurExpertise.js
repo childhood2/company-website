@@ -176,41 +176,6 @@ function OurExpertise({ embedded }) {
           </div>
         </section>
 
-        <div className="expertise__recommended">
-          <h2 className="expertise__recommendedTitle">Recommended for you</h2>
-          <div className="expertise__recommendedGrid">
-            <a
-              href="https://www.youtube.com/watch?v=as9IYFrTiKc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="expertise__recommendedCard"
-            >
-              <div className="expertise__recommendedImgWrap">
-                <img src={process.env.PUBLIC_URL + "/1.png"} alt="" />
-              </div>
-              <p className="expertise__recommendedDesc">
-                This covers the Agile methodology and Scrum workflow step-by-step,
-                which is the framework used by many software development teams in
-                the USA and globally.
-              </p>
-            </a>
-            <a
-              href="https://www.youtube.com/watch?v=ggJaQ4I2h9w&utm_source=chatgpt.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="expertise__recommendedCard"
-            >
-              <div className="expertise__recommendedImgWrap">
-                <img src={process.env.PUBLIC_URL + "/2.png"} alt="" />
-              </div>
-              <p className="expertise__recommendedDesc">
-                This video explains typical responsibilities and activities of IT
-                consultants, which can help you visualize consulting conversations.
-              </p>
-            </a>
-          </div>
-        </div>
-
         <div className="app__spacer"></div>
 
         <div className="about__stayConnected">

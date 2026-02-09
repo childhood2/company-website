@@ -235,8 +235,7 @@
 
 @media screen and (max-width: 768px) {
   .expertise__servicesTitle,
-  .expertise__customerSuccessTitle,
-  .expertise__recommendedTitle {
+  .expertise__customerSuccessTitle {
     font-size: 34px;
   }
 
@@ -256,74 +255,5 @@
   .expertise__customerSuccessDesc {
     font-size: 13px;
     margin-top: 0.75rem;
-  }
-}
-
-.expertise__recommended {
-  margin-top: 3rem;
-}
-
-.expertise__recommendedTitle {
-  font-size: 44px;
-  font-weight: normal;
-  color: #212529;
-  margin: 0 0 1.5rem 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.expertise__recommendedGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.expertise__recommendedCard {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-  background: white;
-  transition: background 0.2s ease;
-  min-width: 0; // allow card to respect grid column width
-
-  &:hover {
-    background: transparent;
-  }
-}
-
-.expertise__recommendedImgWrap {
-  width: 100%;
-  min-height: 200px;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  flex-shrink: 0;
-  background: #f4f5f7;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-  }
-}
-
-.expertise__recommendedDesc {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  font-size: 1rem; /* same as Contact Us intro text */
-  line-height: 1.5;
-  color: #212529;
-  margin: 1rem 0 0 0;
-  padding: 0;
-  overflow-wrap: break-word;
-  font-weight: normal;
-}
-
-@media screen and (max-width: 768px) {
-  .expertise__recommendedGrid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
   }
 }
