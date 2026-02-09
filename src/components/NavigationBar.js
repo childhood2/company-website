@@ -41,7 +41,7 @@ function NavigationBar({ activeTab, setActiveTab }) {
           aria-label="Apollo Technology home"
         >
           <img
-            src={`${process.env.PUBLIC_URL}/favicon.svg`}
+            src={`${process.env.PUBLIC_URL}/logo.png`}
             alt="Apollo Technology"
             className="navbar__logoImg"
           />
