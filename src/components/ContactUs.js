@@ -31,7 +31,7 @@ function ContactUs() {
             type="email"
             id="cus-email"
             name="email"
-            placeholder="you@company.com"
+            placeholder="you@email.com"
           />
         </div>
         <div className="cus__field">

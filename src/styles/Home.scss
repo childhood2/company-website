@@ -37,7 +37,8 @@
     font-size: 82px; // 48 * 1.7
     line-height: 1.2;
     letter-spacing: -0.02em;
-    background: linear-gradient(90deg, #00fff7 0%, #00d4ff 25%, #7b2ff7 50%, #f107a3 75%, #00fff7 100%);
+    /* High-contrast gradient: white/light so text is readable on blue hero background */
+    background: linear-gradient(90deg, #ffffff 0%, #e0e7ff 25%, #7b2ff7 50%, #c026d3 75%, #ffffff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
