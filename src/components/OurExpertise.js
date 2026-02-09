@@ -222,7 +222,7 @@ function OurExpertise({ embedded }) {
                     if (submitted && !email.trim()) setEmailError("Email is required");
                   }}
                   className={`about__stayConnectedInput ${emailError ? "about__stayConnectedInput--error" : ""}`}
-                  placeholder="you@company.com"
+                  placeholder="support@applotech.com"
                   autoComplete="email"
                 />
                 {emailError && (
