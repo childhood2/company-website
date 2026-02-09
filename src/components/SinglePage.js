@@ -4,7 +4,7 @@ import OurExpertise from "./OurExpertise";
 import ContactUs from "./ContactUs";
 
 // Hero image: replace public/hero-bg.jpg with your image. Bump version to force reload.
-const HERO_IMAGE_VERSION = 3;
+const HERO_IMAGE_VERSION = 4;
 const heroBgUrl = `${process.env.PUBLIC_URL || ""}/hero-bg.jpg?v=${HERO_IMAGE_VERSION}`;
 
 function SinglePage({ activeTab }) {
