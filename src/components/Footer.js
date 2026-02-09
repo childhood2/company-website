@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer__row">
-        <img src={process.env.PUBLIC_URL + "/logo.png?v=3"} alt="Apollo Technology" />
+        <img src={process.env.PUBLIC_URL + "/favicon.svg"} alt="Apollo Technology" className="footer__logo" />
         <p>Apollo Technology © 2017</p>
       </div>
       <div className="footer__middle">
