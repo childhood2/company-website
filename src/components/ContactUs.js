@@ -18,19 +18,39 @@ function ContactUs() {
       <form className="cus__form" onSubmit={(e) => e.preventDefault()}>
         <div className="cus__field">
           <label htmlFor="cus-name">NAME:</label>
-          <input type="text" id="cus-name" name="name" placeholder=" " />
+          <input
+            type="text"
+            id="cus-name"
+            name="name"
+            placeholder="Your name"
+          />
         </div>
         <div className="cus__field">
           <label htmlFor="cus-email">EMAIL ADDRESS:</label>
-          <input type="email" id="cus-email" name="email" placeholder=" " />
+          <input
+            type="email"
+            id="cus-email"
+            name="email"
+            placeholder="you@company.com"
+          />
         </div>
         <div className="cus__field">
           <label htmlFor="cus-subject">SUBJECT:</label>
-          <input type="text" id="cus-subject" name="subject" placeholder=" " />
+          <input
+            type="text"
+            id="cus-subject"
+            name="subject"
+            placeholder="How can we help?"
+          />
         </div>
         <div className="cus__field cus__field--message">
           <label htmlFor="cus-message">YOUR MESSAGE:</label>
-          <textarea id="cus-message" name="message" rows={5} placeholder=" " />
+          <textarea
+            id="cus-message"
+            name="message"
+            rows={5}
+            placeholder="Tell us about your project or question..."
+          />
         </div>
         <button type="submit" className="cus__submit">
           SEND MESSAGE

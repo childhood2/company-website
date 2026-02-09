@@ -72,7 +72,7 @@ function OurExpertise({ embedded }) {
       )}
 
       <div className="expertise">
-        <h2 className="expertise__servicesTitle">Services</h2>
+        <h2 className="expertise__servicesTitle">Our expertise</h2>
         <div className="expertise__grid">
           <div className="expertise__card">
             <h3 className="expertise__cardTitle">Backend &amp; Microservices</h3>
