@@ -96,7 +96,7 @@ function About({ embedded }) {
                   retail industries.
                 </p>
               </div>
-              <img src={process.env.PUBLIC_URL + "/logo.png?v=3"} alt="About" className="home__jumboImg" />
+              <img src={process.env.PUBLIC_URL + "/favicon.svg"} alt="About" className="home__jumboImg" />
             </div>
           </div>
           <div className="app__spacer"></div>
