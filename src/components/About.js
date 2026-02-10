@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import DescriptionIcon from "@material-ui/icons/Description";
 import BuildIcon from "@material-ui/icons/Build";
-import HubIcon from "@material-ui/icons/Hub";
+import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import CodeIcon from "@material-ui/icons/Code";
 import SendIcon from "@material-ui/icons/Send";
 
@@ -138,7 +138,7 @@ function About({ embedded }) {
           </li>
           <li className="about__howWeDoItStep">
             <span className="about__howWeDoItIconWrap" aria-hidden="true">
-              <HubIcon className="about__howWeDoItIcon" />
+              <AccountTreeIcon className="about__howWeDoItIcon" />
             </span>
             <div className="about__howWeDoItContent">
               <h3 className="about__howWeDoItHeading">Technical Assessment</h3>
