@@ -1,4 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
+import DescriptionIcon from "@material-ui/icons/Description";
+import BuildIcon from "@material-ui/icons/Build";
+import HubIcon from "@material-ui/icons/Hub";
+import CodeIcon from "@material-ui/icons/Code";
+import SendIcon from "@material-ui/icons/Send";
 
 const PROJECTS_PER_PAGE = 3;
 
@@ -102,6 +107,72 @@ function About({ embedded }) {
           <div className="app__spacer"></div>
         </>
       )}
+
+      <section className="about__howWeDoIt" aria-label="How We Do It">
+        <h2 className="about__howWeDoItTitle">How We Do It</h2>
+        <p className="about__howWeDoItIntro">
+          We combine technical knowledge with clear communication and trust. Here is how we work with you from idea to launch.
+        </p>
+        <ol className="about__howWeDoItSteps">
+          <li className="about__howWeDoItStep">
+            <span className="about__howWeDoItIconWrap" aria-hidden="true">
+              <DescriptionIcon className="about__howWeDoItIcon" />
+            </span>
+            <div className="about__howWeDoItContent">
+              <h3 className="about__howWeDoItHeading">Gathering Requirements</h3>
+              <p className="about__howWeDoItDesc">
+                What&apos;s the problem you want to solve? Who&apos;s your target audience? Together with our client we define the key elements, solution and design.
+              </p>
+            </div>
+          </li>
+          <li className="about__howWeDoItStep">
+            <span className="about__howWeDoItIconWrap" aria-hidden="true">
+              <BuildIcon className="about__howWeDoItIcon" />
+            </span>
+            <div className="about__howWeDoItContent">
+              <h3 className="about__howWeDoItHeading">Product Design</h3>
+              <p className="about__howWeDoItDesc">
+                We work with Design Thinking Methodology and Double Diamond Framework in an agile workflow, focusing on user experience and best UX practices.
+              </p>
+            </div>
+          </li>
+          <li className="about__howWeDoItStep">
+            <span className="about__howWeDoItIconWrap" aria-hidden="true">
+              <HubIcon className="about__howWeDoItIcon" />
+            </span>
+            <div className="about__howWeDoItContent">
+              <h3 className="about__howWeDoItHeading">Technical Assessment</h3>
+              <p className="about__howWeDoItDesc">
+                We research and decide the right blend of technologies to implement the solution. We propose a detailed software architecture and integrations with other systems.
+              </p>
+            </div>
+          </li>
+          <li className="about__howWeDoItStep">
+            <span className="about__howWeDoItIconWrap" aria-hidden="true">
+              <CodeIcon className="about__howWeDoItIcon" />
+            </span>
+            <div className="about__howWeDoItContent">
+              <h3 className="about__howWeDoItHeading">Product Development</h3>
+              <p className="about__howWeDoItDesc">
+                We cover big data, powerful visualizations, AI, mobile, web, backend, cloud and infrastructure. Great user experience mixed with state of the art engineering to deliver the best software solution for your target audience in sprints that last 2 weeks.
+              </p>
+            </div>
+          </li>
+          <li className="about__howWeDoItStep">
+            <span className="about__howWeDoItIconWrap about__howWeDoItIconWrap--launch" aria-hidden="true">
+              <SendIcon className="about__howWeDoItIcon" />
+            </span>
+            <div className="about__howWeDoItContent">
+              <h3 className="about__howWeDoItHeading">Launch!</h3>
+              <p className="about__howWeDoItDesc">
+                We guarantee a high-quality product through automated and manual testing solutions. We can do stress/load testing to ensure high availability and we then automate the deployment process and deliver the software product to your users.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <div className="app__spacer" />
 
       <div ref={experienceRef} className="about__experience">
         <h2 className="about__experienceTitle">Our projects</h2>
