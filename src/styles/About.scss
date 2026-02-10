@@ -124,6 +124,7 @@
   display: block;
   width: 100%;
   max-width: 320px;
+  height: 220px;
   border: 1px solid #e0e0e0;
   background: #fff;
   padding: 0;
@@ -139,7 +140,7 @@
 .about__experienceItemImg {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   background: #f8f9fa;
