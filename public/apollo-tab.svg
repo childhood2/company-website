@@ -45,12 +45,12 @@
        Q27 56, 25 51Z"
     fill="#ff7043"/>
 
-  <!-- Curved swoosh around rocket, wrapping near the flame (opposite side from nose) -->
+  <!-- Curved circle wrapping the middle part of the rocket -->
   <path
-    d="M10 44
-       Q16 54, 28 58
-       Q40 60, 52 52
-       Q44 54, 36 50"
+    d="M14 38
+       Q20 28, 32 26
+       Q44 28, 50 36
+       Q46 40, 40 38"
     fill="none"
     stroke="#1e88e5"
     stroke-width="3"
