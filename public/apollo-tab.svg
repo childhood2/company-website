@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background circle to fully occupy favicon area -->
+  <defs>
+    <linearGradient id="apolloTabGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2ed573"/>
+      <stop offset="50%" stop-color="#1e90ff"/>
+      <stop offset="100%" stop-color="#f107a3"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#0b1720"/>
+
+  <!-- Simple abstract mark inspired by the main logo, thick enough for 16x16 -->
+  <path
+    d="M16 38
+       Q 22 20, 32 16
+       Q 44 20, 48 32
+       Q 40 30, 34 34
+       Q 28 38, 20 40 Z"
+    fill="url(#apolloTabGradient)"/>
+
+  <!-- Accent orbit line -->
+  <path
+    d="M14 30
+       Q 32 22, 50 26"
+    fill="none"
+    stroke="#2ed573"
+    stroke-width="2.5"
+    stroke-linecap="round"/>
+
+  <!-- Small highlight dot -->
+  <circle cx="38" cy="24" r="2.3" fill="#ffffff"/>
+</svg>
+
