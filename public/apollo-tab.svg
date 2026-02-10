@@ -2,14 +2,14 @@
   <!-- White circular background, fills almost all favicon area -->
   <circle cx="32" cy="32" r="30" fill="#ffffff" />
 
-  <!-- Launching rocket, pointing up-right, kept very thick so it reads at 16x16 -->
-  <!-- Rocket body (made longer and thicker) -->
+  <!-- Launching rocket, pointing up-right, kept bold so it reads at 16x16 -->
+  <!-- Rocket body (aligned closer to main logo shape) -->
   <path
-    d="M22 44
-       L36 14
-       Q38 10, 44 13
-       Q42 20, 40 26
-       L26 52
+    d="M24 42
+       L36 16
+       Q38 12, 43 14
+       Q41 20, 39 26
+       L27 50
        Z"
     fill="#1565c0"/>
 
@@ -31,25 +31,26 @@
        Z"
     fill="#1e88e5"/>
 
-  <!-- Stronger flame (firing gas) -->
+  <!-- Flame (firing gas), similar angle to main logo -->
   <path
-    d="M24 50
-       Q20 58, 24 62
-       Q28 58, 24 50Z"
+    d="M25 50
+       Q21 58, 25 63
+       Q29 58, 25 50Z"
     fill="#ffb300"/>
 
   <!-- Inner hot flame core -->
   <path
-    d="M24 46
-       Q22.5 50, 24 54
-       Q25.5 50, 24 46Z"
+    d="M25 51
+       Q23 56, 25 60
+       Q27 56, 25 51Z"
     fill="#ff7043"/>
 
-  <!-- Curved swoosh around rocket to echo logo's rounded circle -->
+  <!-- Curved swoosh around rocket to echo logo's rounded circle (direction and shape tuned) -->
   <path
-    d="M8 34
-       Q18 16, 34 12
-       Q48 10, 56 16"
+    d="M8 36
+       Q18 18, 34 14
+       Q48 13, 56 22
+       Q50 20, 44 20"
     fill="none"
     stroke="#1e88e5"
     stroke-width="3"
