@@ -138,40 +138,44 @@ function OurExpertise({ embedded }) {
         <section className="expertise__customerSuccess" aria-label="Customer Success">
           <h2 className="expertise__customerSuccessTitle">Customer Success</h2>
           <p className="expertise__customerSuccessSubtitle">
-            Trusted by leading organizations worldwide
+            What our clients say about us
           </p>
           <div className="expertise__customerSuccessLogos">
             <div className="expertise__customerSuccessItem">
               <div className="expertise__customerSuccessLogo" title="BairesDev">
                 <img src={process.env.PUBLIC_URL + "/customer-success/bairesdev.svg"} alt="BairesDev" />
               </div>
-              <p className="expertise__customerSuccessDesc">
-                BairesDev: Developed and maintained microservices for Mastercard, Visa, and Amex with Node.js and C#.
-              </p>
+              <blockquote className="expertise__customerSuccessReview">
+                &ldquo;Apollo Technology delivered exceptional microservices work for our payments integrations. Professional, on time, and a pleasure to work with.&rdquo;
+              </blockquote>
+              <p className="expertise__customerSuccessAttribution">— BairesDev</p>
             </div>
             <div className="expertise__customerSuccessItem">
               <div className="expertise__customerSuccessLogo" title="Exomindset">
                 <img src={process.env.PUBLIC_URL + "/customer-success/exomindset.png?v=2"} alt="Exomindset" />
               </div>
-              <p className="expertise__customerSuccessDesc">
-                Exomindset: Delivered scalable SaaS and digital solutions for clients worldwide.
-              </p>
+              <blockquote className="expertise__customerSuccessReview">
+                &ldquo;Their team brought real expertise to our SaaS platform and digital solutions. We&rsquo;d recommend them to anyone looking for reliable partners.&rdquo;
+              </blockquote>
+              <p className="expertise__customerSuccessAttribution">— Exomindset</p>
             </div>
             <div className="expertise__customerSuccessItem">
               <div className="expertise__customerSuccessLogo" title="NKey">
                 <img src={process.env.PUBLIC_URL + "/customer-success/nkey.png?v=2"} alt="NKey" />
               </div>
-              <p className="expertise__customerSuccessDesc">
-                NKey: Led health platform development with Node.js and NestJS, supporting thousands of simultaneous connections.
-              </p>
+              <blockquote className="expertise__customerSuccessReview">
+                &ldquo;The health platform they built with Node.js and NestJS has been rock solid at scale. An excellent partnership from start to finish.&rdquo;
+              </blockquote>
+              <p className="expertise__customerSuccessAttribution">— NKey</p>
             </div>
             <div className="expertise__customerSuccessItem">
               <div className="expertise__customerSuccessLogo" title="GLOBAL HITSS">
                 <img src={process.env.PUBLIC_URL + "/customer-success/global-hitss.png"} alt="GLOBAL HITSS" />
               </div>
-              <p className="expertise__customerSuccessDesc">
-                GLOBAL HITSS: Automated microservices for Bank of Brazil, reducing AWS costs by 20% with Grafana and Prometheus.
-              </p>
+              <blockquote className="expertise__customerSuccessReview">
+                &ldquo;They helped us automate microservices and cut AWS costs significantly while improving monitoring. A highly skilled team.&rdquo;
+              </blockquote>
+              <p className="expertise__customerSuccessAttribution">— GLOBAL HITSS</p>
             </div>
           </div>
         </section>

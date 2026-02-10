@@ -224,11 +224,20 @@
   }
 }
 
-.expertise__customerSuccessDesc {
+.expertise__customerSuccessReview {
   font-size: 14px;
   line-height: 1.5;
   color: #495057;
   margin: 1rem 0 0 0;
+  padding: 0;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.expertise__customerSuccessAttribution {
+  font-size: 13px;
+  color: #6c757d;
+  margin: 0.5rem 0 0 0;
   padding: 0;
   font-weight: normal;
 }
@@ -252,8 +261,12 @@
     max-height: 48px;
   }
 
-  .expertise__customerSuccessDesc {
+  .expertise__customerSuccessReview {
     font-size: 13px;
     margin-top: 0.75rem;
+  }
+
+  .expertise__customerSuccessAttribution {
+    font-size: 12px;
   }
 }
