@@ -117,16 +117,13 @@
 .about__experienceItemImage {
   flex-shrink: 0;
   display: flex;
-  min-height: 200px;
-  height: 100%;
+  align-items: center;
 }
 
 .about__experienceItemImageLink {
   display: block;
   width: 100%;
   max-width: 320px;
-  height: 100%;
-  min-height: 200px;
   border: 1px solid #e0e0e0;
   background: #fff;
   padding: 0;
@@ -142,8 +139,7 @@
 .about__experienceItemImg {
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 200px;
+  height: auto;
   object-fit: cover;
   object-position: center;
   background: #f8f9fa;
