@@ -45,12 +45,12 @@
        Q27 56, 25 51Z"
     fill="#ff7043"/>
 
-  <!-- Curved swoosh around rocket to echo logo's rounded circle (direction and shape tuned) -->
+  <!-- Curved swoosh around rocket, wrapping near the flame (opposite side from nose) -->
   <path
-    d="M8 36
-       Q18 18, 34 14
-       Q48 13, 56 22
-       Q50 20, 44 20"
+    d="M10 44
+       Q16 54, 28 58
+       Q40 60, 52 52
+       Q44 54, 36 50"
     fill="none"
     stroke="#1e88e5"
     stroke-width="3"
