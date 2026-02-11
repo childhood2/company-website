@@ -33,6 +33,51 @@
   }
 }
 
+// Testimonial section (above How We Do It)
+.about__testimonial {
+  width: 94%;
+  max-width: 1500px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 3rem 0 2rem;
+}
+
+.about__testimonialQuote {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #212529;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  max-width: 50em;
+
+  @media screen and (max-width: 768px) {
+    font-size: 22px;
+  }
+}
+
+.about__testimonialAttribution {
+  margin-top: 1rem;
+}
+
+.about__testimonialName {
+  font-size: 18px;
+  font-weight: normal;
+  color: #212529;
+  margin: 0 0 0.25rem 0;
+  line-height: 1.4;
+}
+
+.about__testimonialTitle {
+  font-size: 16px;
+  font-weight: normal;
+  color: #6c757d;
+  margin: 0;
+  line-height: 1.4;
+}
+
 // How We Do It section (above Our projects)
 .about__howWeDoIt {
   width: 94%;
