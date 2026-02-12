@@ -113,8 +113,7 @@ function About({ embedded }) {
           &ldquo;We continuously refine our processes. To be able to deliver products with impact on a global scale, we rely on best practices that we personalize taking into consideration feedback from our clients and our team members.&rdquo;
         </blockquote>
         <div className="about__testimonialAttribution">
-          <p className="about__testimonialName">Alexandru Artimon</p>
-          <p className="about__testimonialTitle">Managing Partner @ Atta Systems</p>
+          <p className="about__testimonialName">SÓSTENES APOLLO</p>
         </div>
       </section>
 
