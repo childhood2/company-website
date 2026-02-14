@@ -95,7 +95,7 @@ $cus-border: #1a4d6f;
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
-  background: #1e90ff;
+  background: #0000FF;
   border: 2px solid transparent;
   border-radius: 0;
   cursor: pointer;
@@ -103,8 +103,8 @@ $cus-border: #1a4d6f;
 
   &:hover {
     background: white;
-    border-color: #1e90ff;
-    color: #1e90ff;
+    border-color: #0000FF;
+    color: #0000FF;
   }
 }
 
@@ -127,7 +127,7 @@ $cus-border: #1a4d6f;
   h4 {
     line-height: 1.6;
     cursor: pointer;
-    color: #1e90ff;
+    color: #0000FF;
   }
 
   p {

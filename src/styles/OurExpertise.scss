@@ -42,7 +42,7 @@
   }
 
   &:hover {
-    background: #1e90ff;
+    background: #0000FF;
 
     .expertise__cardTitle,
     .expertise__cardDesc {
@@ -204,8 +204,8 @@
   line-height: 0;
 
   &:hover {
-    border-color: #1e90ff;
-    box-shadow: 0 2px 8px rgba(30, 144, 255, 0.15);
+    border-color: #0000FF;
+    box-shadow: 0 2px 8px rgba(0, 0, 255, 0.15);
   }
 
   img {

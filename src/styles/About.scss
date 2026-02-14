@@ -48,7 +48,7 @@
 
 .about__testimonialImageWrap {
   flex-shrink: 0;
-  background: #1e90ff;
+  background: #0000FF;
   border-radius: 16px;
   padding: 12px;
   overflow: hidden;
@@ -160,7 +160,7 @@
     top: 2.5rem;
     bottom: 2.5rem;
     width: 0;
-    border-left: 2px dashed #1e90ff;
+    border-left: 2px dashed #0000FF;
     opacity: 0.6;
   }
 
@@ -177,18 +177,18 @@
   position: relative;
   padding-bottom: 2rem;
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(120px) scale(0.92);
   transition: none;
 
   .about__howWeDoIt--inView & {
-    animation: about__howWeDoItStepIn 0.5s ease-out forwards;
+    animation: about__howWeDoItStepIn 1s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
   }
 
-  .about__howWeDoIt--inView &:nth-child(1) { animation-delay: 0.05s; }
-  .about__howWeDoIt--inView &:nth-child(2) { animation-delay: 0.15s; }
-  .about__howWeDoIt--inView &:nth-child(3) { animation-delay: 0.25s; }
-  .about__howWeDoIt--inView &:nth-child(4) { animation-delay: 0.35s; }
-  .about__howWeDoIt--inView &:nth-child(5) { animation-delay: 0.45s; }
+  .about__howWeDoIt--inView &:nth-child(1) { animation-delay: 0s; }
+  .about__howWeDoIt--inView &:nth-child(2) { animation-delay: 0.18s; }
+  .about__howWeDoIt--inView &:nth-child(3) { animation-delay: 0.36s; }
+  .about__howWeDoIt--inView &:nth-child(4) { animation-delay: 0.54s; }
+  .about__howWeDoIt--inView &:nth-child(5) { animation-delay: 0.72s; }
 
   &:last-child {
     padding-bottom: 0;
@@ -198,11 +198,11 @@
 @keyframes about__howWeDoItStepIn {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(120px) scale(0.92);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -213,7 +213,7 @@
   width: 2.8rem;
   height: 2.8rem;
   border-radius: 50%;
-  background: #1e90ff;
+  background: #0000FF;
   color: #fff;
   display: flex;
   align-items: center;
@@ -242,10 +242,10 @@
 
 .about__howWeDoItContent {
   background: #fff;
-  border: 1px solid #e0e7ff;
+  border: 1px solid #ccccff;
   padding: 1.25rem 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(30, 144, 255, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 255, 0.08);
 }
 
 .about__howWeDoItHeading {
@@ -327,13 +327,13 @@
 }
 
 .about__experienceItemTitleLink {
-  color: #1e90ff;
+  color: #0000FF;
   text-decoration: none;
   transition: color 0.2s ease, text-decoration 0.2s ease;
 
   &:hover {
     text-decoration: underline;
-    color: #1573d4;
+    color: #0000cc;
   }
 }
 
@@ -363,8 +363,8 @@
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 
   &:hover {
-    border-color: #1e90ff;
-    box-shadow: 0 4px 12px rgba(30, 144, 255, 0.12);
+    border-color: #0000FF;
+    box-shadow: 0 4px 12px rgba(0, 0, 255, 0.12);
   }
 }
 
@@ -398,7 +398,7 @@
 .about__experienceMetricValue {
   font-size: 14px;
   font-weight: normal;
-  color: #1e90ff;
+  color: #0000FF;
   line-height: 1.4;
   flex-shrink: 0;
 }
@@ -414,7 +414,7 @@
   display: inline-block;
   font-size: 16px;
   font-weight: normal;
-  color: #1e90ff;
+  color: #0000FF;
   text-decoration: none;
 
   &:hover {
@@ -438,15 +438,15 @@
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
-  color: #1e90ff;
+  color: #0000FF;
   background: white;
-  border: 1px solid #1e90ff;
+  border: 1px solid #0000FF;
   border-radius: 0;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
 
   &:hover:not(:disabled) {
-    background: #1e90ff;
+    background: #0000FF;
     color: white;
   }
 
@@ -477,18 +477,18 @@
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
   &:hover {
-    border-color: #1e90ff;
-    color: #1e90ff;
+    border-color: #0000FF;
+    color: #0000FF;
   }
 
   &--current {
-    background: #1e90ff;
-    border-color: #1e90ff;
+    background: #0000FF;
+    border-color: #0000FF;
     color: white;
 
     &:hover {
-      background: #1573d4;
-      border-color: #1573d4;
+      background: #0000cc;
+      border-color: #0000cc;
       color: white;
     }
   }
@@ -619,7 +619,7 @@
   font-size: 16px;
   font-weight: normal;
   color: white;
-  background: #1e90ff;
+  background: #0000FF;
   border: 2px solid transparent;
   border-radius: 0;
   cursor: pointer;
@@ -627,8 +627,8 @@
 
   &:hover {
     background: white;
-    border-color: #1e90ff;
-    color: #1e90ff;
+    border-color: #0000FF;
+    color: #0000FF;
   }
 }
 
@@ -701,20 +701,20 @@
 
   &:hover {
     border-color: #c5d9f0;
-    box-shadow: 0 4px 12px rgba(30, 144, 255, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 255, 0.08);
   }
 
   &--open {
-    border-color: #1e90ff;
-    box-shadow: 0 6px 20px rgba(30, 144, 255, 0.12);
+    border-color: #0000FF;
+    box-shadow: 0 6px 20px rgba(0, 0, 255, 0.12);
 
     .about__faqQuestion {
-      color: #1e90ff;
+      color: #0000FF;
       font-weight: normal;
     }
 
     .about__faqIcon {
-      background: #1e90ff;
+      background: #0000FF;
       color: white;
       transform: rotate(0deg);
     }
@@ -738,11 +738,11 @@
   font-family: inherit;
 
   &:hover {
-    color: #1e90ff;
+    color: #0000FF;
   }
 
   &:focus {
-    outline: 2px solid #1e90ff;
+    outline: 2px solid #0000FF;
     outline-offset: 2px;
   }
 }
@@ -755,7 +755,7 @@
   align-items: center;
   justify-content: center;
   background: #f4f5f7;
-  color: #1e90ff;
+  color: #0000FF;
   border-radius: 0;
   font-size: 18px;
   font-weight: normal;
@@ -801,7 +801,7 @@
     margin-bottom: 0.35rem;
 
     &::marker {
-      color: #1e90ff;
+      color: #0000FF;
     }
   }
 }
