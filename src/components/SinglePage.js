@@ -35,7 +35,7 @@ function SinglePage({ activeTab }) {
               <span className="home__heroTitleLine2">to completion.</span>
             </h1>
             <p className="home__heroText">
-              Flexible pay. Global time zones.
+              Competitive pricing. Global availability.
               <br />
               Work done right.
             </p>

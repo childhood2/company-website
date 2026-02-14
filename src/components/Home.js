@@ -20,7 +20,7 @@ function Home() {
               From concept to completion.
             </h1>
             <p className="home__heroText">
-              Flexible pay. Global time zones. Work done right.
+              Competitive pricing. Global availability. Work done right.
             </p>
             <Link to="/contact-us">
               <input

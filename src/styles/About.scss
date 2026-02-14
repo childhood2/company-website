@@ -40,6 +40,26 @@
   margin-right: auto;
   margin-left: auto;
   padding: 3rem 0 2rem;
+  display: grid;
+  grid-template-columns: minmax(200px, 360px) 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.about__testimonialImageWrap {
+  flex-shrink: 0;
+}
+
+.about__testimonialImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.about__testimonialContent {
+  min-width: 0;
 }
 
 .about__testimonialQuote {
@@ -76,6 +96,18 @@
   color: #6c757d;
   margin: 0;
   line-height: 1.4;
+}
+
+@media screen and (max-width: 768px) {
+  .about__testimonial {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about__testimonialImageWrap {
+    max-width: 280px;
+    margin: 0 auto;
+  }
 }
 
 // How We Do It section (above Our projects)
