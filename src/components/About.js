@@ -70,7 +70,9 @@ const EXPERIENCE_PROJECTS = [
 
 function About({ embedded }) {
   const [currentPage, setCurrentPage] = useState(0);
+  const [howWeDoItInView, setHowWeDoItInView] = useState(false);
   const experienceRef = useRef(null);
+  const howWeDoItRef = useRef(null);
   const totalPages = Math.ceil(EXPERIENCE_PROJECTS.length / PROJECTS_PER_PAGE);
   const start = currentPage * PROJECTS_PER_PAGE;
   const projectsOnPage = EXPERIENCE_PROJECTS.slice(start, start + PROJECTS_PER_PAGE);
@@ -78,6 +80,22 @@ function About({ embedded }) {
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
+
+  // How We Do It steps: animate in when section enters viewport (from down to upward)
+  useEffect(() => {
+    const el = howWeDoItRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setHowWeDoItInView(true);
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   // Keep "Our projects" in view when changing page (avoids scroll jumping to Our Expertise)
   useEffect(() => {
@@ -124,7 +142,7 @@ function About({ embedded }) {
 
       <div className="app__spacer" />
 
-      <section className="about__howWeDoIt" aria-label="How We Do It">
+      <section ref={howWeDoItRef} className={`about__howWeDoIt${howWeDoItInView ? " about__howWeDoIt--inView" : ""}`} aria-label="How We Do It">
         <h2 className="about__howWeDoItTitle">How We Do It</h2>
         <p className="about__howWeDoItIntro">
           We combine technical knowledge with clear communication and trust. Here is how we work with you from idea to launch.
