@@ -71,8 +71,10 @@ const EXPERIENCE_PROJECTS = [
 function About({ embedded }) {
   const [currentPage, setCurrentPage] = useState(0);
   const [howWeDoItInView, setHowWeDoItInView] = useState(false);
+  const [testimonialInView, setTestimonialInView] = useState(false);
   const experienceRef = useRef(null);
   const howWeDoItRef = useRef(null);
+  const testimonialRef = useRef(null);
   const totalPages = Math.ceil(EXPERIENCE_PROJECTS.length / PROJECTS_PER_PAGE);
   const start = currentPage * PROJECTS_PER_PAGE;
   const projectsOnPage = EXPERIENCE_PROJECTS.slice(start, start + PROJECTS_PER_PAGE);
@@ -95,6 +97,30 @@ function About({ embedded }) {
             requestAnimationFrame(() => {
               setHowWeDoItInView(true);
             });
+          });
+          break;
+        }
+      },
+      { threshold: 0.2, rootMargin: "0px 0px 0px 0px" }
+    );
+    observer.observe(el);
+    return () => {
+      if (rafId != null) cancelAnimationFrame(rafId);
+      observer.disconnect();
+    };
+  }, []);
+
+  // Testimonial quote: same entrance animation when section enters viewport
+  useEffect(() => {
+    const el = testimonialRef.current;
+    if (!el) return;
+    let rafId = null;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          rafId = requestAnimationFrame(() => {
+            requestAnimationFrame(() => setTestimonialInView(true));
           });
           break;
         }
@@ -137,7 +163,7 @@ function About({ embedded }) {
         </>
       )}
 
-      <section className="about__testimonial" aria-label="Testimonial">
+      <section ref={testimonialRef} className={`about__testimonial${testimonialInView ? " about__testimonial--inView" : ""}`} aria-label="Testimonial">
         <div className="about__testimonialImageWrap">
           <img src={process.env.PUBLIC_URL + "/1.png"} alt="" className="about__testimonialImage" />
         </div>

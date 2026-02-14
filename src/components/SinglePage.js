@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import About from "./About";
 import OurExpertise from "./OurExpertise";
 import ContactUs from "./ContactUs";
@@ -11,6 +11,8 @@ function SinglePage({ activeTab }) {
   const sectionAboutRef = useRef(null);
   const sectionExpertiseRef = useRef(null);
   const sectionContactRef = useRef(null);
+  const heroCopyRef = useRef(null);
+  const [heroCopyInView, setHeroCopyInView] = useState(false);
   const isFirstRender = useRef(true);
 
   useEffect(() => {
@@ -24,11 +26,35 @@ function SinglePage({ activeTab }) {
     }
   }, [activeTab]);
 
+  // Hero text: same entrance animation when hero enters viewport
+  useEffect(() => {
+    const el = heroCopyRef.current;
+    if (!el) return;
+    let rafId = null;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          rafId = requestAnimationFrame(() => {
+            requestAnimationFrame(() => setHeroCopyInView(true));
+          });
+          break;
+        }
+      },
+      { threshold: 0.2, rootMargin: "0px 0px 0px 0px" }
+    );
+    observer.observe(el);
+    return () => {
+      if (rafId != null) cancelAnimationFrame(rafId);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="single-page">
       <div className="app__jumbotron single-page__hero" style={{ backgroundImage: `url(${heroBgUrl})` }}>
         <div className="home__main">
-          <div className="home__mainDesc">
+          <div ref={heroCopyRef} className={`home__heroCopy${heroCopyInView ? " home__heroCopy--inView" : ""}`}>
             <h1 className="home__heroTitle">
               From concept
               <br />

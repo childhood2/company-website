@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import homeJumbo from "../assets/home/home_jumbo.svg";
 import homeJumboSmall from "../assets/home/home_jumboSmall.svg";
@@ -7,8 +7,35 @@ import whyChoose2 from "../assets/home/why_choose2.svg";
 import whyChoose3 from "../assets/home/why_choose3.svg";
 
 function Home() {
+  const heroCopyRef = useRef(null);
+  const [heroCopyInView, setHeroCopyInView] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // Hero text: same entrance animation when hero enters viewport
+  useEffect(() => {
+    const el = heroCopyRef.current;
+    if (!el) return;
+    let rafId = null;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          rafId = requestAnimationFrame(() => {
+            requestAnimationFrame(() => setHeroCopyInView(true));
+          });
+          break;
+        }
+      },
+      { threshold: 0.2, rootMargin: "0px 0px 0px 0px" }
+    );
+    observer.observe(el);
+    return () => {
+      if (rafId != null) cancelAnimationFrame(rafId);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -16,12 +43,14 @@ function Home() {
       <div className="app__jumbotron">
         <div className="home__main">
           <div className="home__mainDesc">
-            <h1 className="home__heroTitle">
-              From concept to completion.
-            </h1>
-            <p className="home__heroText">
-              Competitive pricing. Global availability. Work done right.
-            </p>
+            <div ref={heroCopyRef} className={`home__heroCopy${heroCopyInView ? " home__heroCopy--inView" : ""}`}>
+              <h1 className="home__heroTitle">
+                From concept to completion.
+              </h1>
+              <p className="home__heroText">
+                Competitive pricing. Global availability. Work done right.
+              </p>
+            </div>
             <Link to="/contact-us">
               <input
                 type="button"
