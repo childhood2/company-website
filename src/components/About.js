@@ -110,7 +110,7 @@ function About({ embedded }) {
 
       <section className="about__testimonial" aria-label="Testimonial">
         <blockquote className="about__testimonialQuote">
-          &ldquo;We continuously refine our processes. To be able to deliver products with impact on a global scale, we rely on best practices that we personalize taking into consideration feedback from our clients and our team members.&rdquo;
+          &ldquo;We continuously refine our processes. To be able to deliver products with impact on a global scale, we rely on best practices that we personalize taking into consideration feedback from our clients.&rdquo;
         </blockquote>
         <div className="about__testimonialAttribution">
           <p className="about__testimonialName">SÓSTENES APOLLO</p>
