@@ -187,7 +187,7 @@ function OurExpertise({ embedded }) {
           <div className="about__stayConnectedLeft">
             <div className="about__stayConnectedGraphic">
               <img
-                src={process.env.PUBLIC_URL + "/experience/stay-connected.png"}
+                src={process.env.PUBLIC_URL + "/2.png"}
                 alt=""
                 width="320"
                 height="auto"

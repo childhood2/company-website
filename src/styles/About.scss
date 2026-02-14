@@ -33,7 +33,7 @@
   }
 }
 
-// Testimonial section (above How We Do It)
+// Testimonial section (above How We Do It) — layout: image left in teal frame, quote + attribution right
 .about__testimonial {
   width: 94%;
   max-width: 1500px;
@@ -41,21 +41,26 @@
   margin-left: auto;
   padding: 3rem 0 2rem;
   display: grid;
-  grid-template-columns: minmax(200px, 360px) 1fr;
+  grid-template-columns: minmax(240px, 380px) 1fr;
   gap: 2.5rem;
-  align-items: start;
+  align-items: center;
 }
 
 .about__testimonialImageWrap {
   flex-shrink: 0;
+  background: #00bcd4;
+  border-radius: 16px;
+  padding: 12px;
+  overflow: hidden;
 }
 
 .about__testimonialImage {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 10px;
   object-fit: cover;
+  aspect-ratio: 3 / 4;
 }
 
 .about__testimonialContent {
@@ -102,6 +107,7 @@
   .about__testimonial {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    align-items: start;
   }
 
   .about__testimonialImageWrap {
