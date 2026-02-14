@@ -85,16 +85,27 @@ function About({ embedded }) {
   useEffect(() => {
     const el = howWeDoItRef.current;
     if (!el) return;
+    let rafId = null;
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setHowWeDoItInView(true);
-        });
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          // Defer so the browser paints the initial state (opacity 0, translated) first, then we trigger the animation
+          rafId = requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              setHowWeDoItInView(true);
+            });
+          });
+          break;
+        }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.2, rootMargin: "0px 0px 0px 0px" }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      if (rafId != null) cancelAnimationFrame(rafId);
+      observer.disconnect();
+    };
   }, []);
 
   // Keep "Our projects" in view when changing page (avoids scroll jumping to Our Expertise)
