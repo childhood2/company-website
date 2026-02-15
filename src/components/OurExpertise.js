@@ -146,6 +146,8 @@ function OurExpertise({ embedded }) {
         <section className="expertise__customerSuccess" aria-label="What our clients say about us">
           <h2 className="expertise__customerSuccessTitle">What our clients say about us</h2>
           <div className="expertise__customersCarouselWrap">
+            <span className="expertise__customersCarouselBtn expertise__customersCarouselBtn--prev" aria-hidden="true" />
+            <span className="expertise__customersCarouselBtn expertise__customersCarouselBtn--next" aria-hidden="true" />
             <div className="expertise__customersCarousel">
               <div className="expertise__customersSummaryCard expertise__customersSummaryCard--fixed" role="listitem">
                 <div className="expertise__customersSummaryLogo">

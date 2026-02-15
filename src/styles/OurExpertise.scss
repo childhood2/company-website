@@ -226,7 +226,8 @@
   border-radius: 50%;
   border: 1px solid #d1d5db;
   background: #ffffff;
-  cursor: pointer;
+  cursor: default;
+  pointer-events: none;
   z-index: 2;
   transition: background 0.2s ease, border-color 0.2s ease;
   padding: 0;
