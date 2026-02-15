@@ -167,9 +167,9 @@
   overflow: visible;
   align-self: stretch;
   min-height: 0;
-  background: linear-gradient(to bottom, #ffffff 0%, #e0e7ff 20%, #93c5fd 50%, #2563eb 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #dbeafe 25%, #93c5fd 55%, #2563eb 100%);
   border-radius: 0;
-  border: 1px solid #e0e7ff;
+  border: 1px solid #93c5fd;
 }
 
 .about__howWeDoItTitle {
@@ -389,7 +389,7 @@
 
   &:hover {
     text-decoration: underline;
-    color: #e0e7ff;
+    color: #dbeafe;
   }
 
   .about__experienceItem:nth-child(even) & {
@@ -404,7 +404,7 @@
 .about__experienceItemDesc {
   font-size: 15px;
   line-height: 1.6;
-  color: #e0e7ff;
+  color: #dbeafe;
   margin: 0 0 1rem 0;
   font-weight: normal;
 
@@ -488,7 +488,7 @@
 .about__experienceMetricLabel {
   font-size: 14px;
   line-height: 1.4;
-  color: #e0e7ff;
+  color: #dbeafe;
   font-weight: normal;
 
   .about__experienceItem:nth-child(even) & {
@@ -505,7 +505,7 @@
 
   &:hover {
     text-decoration: underline;
-    color: #e0e7ff;
+    color: #dbeafe;
   }
 
   .about__experienceItem:nth-child(even) & {
