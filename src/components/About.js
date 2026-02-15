@@ -166,23 +166,22 @@ function About({ embedded }) {
         </>
       )}
 
-      <section ref={testimonialRef} className={`about__testimonial${testimonialInView ? " about__testimonial--inView" : ""}`} aria-label="Testimonial">
-        <div className="about__testimonialImageWrap">
-          <img src={process.env.PUBLIC_URL + "/1.png"} alt="" className="about__testimonialImage" />
-        </div>
-        <div className="about__testimonialContent">
-          <blockquote className="about__testimonialQuote">
-            &ldquo;We continuously refine our processes. To be able to deliver products with impact on a global scale, we rely on best practices that we personalize taking into consideration feedback from our clients.&rdquo;
-          </blockquote>
-          <div className="about__testimonialAttribution">
-            <p className="about__testimonialName">SÓSTENES APOLLO</p>
+      <div className="about__testimonialAndHowWeDoIt">
+        <section ref={testimonialRef} className={`about__testimonial${testimonialInView ? " about__testimonial--inView" : ""}`} aria-label="Testimonial">
+          <div className="about__testimonialImageWrap">
+            <img src={process.env.PUBLIC_URL + "/1.png"} alt="" className="about__testimonialImage" />
           </div>
-        </div>
-      </section>
+          <div className="about__testimonialContent">
+            <blockquote className="about__testimonialQuote">
+              &ldquo;We continuously refine our processes. To be able to deliver products with impact on a global scale, we rely on best practices that we personalize taking into consideration feedback from our clients.&rdquo;
+            </blockquote>
+            <div className="about__testimonialAttribution">
+              <p className="about__testimonialName">SÓSTENES APOLLO</p>
+            </div>
+          </div>
+        </section>
 
-      <div className="app__spacer" />
-
-      <section ref={howWeDoItRef} className={`about__howWeDoIt${howWeDoItInView ? " about__howWeDoIt--inView" : ""}`} aria-label="How We Do It">
+        <section ref={howWeDoItRef} className={`about__howWeDoIt${howWeDoItInView ? " about__howWeDoIt--inView" : ""}`} aria-label="How We Do It">
         <h2 className="about__howWeDoItTitle">How We Do It</h2>
         <p className="about__howWeDoItIntro">
           We combine technical knowledge with clear communication and trust. Here is how we work with you from idea to launch.
@@ -244,7 +243,8 @@ function About({ embedded }) {
             </div>
           </li>
         </ol>
-      </section>
+        </section>
+      </div>
 
       <div className="app__spacer" />
 
