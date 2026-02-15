@@ -66,9 +66,9 @@
 
 .about__testimonialImageWrap {
   flex-shrink: 0;
-  background: #007bff;
+  background: transparent;
   border-radius: 0;
-  padding: 12px;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -169,7 +169,6 @@
   min-height: 0;
   background: linear-gradient(to bottom, #ffffff 0%, #e6f2ff 25%, #99caff 55%, #007bff 100%);
   border-radius: 0;
-  border: 1px solid #66b3ff;
 }
 
 .about__howWeDoItTitle {
@@ -334,7 +333,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 1rem;
 }
 
 .about__experienceItem {
@@ -344,20 +343,8 @@
   align-items: stretch;
   padding: 2rem 1.5rem;
   border-radius: 0;
-
-  &:nth-child(odd) {
-    background: #2563eb;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  &:nth-child(even) {
-    background: #ffffff;
-    border-bottom: 1px solid #e8e8e8;
-  }
-
-  &:last-child {
-    border-bottom: none;
-  }
+  background: #ffffff;
+  border: 1px solid #d1d5db;
 
   @media screen and (max-width: 900px) {
     grid-template-columns: 1fr;
@@ -383,34 +370,22 @@
 }
 
 .about__experienceItemTitleLink {
-  color: #ffffff;
+  color: #2563eb;
   text-decoration: none;
   transition: color 0.2s ease, text-decoration 0.2s ease;
 
   &:hover {
     text-decoration: underline;
-    color: #dbeafe;
-  }
-
-  .about__experienceItem:nth-child(even) & {
-    color: #2563eb;
-
-    &:hover {
-      color: #1d4ed8;
-    }
+    color: #1d4ed8;
   }
 }
 
 .about__experienceItemDesc {
   font-size: 15px;
   line-height: 1.6;
-  color: #dbeafe;
+  color: #374151;
   margin: 0 0 1rem 0;
   font-weight: normal;
-
-  .about__experienceItem:nth-child(even) & {
-    color: #374151;
-  }
 }
 
 .about__experienceItemImage {
@@ -424,7 +399,7 @@
   width: 100%;
   max-width: 320px;
   height: 220px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid #e0e0e0;
   background: #fff;
   padding: 0;
   overflow: hidden;
@@ -432,17 +407,8 @@
   border-radius: 0;
 
   &:hover {
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .about__experienceItem:nth-child(even) & {
-    border-color: #e0e0e0;
-
-    &:hover {
-      border-color: #2563eb;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
-    }
+    border-color: #2563eb;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
   }
 }
 
@@ -476,44 +442,28 @@
 .about__experienceMetricValue {
   font-size: 14px;
   font-weight: normal;
-  color: #ffffff;
+  color: #2563eb;
   line-height: 1.4;
   flex-shrink: 0;
-
-  .about__experienceItem:nth-child(even) & {
-    color: #2563eb;
-  }
 }
 
 .about__experienceMetricLabel {
   font-size: 14px;
   line-height: 1.4;
-  color: #dbeafe;
+  color: #525f7f;
   font-weight: normal;
-
-  .about__experienceItem:nth-child(even) & {
-    color: #525f7f;
-  }
 }
 
 .about__experienceLink {
   display: inline-block;
   font-size: 16px;
   font-weight: normal;
-  color: #ffffff;
+  color: #2563eb;
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
-    color: #dbeafe;
-  }
-
-  .about__experienceItem:nth-child(even) & {
-    color: #2563eb;
-
-    &:hover {
-      color: #1d4ed8;
-    }
+    color: #1d4ed8;
   }
 }
 
@@ -525,7 +475,7 @@
   gap: 0.5rem;
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid #e8e8e8;
 }
 
 .about__experiencePaginationBtn {
