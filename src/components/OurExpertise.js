@@ -65,14 +65,41 @@ function OurExpertise({ embedded }) {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
 
+  const CARD_WIDTH = 300;
+  const CARD_GAP = 16;
+  const CUSTOMERS_STEP = CARD_WIDTH + CARD_GAP;
+
   const scrollCustomers = (direction) => {
     const el = customersCarouselRef.current;
     if (!el) return;
-    const cardWidth = 320;
-    const gap = 16;
-    const step = (cardWidth + gap) * direction;
-    el.scrollBy({ left: step, behavior: "smooth" });
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    if (maxScroll <= 0) return;
+    const step = CUSTOMERS_STEP * direction;
+    const target = el.scrollLeft + step;
+    if (target >= maxScroll - 2) {
+      el.scrollTo({ left: 0, behavior: "smooth" });
+    } else if (target <= 2) {
+      el.scrollTo({ left: maxScroll, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: step, behavior: "smooth" });
+    }
   };
+
+  // Auto-advance carousel left to right in a cycle
+  useEffect(() => {
+    const el = customersCarouselRef.current;
+    if (!el) return;
+    const interval = setInterval(() => {
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      if (maxScroll <= 0) return;
+      if (el.scrollLeft >= maxScroll - 2) {
+        el.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        el.scrollBy({ left: CUSTOMERS_STEP, behavior: "smooth" });
+      }
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
