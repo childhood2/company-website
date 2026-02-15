@@ -7,10 +7,10 @@ import iconConsulting from "../assets/our_expertise/icon-consulting.svg";
 import iconCloud from "../assets/our_expertise/icon-cloud.svg";
 
 const CUSTOMER_REVIEWS = [
-  { name: "BairesDev", initial: "B", quote: "Apollo Technology delivered exceptional microservices work for our payments integrations. Professional, on time, and a pleasure to work with." },
-  { name: "Exomindset", initial: "E", quote: "Their team brought real expertise to our SaaS platform and digital solutions. We'd recommend them to anyone looking for reliable partners." },
-  { name: "NKey", initial: "N", quote: "The health platform they built with Node.js and NestJS has been rock solid at scale. An excellent partnership from start to finish." },
-  { name: "GLOBAL HITSS", initial: "G", quote: "They helped us automate microservices and cut AWS costs significantly while improving monitoring. A highly skilled team." },
+  { name: "BairesDev", logo: "/customer-success/bairesdev.svg", timeAgo: "a year ago", quote: "Apollo Technology delivered exceptional microservices work for our payments integrations. Professional, on time, and a pleasure to work with." },
+  { name: "Exomindset", logo: "/customer-success/exomindset.png?v=2", timeAgo: "2 years ago", quote: "Their team brought real expertise to our SaaS platform and digital solutions. We'd recommend them to anyone looking for reliable partners." },
+  { name: "NKey", logo: "/customer-success/nkey.png?v=2", timeAgo: "3 years ago", quote: "The health platform they built with Node.js and NestJS has been rock solid at scale. An excellent partnership from start to finish." },
+  { name: "GLOBAL HITSS", logo: "/customer-success/global-hitss.png", timeAgo: "5 years ago", quote: "They helped us automate microservices and cut AWS costs significantly while improving monitoring. A highly skilled team." },
 ];
 
 const FAQ_ITEMS = [
@@ -175,28 +175,17 @@ function OurExpertise({ embedded }) {
                   <span className="expertise__customersSummaryScore">5.0</span>
                   <span className="expertise__customersStars" aria-hidden="true">★★★★★</span>
                 </div>
-                <p className="expertise__customersSummaryCount">Based on {CUSTOMER_REVIEWS.length} reviews</p>
-                <p className="expertise__customersSummaryPowered">powered by Google</p>
-                <a
-                  href="https://g.page/r/your-business/review"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="expertise__customersSummaryCta"
-                >
-                  Review us on Google
-                </a>
               </div>
               {CUSTOMER_REVIEWS.map((review, i) => (
                 <div key={i} className="expertise__customersReviewCard" role="listitem">
                   <div className="expertise__customersReviewHeader">
-                    <div className="expertise__customersReviewAvatar" aria-hidden="true">
-                      {review.initial}
+                    <div className="expertise__customersReviewLogo">
+                      <img src={process.env.PUBLIC_URL + review.logo} alt={review.name} />
                     </div>
                     <div className="expertise__customersReviewMeta">
                       <span className="expertise__customersReviewName">{review.name}</span>
-                      <span className="expertise__customersReviewTime">a year ago</span>
+                      <span className="expertise__customersReviewTime">{review.timeAgo}</span>
                     </div>
-                    <span className="expertise__customersReviewGoogle" aria-hidden="true">Google</span>
                   </div>
                   <div className="expertise__customersReviewStars" aria-hidden="true">★★★★★</div>
                   <p className="expertise__customersReviewText">{review.quote}</p>
