@@ -159,21 +159,24 @@
   }
 }
 
-// How We Do It section — sits in right column of wrapper
+// How We Do It section — one blue card for the entire section (sits in right column of wrapper)
 .about__howWeDoIt {
   width: 100%;
   min-width: 0;
-  padding: 0;
+  padding: 2rem 1.5rem;
   overflow: visible;
   align-self: stretch;
   min-height: 0;
+  background: #2563eb;
+  border-radius: 0;
+  border: 1px solid #2563eb;
 }
 
 .about__howWeDoItTitle {
   font-size: 44px;
   font-weight: normal;
   margin: 0 0 0.75rem 0;
-  color: #212529;
+  color: #ffffff;
 
   @media screen and (max-width: 768px) {
     font-size: 34px;
@@ -183,7 +186,7 @@
 .about__howWeDoItIntro {
   font-size: 18px;
   line-height: 1.6;
-  color: #495057;
+  color: #e0e7ff;
   margin: 0 0 2.5rem 0;
   max-width: 42em;
 }
@@ -202,8 +205,8 @@
     top: 2.5rem;
     bottom: 2.5rem;
     width: 0;
-    border-left: 2px dashed #2563eb;
-    opacity: 0.6;
+    border-left: 2px dashed rgba(255, 255, 255, 0.5);
+    opacity: 1;
   }
 
   @media screen and (max-width: 768px) {
@@ -260,10 +263,10 @@
   justify-content: center;
   flex-shrink: 0;
   background: transparent;
-  color: #2563eb;
+  color: #ffffff;
 
   &--launch {
-    color: #2563eb;
+    color: #ffffff;
   }
 
   @media screen and (max-width: 768px) {
@@ -275,7 +278,7 @@
 
 .about__howWeDoItIcon {
   font-size: 1.4rem !important;
-  color: #2563eb;
+  color: #ffffff;
 
   @media screen and (max-width: 768px) {
     font-size: 1.1rem !important;
@@ -283,11 +286,8 @@
 }
 
 .about__howWeDoItContent {
-  background: #2563eb;
-  border: 1px solid #2563eb;
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 0 0 0;
   border-radius: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .about__howWeDoItHeading {
@@ -340,8 +340,15 @@
   align-items: stretch;
   padding: 2rem 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  background: #2563eb;
   border-radius: 0;
+
+  &:nth-child(odd) {
+    background: #2563eb;
+  }
+
+  &:nth-child(even) {
+    background: #3b82f6;
+  }
 
   &:last-child {
     border-bottom: none;
