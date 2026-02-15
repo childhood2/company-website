@@ -26,13 +26,13 @@ p {
 }
 
 .single-page__hero.app__jumbotron {
-  width: 100%;
-  max-width: none;
-  margin-right: auto;
+  width: 94%;
+  max-width: 1500px;
   margin-left: auto;
+  margin-right: auto;
   padding-top: 8%;
   padding-bottom: 8%;
-  min-height: 420px;
+  min-height: 380px;
   background-color: #fff;
   /* background image set via SinglePage.js from src/assets/home/hero-bg.jpg */
   background-size: cover;
@@ -41,8 +41,8 @@ p {
 }
 
 .single-page__hero .home__main {
-  width: 94%;
-  max-width: 1500px;
+  width: 100%;
+  max-width: none;
   margin-left: auto;
   margin-right: auto;
 }
