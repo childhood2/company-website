@@ -318,6 +318,16 @@
   font-size: 0.75rem;
   color: #9ca3af;
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.expertise__customersGoogleIcon {
+  display: inline-block;
+  height: 1em;
+  width: auto;
+  vertical-align: middle;
 }
 
 // Individual review cards
@@ -379,9 +389,14 @@
 }
 
 .expertise__customersReviewGoogle {
-  font-size: 0.75rem;
-  color: #9ca3af;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+
+  .expertise__customersGoogleIcon {
+    height: 14px;
+    width: auto;
+  }
 }
 
 .expertise__customersReviewStars {

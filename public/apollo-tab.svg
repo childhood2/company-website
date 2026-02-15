@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="8 12 48 54">
-  <!-- Launching rocket, pointing up-right, kept bold so it reads at 16x16 -->
-  <!-- Rocket body (aligned closer to main logo shape) -->
+  <!-- Rocket angle aligned with main logo: up and to the right (~20–25° from vertical) -->
+  <g transform="rotate(-12 32 39)">
   <path
     d="M24 42
        L36 16
@@ -52,5 +52,6 @@
     stroke="#1e88e5"
     stroke-width="3"
     stroke-linecap="round"/>
+  </g>
 </svg>
 

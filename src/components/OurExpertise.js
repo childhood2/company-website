@@ -163,7 +163,7 @@ function OurExpertise({ embedded }) {
                       <span className="expertise__customersStars" aria-hidden="true">★★★★★</span>
                     </div>
                     <p className="expertise__customersSummaryCount">Based on {CUSTOMER_REVIEWS.length} reviews</p>
-                    <p className="expertise__customersSummaryPowered">powered by Google</p>
+                    <p className="expertise__customersSummaryPowered">powered by <img src={process.env.PUBLIC_URL + "/google.svg"} alt="Google" className="expertise__customersGoogleIcon" /></p>
                   </div>
                   {CUSTOMER_REVIEWS.map((review, i) => (
                     <div key={`${segment}-${i}`} className="expertise__customersReviewCard" role="listitem">
@@ -175,7 +175,7 @@ function OurExpertise({ embedded }) {
                           <span className="expertise__customersReviewName">{review.name}</span>
                           <span className="expertise__customersReviewTime">{review.timeAgo}</span>
                         </div>
-                        <span className="expertise__customersReviewGoogle" aria-hidden="true">Google</span>
+                        <span className="expertise__customersReviewGoogle" aria-hidden="true"><img src={process.env.PUBLIC_URL + "/google.svg"} alt="Google" className="expertise__customersGoogleIcon" /></span>
                       </div>
                       <div className="expertise__customersReviewStars" aria-hidden="true">★★★★★</div>
                       <p className="expertise__customersReviewText">{review.quote}</p>
