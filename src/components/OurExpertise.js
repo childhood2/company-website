@@ -68,6 +68,7 @@ function OurExpertise({ embedded }) {
   const CARD_WIDTH = 300;
   const CARD_GAP = 16;
   const CUSTOMERS_STEP = CARD_WIDTH + CARD_GAP;
+  const CUSTOMERS_SEGMENT_WIDTH = (1 + CUSTOMER_REVIEWS.length) * CUSTOMERS_STEP; // 5 cards, for seamless loop
 
   const scrollCustomers = (direction) => {
     const el = customersCarouselRef.current;
@@ -85,20 +86,23 @@ function OurExpertise({ embedded }) {
     }
   };
 
-  // Auto-advance carousel left to right in a cycle
+  // Slow continuous scroll left-to-right like water, seamless loop
   useEffect(() => {
     const el = customersCarouselRef.current;
     if (!el) return;
-    const interval = setInterval(() => {
-      const maxScroll = el.scrollWidth - el.clientWidth;
-      if (maxScroll <= 0) return;
-      if (el.scrollLeft >= maxScroll - 2) {
-        el.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        el.scrollBy({ left: CUSTOMERS_STEP, behavior: "smooth" });
+    const pixelsPerFrame = 0.35;
+    let rafId = null;
+    const tick = () => {
+      el.scrollLeft += pixelsPerFrame;
+      if (el.scrollLeft >= CUSTOMERS_SEGMENT_WIDTH - 1) {
+        el.scrollLeft -= CUSTOMERS_SEGMENT_WIDTH;
       }
-    }, 4000);
-    return () => clearInterval(interval);
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+    return () => {
+      if (rafId != null) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
@@ -193,33 +197,37 @@ function OurExpertise({ embedded }) {
               aria-label="Previous reviews"
             />
             <div ref={customersCarouselRef} className="expertise__customersCarousel" role="list">
-              <div className="expertise__customersSummaryCard" role="listitem">
-                <div className="expertise__customersSummaryLogo">
-                  <img src={process.env.PUBLIC_URL + "/logo.png"} alt="" />
-                </div>
-                <h3 className="expertise__customersSummaryName">Apollo Technology</h3>
-                <div className="expertise__customersSummaryRating">
-                  <span className="expertise__customersSummaryScore">5.0</span>
-                  <span className="expertise__customersStars" aria-hidden="true">★★★★★</span>
-                </div>
-                <p className="expertise__customersSummaryCount">Based on {CUSTOMER_REVIEWS.length} reviews</p>
-                <p className="expertise__customersSummaryPowered">powered by Google</p>
-              </div>
-              {CUSTOMER_REVIEWS.map((review, i) => (
-                <div key={i} className="expertise__customersReviewCard" role="listitem">
-                  <div className="expertise__customersReviewHeader">
-                    <div className="expertise__customersReviewLogo">
-                      <img src={process.env.PUBLIC_URL + review.logo} alt={review.name} />
+              {[0, 1].map((segment) => (
+                <React.Fragment key={segment}>
+                  <div className="expertise__customersSummaryCard" role="listitem">
+                    <div className="expertise__customersSummaryLogo">
+                      <img src={process.env.PUBLIC_URL + "/logo.png"} alt="" />
                     </div>
-                    <div className="expertise__customersReviewMeta">
-                      <span className="expertise__customersReviewName">{review.name}</span>
-                      <span className="expertise__customersReviewTime">{review.timeAgo}</span>
+                    <h3 className="expertise__customersSummaryName">Apollo Technology</h3>
+                    <div className="expertise__customersSummaryRating">
+                      <span className="expertise__customersSummaryScore">5.0</span>
+                      <span className="expertise__customersStars" aria-hidden="true">★★★★★</span>
                     </div>
-                    <span className="expertise__customersReviewGoogle" aria-hidden="true">Google</span>
+                    <p className="expertise__customersSummaryCount">Based on {CUSTOMER_REVIEWS.length} reviews</p>
+                    <p className="expertise__customersSummaryPowered">powered by Google</p>
                   </div>
-                  <div className="expertise__customersReviewStars" aria-hidden="true">★★★★★</div>
-                  <p className="expertise__customersReviewText">{review.quote}</p>
-                </div>
+                  {CUSTOMER_REVIEWS.map((review, i) => (
+                    <div key={`${segment}-${i}`} className="expertise__customersReviewCard" role="listitem">
+                      <div className="expertise__customersReviewHeader">
+                        <div className="expertise__customersReviewLogo">
+                          <img src={process.env.PUBLIC_URL + review.logo} alt={review.name} />
+                        </div>
+                        <div className="expertise__customersReviewMeta">
+                          <span className="expertise__customersReviewName">{review.name}</span>
+                          <span className="expertise__customersReviewTime">{review.timeAgo}</span>
+                        </div>
+                        <span className="expertise__customersReviewGoogle" aria-hidden="true">Google</span>
+                      </div>
+                      <div className="expertise__customersReviewStars" aria-hidden="true">★★★★★</div>
+                      <p className="expertise__customersReviewText">{review.quote}</p>
+                    </div>
+                  ))}
+                </React.Fragment>
               ))}
             </div>
             <button
