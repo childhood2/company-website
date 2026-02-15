@@ -65,41 +65,28 @@ function OurExpertise({ embedded }) {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
 
-  const CARD_WIDTH = 300;
-  const CARD_GAP = 16;
-  const CUSTOMERS_STEP = CARD_WIDTH + CARD_GAP;
-  const CUSTOMERS_SEGMENT_WIDTH = (1 + CUSTOMER_REVIEWS.length) * CUSTOMERS_STEP; // 5 cards, for seamless loop
-
-  const scrollCustomers = (direction) => {
-    const el = customersCarouselRef.current;
-    if (!el) return;
-    const maxScroll = el.scrollWidth - el.clientWidth;
-    if (maxScroll <= 0) return;
-    const step = CUSTOMERS_STEP * direction;
-    const target = el.scrollLeft + step;
-    if (target >= maxScroll - 2) {
-      el.scrollTo({ left: 0, behavior: "smooth" });
-    } else if (target <= 2) {
-      el.scrollTo({ left: maxScroll, behavior: "smooth" });
-    } else {
-      el.scrollBy({ left: step, behavior: "smooth" });
-    }
-  };
-
   // Slow continuous scroll left-to-right like water, seamless loop
   useEffect(() => {
-    const el = customersCarouselRef.current;
-    if (!el) return;
-    const pixelsPerFrame = 0.35;
     let rafId = null;
-    const tick = () => {
-      el.scrollLeft += pixelsPerFrame;
-      if (el.scrollLeft >= CUSTOMERS_SEGMENT_WIDTH - 1) {
-        el.scrollLeft -= CUSTOMERS_SEGMENT_WIDTH;
+    const startLoop = () => {
+      const el = customersCarouselRef.current;
+      if (!el) {
+        rafId = requestAnimationFrame(startLoop);
+        return;
       }
+      const segmentWidth = (1 + CUSTOMER_REVIEWS.length) * (300 + 16);
+      const pixelsPerFrame = 0.5;
+      const tick = () => {
+        if (!el.isConnected) return;
+        el.scrollLeft += pixelsPerFrame;
+        if (el.scrollLeft >= segmentWidth - 2) {
+          el.scrollLeft -= segmentWidth;
+        }
+        rafId = requestAnimationFrame(tick);
+      };
       rafId = requestAnimationFrame(tick);
     };
-    rafId = requestAnimationFrame(tick);
+    rafId = requestAnimationFrame(startLoop);
     return () => {
       if (rafId != null) cancelAnimationFrame(rafId);
     };
@@ -190,12 +177,6 @@ function OurExpertise({ embedded }) {
             What our clients say about us
           </p>
           <div className="expertise__customersCarouselWrap">
-            <button
-              type="button"
-              className="expertise__customersCarouselBtn expertise__customersCarouselBtn--prev"
-              onClick={() => scrollCustomers(-1)}
-              aria-label="Previous reviews"
-            />
             <div ref={customersCarouselRef} className="expertise__customersCarousel" role="list">
               {[0, 1].map((segment) => (
                 <React.Fragment key={segment}>
@@ -230,12 +211,6 @@ function OurExpertise({ embedded }) {
                 </React.Fragment>
               ))}
             </div>
-            <button
-              type="button"
-              className="expertise__customersCarouselBtn expertise__customersCarouselBtn--next"
-              onClick={() => scrollCustomers(1)}
-              aria-label="Next reviews"
-            />
           </div>
         </section>
 
