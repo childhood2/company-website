@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import iconAgile from "../assets/our_expertise/icon-agile.svg";
 import iconAi from "../assets/our_expertise/icon-ai.svg";
 import iconProduct from "../assets/our_expertise/icon-product.svg";
@@ -59,10 +59,24 @@ function OurExpertise({ embedded }) {
   const [emailError, setEmailError] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  const customersTrackWrapRef = useRef(null);
+  const scrollStep = 320;
+  const oneSetWidth = 1264; // 4 cards * (300px + 1rem gap)
 
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
+
+  useEffect(() => {
+    const el = customersTrackWrapRef.current;
+    if (!el) return;
+    const step = 0.5;
+    const interval = setInterval(() => {
+      el.scrollLeft += step;
+      if (el.scrollLeft >= oneSetWidth) el.scrollLeft -= oneSetWidth;
+    }, 20);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
@@ -146,8 +160,24 @@ function OurExpertise({ embedded }) {
         <section className="expertise__customerSuccess" aria-label="What our clients say about us">
           <h2 className="expertise__customerSuccessTitle">What our clients say about us</h2>
           <div className="expertise__customersCarouselWrap">
-            <span className="expertise__customersCarouselBtn expertise__customersCarouselBtn--prev" aria-hidden="true" />
-            <span className="expertise__customersCarouselBtn expertise__customersCarouselBtn--next" aria-hidden="true" />
+            <button
+              type="button"
+              className="expertise__customersCarouselBtn expertise__customersCarouselBtn--prev"
+              onClick={() => {
+                const el = customersTrackWrapRef.current;
+                if (el) el.scrollBy({ left: -scrollStep, behavior: "smooth" });
+              }}
+              aria-label="Previous reviews"
+            />
+            <button
+              type="button"
+              className="expertise__customersCarouselBtn expertise__customersCarouselBtn--next"
+              onClick={() => {
+                const el = customersTrackWrapRef.current;
+                if (el) el.scrollBy({ left: scrollStep, behavior: "smooth" });
+              }}
+              aria-label="Next reviews"
+            />
             <div className="expertise__customersCarousel">
               <div className="expertise__customersSummaryCard expertise__customersSummaryCard--fixed" role="listitem">
                 <div className="expertise__customersSummaryLogo">
@@ -161,7 +191,7 @@ function OurExpertise({ embedded }) {
                 <p className="expertise__customersSummaryCount">Based on {CUSTOMER_REVIEWS.length} reviews</p>
                 <p className="expertise__customersSummaryPowered">powered by <img src={process.env.PUBLIC_URL + "/google.svg"} alt="Google" className="expertise__customersGoogleIcon" /></p>
               </div>
-              <div className="expertise__customersCarouselTrackWrap">
+              <div className="expertise__customersCarouselTrackWrap" ref={customersTrackWrapRef}>
                 <div className="expertise__customersCarouselTrack" role="list">
                   {[0, 1].map((segment) => (
                     <React.Fragment key={segment}>
