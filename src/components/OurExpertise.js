@@ -165,7 +165,10 @@ function OurExpertise({ embedded }) {
               className="expertise__customersCarouselBtn expertise__customersCarouselBtn--prev"
               onClick={() => {
                 const el = customersTrackWrapRef.current;
-                if (el) el.scrollBy({ left: -scrollStep, behavior: "smooth" });
+                if (el) {
+                  const target = Math.max(0, el.scrollLeft - scrollStep);
+                  el.scrollTo({ left: target, behavior: "smooth" });
+                }
               }}
               aria-label="Previous reviews"
             />
@@ -174,7 +177,11 @@ function OurExpertise({ embedded }) {
               className="expertise__customersCarouselBtn expertise__customersCarouselBtn--next"
               onClick={() => {
                 const el = customersTrackWrapRef.current;
-                if (el) el.scrollBy({ left: scrollStep, behavior: "smooth" });
+                if (el) {
+                  const maxScroll = el.scrollWidth - el.clientWidth;
+                  const target = Math.min(maxScroll, el.scrollLeft + scrollStep);
+                  el.scrollTo({ left: target, behavior: "smooth" });
+                }
               }}
               aria-label="Next reviews"
             />
