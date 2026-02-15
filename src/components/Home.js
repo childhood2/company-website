@@ -14,7 +14,7 @@ function Home() {
     window.scrollTo(0, 0);
   }, []);
 
-  // Hero text: same entrance animation when hero enters viewport
+  // Hero text: entrance animation runs every time user passes the section (scroll up or down)
   useEffect(() => {
     const el = heroCopyRef.current;
     if (!el) return;
@@ -22,10 +22,13 @@ function Home() {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          rafId = requestAnimationFrame(() => {
-            requestAnimationFrame(() => setHeroCopyInView(true));
-          });
+          if (entry.isIntersecting) {
+            rafId = requestAnimationFrame(() => {
+              requestAnimationFrame(() => setHeroCopyInView(true));
+            });
+          } else {
+            setHeroCopyInView(false);
+          }
           break;
         }
       },

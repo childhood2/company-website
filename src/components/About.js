@@ -83,7 +83,7 @@ function About({ embedded }) {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
 
-  // How We Do It steps: animate in when section enters viewport (from down to upward)
+  // How We Do It steps: animate in every time user passes the section (scroll up or down)
   useEffect(() => {
     const el = howWeDoItRef.current;
     if (!el) return;
@@ -91,13 +91,13 @@ function About({ embedded }) {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          // Defer so the browser paints the initial state (opacity 0, translated) first, then we trigger the animation
-          rafId = requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              setHowWeDoItInView(true);
+          if (entry.isIntersecting) {
+            rafId = requestAnimationFrame(() => {
+              requestAnimationFrame(() => setHowWeDoItInView(true));
             });
-          });
+          } else {
+            setHowWeDoItInView(false);
+          }
           break;
         }
       },
@@ -110,7 +110,7 @@ function About({ embedded }) {
     };
   }, []);
 
-  // Testimonial quote: same entrance animation when section enters viewport
+  // Testimonial quote: animate in every time user passes the section (scroll up or down)
   useEffect(() => {
     const el = testimonialRef.current;
     if (!el) return;
@@ -118,10 +118,13 @@ function About({ embedded }) {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          rafId = requestAnimationFrame(() => {
-            requestAnimationFrame(() => setTestimonialInView(true));
-          });
+          if (entry.isIntersecting) {
+            rafId = requestAnimationFrame(() => {
+              requestAnimationFrame(() => setTestimonialInView(true));
+            });
+          } else {
+            setTestimonialInView(false);
+          }
           break;
         }
       },
