@@ -178,9 +178,9 @@
 .expertise__customerSuccessCard {
   width: 100%;
   padding: 2rem 1.5rem;
-  background: #2563eb;
+  background: #ffffff;
   border-radius: 0;
-  border: 1px solid #2563eb;
+  border: 1px solid #d1d5db;
 }
 
 .expertise__customerSuccessLogos {
@@ -203,7 +203,7 @@
   display: inline-flex;
   padding: 0.5rem;
   background: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid #e0e0e0;
   border-radius: 0;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   flex-shrink: 0;
@@ -211,7 +211,7 @@
   line-height: 0;
 
   &:hover {
-    border-color: rgba(255, 255, 255, 0.8);
+    border-color: #d1d5db;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
@@ -234,7 +234,7 @@
 .expertise__customerSuccessReview {
   font-size: 14px;
   line-height: 1.5;
-  color: #dbeafe;
+  color: #374151;
   margin: 1rem 0 0 0;
   padding: 0;
   font-weight: normal;
@@ -243,7 +243,7 @@
 
 .expertise__customerSuccessAttribution {
   font-size: 13px;
-  color: #ffffff;
+  color: #6c757d;
   margin: 0.5rem 0 0 0;
   padding: 0;
   font-weight: normal;
