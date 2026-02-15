@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import iconAgile from "../assets/our_expertise/icon-agile.svg";
 import iconAi from "../assets/our_expertise/icon-ai.svg";
 import iconProduct from "../assets/our_expertise/icon-product.svg";
@@ -59,38 +59,10 @@ function OurExpertise({ embedded }) {
   const [emailError, setEmailError] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
-  const customersCarouselRef = useRef(null);
 
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
-
-  // Slow continuous scroll left-to-right like water, seamless loop
-  useEffect(() => {
-    let rafId = null;
-    const startLoop = () => {
-      const el = customersCarouselRef.current;
-      if (!el) {
-        rafId = requestAnimationFrame(startLoop);
-        return;
-      }
-      const segmentWidth = (1 + CUSTOMER_REVIEWS.length) * (300 + 16);
-      const pixelsPerFrame = 0.5;
-      const tick = () => {
-        if (!el.isConnected) return;
-        el.scrollLeft += pixelsPerFrame;
-        if (el.scrollLeft >= segmentWidth - 2) {
-          el.scrollLeft -= segmentWidth;
-        }
-        rafId = requestAnimationFrame(tick);
-      };
-      rafId = requestAnimationFrame(tick);
-    };
-    rafId = requestAnimationFrame(startLoop);
-    return () => {
-      if (rafId != null) cancelAnimationFrame(rafId);
-    };
-  }, []);
 
   return (
     <div>
@@ -177,7 +149,8 @@ function OurExpertise({ embedded }) {
             What our clients say about us
           </p>
           <div className="expertise__customersCarouselWrap">
-            <div ref={customersCarouselRef} className="expertise__customersCarousel" role="list">
+            <div className="expertise__customersCarousel">
+              <div className="expertise__customersCarouselTrack" role="list">
               {[0, 1].map((segment) => (
                 <React.Fragment key={segment}>
                   <div className="expertise__customersSummaryCard" role="listitem">
@@ -210,6 +183,7 @@ function OurExpertise({ embedded }) {
                   ))}
                 </React.Fragment>
               ))}
+              </div>
             </div>
           </div>
         </section>
