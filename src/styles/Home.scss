@@ -17,34 +17,32 @@
   align-items: center;
 }
 
-/* Single-page hero: moderate size, normal weight, flowing rainbow on "From concept to completion." */
+/* Single-page hero: colors in same range as background (blues/whites, no yellow/green) */
 .single-page__hero .home__heroTitle {
   font-size: 72px;
   font-weight: normal;
   background: linear-gradient(
     90deg,
-    #ff0000 0%,
-    #ff8000 14%,
-    #ffff00 28%,
-    #00ff00 42%,
-    #00ffff 57%,
-    #0080ff 71%,
-    #8000ff 85%,
-    #ff0000 100%
+    #ffffff 0%,
+    #e0f2fe 20%,
+    #93c5fd 45%,
+    #3b82f6 70%,
+    #1e40af 85%,
+    #e0f2fe 100%
   );
   background-size: 200% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  animation: home__heroTitleRainbow 4s linear infinite;
+  animation: home__heroTitleBlue 8s ease-in-out infinite;
 }
 
-@keyframes home__heroTitleRainbow {
-  0% {
+@keyframes home__heroTitleBlue {
+  0%, 100% {
     background-position: 0% 50%;
   }
-  100% {
+  50% {
     background-position: 200% 50%;
   }
 }
@@ -52,7 +50,7 @@
 .single-page__hero .home__heroText {
   font-size: 30px;
   font-weight: normal;
-  color: #333333;
+  color: #1e3a5f;
 }
 
 .home__jumboImg {

@@ -108,9 +108,10 @@ $cus-border: #1a4d6f;
   }
 }
 
+/* Map: same width as contact form (94%, max-width 560px) */
 .contactUs__mapWrap {
   width: 94%;
-  max-width: 1200px;
+  max-width: 560px;
   margin: 3rem auto 0;
 }
 
@@ -124,7 +125,7 @@ $cus-border: #1a4d6f;
 
 .contactUs__map {
   width: 100%;
-  height: 400px;
+  height: 320px;
   overflow: hidden;
   border: 1px solid #e0e0e0;
 
@@ -135,13 +136,13 @@ $cus-border: #1a4d6f;
 
 @media screen and (max-width: 768px) {
   .contactUs__mapWrap {
-    width: 100%;
+    width: 94%;
+    max-width: 100%;
     margin-top: 2rem;
-    padding: 0 1rem;
   }
 
   .contactUs__map {
-    height: 320px;
+    height: 280px;
   }
 }
 
