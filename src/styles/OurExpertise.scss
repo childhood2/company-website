@@ -175,17 +175,30 @@
   font-weight: normal;
 }
 
-// Carousel wrapper: arrows + scrollable track
+// Carousel wrapper: single border around all cards (no per-card borders)
 .expertise__customersCarouselWrap {
   position: relative;
   width: 100%;
   margin-top: 1rem;
+  border: 1px solid #2563eb;
+  padding: 1rem;
 }
 
 .expertise__customersCarousel {
-  overflow: hidden;
-  padding: 0.5rem 0;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
   width: 100%;
+}
+
+.expertise__customersSummaryCard--fixed {
+  flex: 0 0 300px;
+}
+
+.expertise__customersCarouselTrackWrap {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .expertise__customersCarouselTrack {
@@ -200,7 +213,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-1580px);
+    transform: translateX(-1264px);
   }
 }
 
@@ -249,18 +262,17 @@
   }
 }
 
-// Summary card (first card: company rating + CTA)
+// Summary card (first card: company rating + CTA) — no border, one outer border wraps all
 .expertise__customersSummaryCard {
   flex: 0 0 300px;
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: none;
   border-radius: 0;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 1rem 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 280px;
+  min-height: 200px;
 }
 
 .expertise__customersSummaryLogo {
@@ -330,17 +342,16 @@
   vertical-align: middle;
 }
 
-// Individual review cards
+// Individual review cards — no border, single outer border wraps all
 .expertise__customersReviewCard {
   flex: 0 0 300px;
   background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  border: none;
   border-radius: 0;
-  padding: 1.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  padding: 1rem 1.25rem;
   display: flex;
   flex-direction: column;
-  min-height: 280px;
+  min-height: 200px;
 }
 
 .expertise__customersReviewHeader {
@@ -413,7 +424,7 @@
   margin: 0;
   flex: 1;
   overflow-y: auto;
-  max-height: 8em;
+  max-height: 6.5em;
 }
 
 @media screen and (max-width: 768px) {
@@ -438,6 +449,6 @@
   .expertise__customersSummaryCard,
   .expertise__customersReviewCard {
     flex: 0 0 280px;
-    min-height: 260px;
+    min-height: 200px;
   }
 }

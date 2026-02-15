@@ -150,39 +150,41 @@ function OurExpertise({ embedded }) {
           </p>
           <div className="expertise__customersCarouselWrap">
             <div className="expertise__customersCarousel">
-              <div className="expertise__customersCarouselTrack" role="list">
-              {[0, 1].map((segment) => (
-                <React.Fragment key={segment}>
-                  <div className="expertise__customersSummaryCard" role="listitem">
-                    <div className="expertise__customersSummaryLogo">
-                      <img src={process.env.PUBLIC_URL + "/logo.png"} alt="" />
-                    </div>
-                    <h3 className="expertise__customersSummaryName">Apollo Technology</h3>
-                    <div className="expertise__customersSummaryRating">
-                      <span className="expertise__customersSummaryScore">5.0</span>
-                      <span className="expertise__customersStars" aria-hidden="true">★★★★★</span>
-                    </div>
-                    <p className="expertise__customersSummaryCount">Based on {CUSTOMER_REVIEWS.length} reviews</p>
-                    <p className="expertise__customersSummaryPowered">powered by <img src={process.env.PUBLIC_URL + "/google.svg"} alt="Google" className="expertise__customersGoogleIcon" /></p>
-                  </div>
-                  {CUSTOMER_REVIEWS.map((review, i) => (
-                    <div key={`${segment}-${i}`} className="expertise__customersReviewCard" role="listitem">
-                      <div className="expertise__customersReviewHeader">
-                        <div className="expertise__customersReviewLogo">
-                          <img src={process.env.PUBLIC_URL + review.logo} alt={review.name} />
+              <div className="expertise__customersSummaryCard expertise__customersSummaryCard--fixed" role="listitem">
+                <div className="expertise__customersSummaryLogo">
+                  <img src={process.env.PUBLIC_URL + "/logo.png"} alt="" />
+                </div>
+                <h3 className="expertise__customersSummaryName">Apollo Technology</h3>
+                <div className="expertise__customersSummaryRating">
+                  <span className="expertise__customersSummaryScore">5.0</span>
+                  <span className="expertise__customersStars" aria-hidden="true">★★★★★</span>
+                </div>
+                <p className="expertise__customersSummaryCount">Based on {CUSTOMER_REVIEWS.length} reviews</p>
+                <p className="expertise__customersSummaryPowered">powered by <img src={process.env.PUBLIC_URL + "/google.svg"} alt="Google" className="expertise__customersGoogleIcon" /></p>
+              </div>
+              <div className="expertise__customersCarouselTrackWrap">
+                <div className="expertise__customersCarouselTrack" role="list">
+                  {[0, 1].map((segment) => (
+                    <React.Fragment key={segment}>
+                      {CUSTOMER_REVIEWS.map((review, i) => (
+                        <div key={`${segment}-${i}`} className="expertise__customersReviewCard" role="listitem">
+                          <div className="expertise__customersReviewHeader">
+                            <div className="expertise__customersReviewLogo">
+                              <img src={process.env.PUBLIC_URL + review.logo} alt={review.name} />
+                            </div>
+                            <div className="expertise__customersReviewMeta">
+                              <span className="expertise__customersReviewName">{review.name}</span>
+                              <span className="expertise__customersReviewTime">{review.timeAgo}</span>
+                            </div>
+                            <span className="expertise__customersReviewGoogle" aria-hidden="true"><img src={process.env.PUBLIC_URL + "/google.svg"} alt="Google" className="expertise__customersGoogleIcon" /></span>
+                          </div>
+                          <div className="expertise__customersReviewStars" aria-hidden="true">★★★★★</div>
+                          <p className="expertise__customersReviewText">{review.quote}</p>
                         </div>
-                        <div className="expertise__customersReviewMeta">
-                          <span className="expertise__customersReviewName">{review.name}</span>
-                          <span className="expertise__customersReviewTime">{review.timeAgo}</span>
-                        </div>
-                        <span className="expertise__customersReviewGoogle" aria-hidden="true"><img src={process.env.PUBLIC_URL + "/google.svg"} alt="Google" className="expertise__customersGoogleIcon" /></span>
-                      </div>
-                      <div className="expertise__customersReviewStars" aria-hidden="true">★★★★★</div>
-                      <p className="expertise__customersReviewText">{review.quote}</p>
-                    </div>
+                      ))}
+                    </React.Fragment>
                   ))}
-                </React.Fragment>
-              ))}
+                </div>
               </div>
             </div>
           </div>
