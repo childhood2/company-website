@@ -140,6 +140,7 @@ function OurExpertise({ embedded }) {
           <p className="expertise__customerSuccessSubtitle">
             What our clients say about us
           </p>
+          <div className="expertise__customerSuccessCard">
           <div className="expertise__customerSuccessLogos">
             <div className="expertise__customerSuccessItem">
               <div className="expertise__customerSuccessLogo" title="BairesDev">
@@ -177,6 +178,7 @@ function OurExpertise({ embedded }) {
               </blockquote>
               <p className="expertise__customerSuccessAttribution">— GLOBAL HITSS</p>
             </div>
+          </div>
           </div>
         </section>
 

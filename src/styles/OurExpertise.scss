@@ -154,29 +154,33 @@
   }
 }
 
-// Customer Success section — one blue card for the entire section (width matches .expertise parent)
+// Customer Success section — title/subtitle outside card; blue card wraps testimonials only
 .expertise__customerSuccess {
   width: 100%;
   margin-top: 3rem;
-  padding: 2rem 1.5rem;
-  background: #2563eb;
-  border-radius: 0;
-  border: 1px solid #2563eb;
 }
 
 .expertise__customerSuccessTitle {
   font-size: 44px;
   font-weight: normal;
-  color: #ffffff;
+  color: #212529;
   margin: 0 0 0.5rem 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .expertise__customerSuccessSubtitle {
   font-size: 26px; // 15 * 1.7
-  color: #e0e7ff;
-  margin: 0 0 2rem 0;
+  color: #6c757d;
+  margin: 0 0 1.5rem 0;
   font-weight: normal;
+}
+
+.expertise__customerSuccessCard {
+  width: 100%;
+  padding: 2rem 1.5rem;
+  background: #2563eb;
+  border-radius: 0;
+  border: 1px solid #2563eb;
 }
 
 .expertise__customerSuccessLogos {
