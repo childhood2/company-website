@@ -48,8 +48,8 @@
 
 .about__testimonialImageWrap {
   flex-shrink: 0;
-  background: #0000FF;
-  border-radius: 16px;
+  background: #2563eb;
+  border-radius: 0;
   padding: 12px;
   overflow: hidden;
 }
@@ -58,7 +58,7 @@
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 0;
   object-fit: cover;
   aspect-ratio: 3 / 4;
 }
@@ -180,7 +180,7 @@
     top: 2.5rem;
     bottom: 2.5rem;
     width: 0;
-    border-left: 2px dashed #0000FF;
+    border-left: 2px dashed #2563eb;
     opacity: 0.6;
   }
 
@@ -234,7 +234,7 @@
   width: 2.8rem;
   height: 2.8rem;
   border-radius: 50%;
-  background: #0000FF;
+  background: #2563eb;
   color: #fff;
   display: flex;
   align-items: center;
@@ -265,7 +265,7 @@
   background: #fff;
   border: 1px solid #ccccff;
   padding: 1.25rem 1.5rem;
-  border-radius: 8px;
+  border-radius: 0;
   box-shadow: 0 1px 3px rgba(0, 0, 255, 0.08);
 }
 
@@ -348,13 +348,13 @@
 }
 
 .about__experienceItemTitleLink {
-  color: #0000FF;
+  color: #2563eb;
   text-decoration: none;
   transition: color 0.2s ease, text-decoration 0.2s ease;
 
   &:hover {
     text-decoration: underline;
-    color: #0000cc;
+    color: #1d4ed8;
   }
 }
 
@@ -384,7 +384,7 @@
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 
   &:hover {
-    border-color: #0000FF;
+    border-color: #2563eb;
     box-shadow: 0 4px 12px rgba(0, 0, 255, 0.12);
   }
 }
@@ -419,7 +419,7 @@
 .about__experienceMetricValue {
   font-size: 14px;
   font-weight: normal;
-  color: #0000FF;
+  color: #2563eb;
   line-height: 1.4;
   flex-shrink: 0;
 }
@@ -435,7 +435,7 @@
   display: inline-block;
   font-size: 16px;
   font-weight: normal;
-  color: #0000FF;
+  color: #2563eb;
   text-decoration: none;
 
   &:hover {
@@ -459,15 +459,15 @@
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
-  color: #0000FF;
+  color: #2563eb;
   background: white;
-  border: 1px solid #0000FF;
+  border: 1px solid #2563eb;
   border-radius: 0;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
 
   &:hover:not(:disabled) {
-    background: #0000FF;
+    background: #2563eb;
     color: white;
   }
 
@@ -498,18 +498,18 @@
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
   &:hover {
-    border-color: #0000FF;
-    color: #0000FF;
+    border-color: #2563eb;
+    color: #2563eb;
   }
 
   &--current {
-    background: #0000FF;
-    border-color: #0000FF;
+    background: #2563eb;
+    border-color: #2563eb;
     color: white;
 
     &:hover {
-      background: #0000cc;
-      border-color: #0000cc;
+      background: #1d4ed8;
+      border-color: #1d4ed8;
       color: white;
     }
   }
@@ -640,7 +640,7 @@
   font-size: 16px;
   font-weight: normal;
   color: white;
-  background: #0000FF;
+  background: #2563eb;
   border: 2px solid transparent;
   border-radius: 0;
   cursor: pointer;
@@ -648,8 +648,8 @@
 
   &:hover {
     background: white;
-    border-color: #0000FF;
-    color: #0000FF;
+    border-color: #2563eb;
+    color: #2563eb;
   }
 }
 
@@ -726,16 +726,16 @@
   }
 
   &--open {
-    border-color: #0000FF;
+    border-color: #2563eb;
     box-shadow: 0 6px 20px rgba(0, 0, 255, 0.12);
 
     .about__faqQuestion {
-      color: #0000FF;
+      color: #2563eb;
       font-weight: normal;
     }
 
     .about__faqIcon {
-      background: #0000FF;
+      background: #2563eb;
       color: white;
       transform: rotate(0deg);
     }
@@ -759,11 +759,11 @@
   font-family: inherit;
 
   &:hover {
-    color: #0000FF;
+    color: #2563eb;
   }
 
   &:focus {
-    outline: 2px solid #0000FF;
+    outline: 2px solid #2563eb;
     outline-offset: 2px;
   }
 }
@@ -776,7 +776,7 @@
   align-items: center;
   justify-content: center;
   background: #f4f5f7;
-  color: #0000FF;
+  color: #2563eb;
   border-radius: 0;
   font-size: 18px;
   font-weight: normal;
@@ -822,7 +822,7 @@
     margin-bottom: 0.35rem;
 
     &::marker {
-      color: #0000FF;
+      color: #2563eb;
     }
   }
 }
