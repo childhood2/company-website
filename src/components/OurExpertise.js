@@ -60,8 +60,10 @@ function OurExpertise({ embedded }) {
   const [submitted, setSubmitted] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
   const customersTrackWrapRef = useRef(null);
+  const autoScrollPausedUntilRef = useRef(0);
   const scrollStep = 320;
   const oneSetWidth = 1264; // 4 cards * (300px + 1rem gap)
+  const arrowPauseMs = 800; // pause auto-scroll after arrow click so scroll is visible
 
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
@@ -72,6 +74,7 @@ function OurExpertise({ embedded }) {
     if (!el) return;
     const step = 0.5;
     const interval = setInterval(() => {
+      if (Date.now() < autoScrollPausedUntilRef.current) return; // paused for arrow
       el.scrollLeft += step;
       if (el.scrollLeft >= oneSetWidth) el.scrollLeft -= oneSetWidth;
     }, 20);
@@ -166,6 +169,7 @@ function OurExpertise({ embedded }) {
               onClick={() => {
                 const el = customersTrackWrapRef.current;
                 if (el) {
+                  autoScrollPausedUntilRef.current = Date.now() + arrowPauseMs;
                   const target = Math.max(0, el.scrollLeft - scrollStep);
                   el.scrollTo({ left: target, behavior: "smooth" });
                 }
@@ -178,6 +182,7 @@ function OurExpertise({ embedded }) {
               onClick={() => {
                 const el = customersTrackWrapRef.current;
                 if (el) {
+                  autoScrollPausedUntilRef.current = Date.now() + arrowPauseMs;
                   const maxScroll = el.scrollWidth - el.clientWidth;
                   const target = Math.min(maxScroll, el.scrollLeft + scrollStep);
                   el.scrollTo({ left: target, behavior: "smooth" });
