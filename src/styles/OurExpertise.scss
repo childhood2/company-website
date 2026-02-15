@@ -190,13 +190,17 @@
   align-items: center;
   max-width: 280px;
   text-align: center;
+  background: #2563eb;
+  padding: 1.5rem;
+  border-radius: 0;
+  border: 1px solid #2563eb;
 }
 
 .expertise__customerSuccessLogo {
   display: inline-flex;
-  padding: 0;
+  padding: 0.5rem;
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 0;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   flex-shrink: 0;
@@ -204,8 +208,8 @@
   line-height: 0;
 
   &:hover {
-    border-color: #2563eb;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   img {
@@ -227,7 +231,7 @@
 .expertise__customerSuccessReview {
   font-size: 14px;
   line-height: 1.5;
-  color: #495057;
+  color: #e0e7ff;
   margin: 1rem 0 0 0;
   padding: 0;
   font-weight: normal;
@@ -236,7 +240,7 @@
 
 .expertise__customerSuccessAttribution {
   font-size: 13px;
-  color: #6c757d;
+  color: #ffffff;
   margin: 0.5rem 0 0 0;
   padding: 0;
   font-weight: normal;

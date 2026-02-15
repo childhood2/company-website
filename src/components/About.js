@@ -176,7 +176,7 @@ function About({ embedded }) {
               &ldquo;Continuously refining processes to deliver globally impactful products using best practices informed by client feedback.&rdquo;
             </blockquote>
             <div className="about__testimonialAttribution">
-              <p className="about__testimonialName">SÓSTENES APOLLO</p>
+              <p className="about__testimonialName">SÓSTENES APOLLO, Founder</p>
             </div>
           </div>
         </section>
