@@ -66,7 +66,7 @@
 
 .about__testimonialImageWrap {
   flex-shrink: 0;
-  background: #2563eb;
+  background: #007bff;
   border-radius: 0;
   padding: 12px;
   overflow: hidden;
@@ -167,9 +167,9 @@
   overflow: visible;
   align-self: stretch;
   min-height: 0;
-  background: linear-gradient(to bottom, #ffffff 0%, #dbeafe 25%, #93c5fd 55%, #2563eb 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #e6f2ff 25%, #99caff 55%, #007bff 100%);
   border-radius: 0;
-  border: 1px solid #93c5fd;
+  border: 1px solid #66b3ff;
 }
 
 .about__howWeDoItTitle {
@@ -209,7 +209,7 @@
     top: 2.5rem;
     bottom: 2.5rem;
     width: 0;
-    border-left: 2px dashed #2563eb;
+    border-left: 2px dashed #007bff;
     opacity: 0.7;
   }
 
@@ -267,10 +267,10 @@
   justify-content: center;
   flex-shrink: 0;
   background: transparent;
-  color: #2563eb;
+  color: #007bff;
 
   &--launch {
-    color: #2563eb;
+    color: #007bff;
   }
 
   @media screen and (max-width: 768px) {
@@ -282,7 +282,7 @@
 
 .about__howWeDoItIcon {
   font-size: 1.4rem !important;
-  color: #2563eb;
+  color: #007bff;
 
   @media screen and (max-width: 768px) {
     font-size: 1.1rem !important;
