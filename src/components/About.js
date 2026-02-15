@@ -169,7 +169,7 @@ function About({ embedded }) {
       <div className="about__testimonialAndHowWeDoIt">
         <section ref={testimonialRef} className={`about__testimonial${testimonialInView ? " about__testimonial--inView" : ""}`} aria-label="Testimonial">
           <div className="about__testimonialImageWrap">
-            <img src={process.env.PUBLIC_URL + "/1.png"} alt="" className="about__testimonialImage" />
+            <img src={`${process.env.PUBLIC_URL}/1.png?v=2`} alt="" className="about__testimonialImage" />
           </div>
           <div className="about__testimonialContent">
             <blockquote className="about__testimonialQuote">
@@ -194,7 +194,7 @@ function About({ embedded }) {
             <div className="about__howWeDoItContent">
               <h3 className="about__howWeDoItHeading">Gathering Requirements</h3>
               <p className="about__howWeDoItDesc">
-                What&apos;s the problem you want to solve? Who&apos;s your target audience? Together with our client we define the key elements, solution and design.
+                With our client we define the problem, target audience, key elements, solution and design.
               </p>
             </div>
           </li>
@@ -205,7 +205,7 @@ function About({ embedded }) {
             <div className="about__howWeDoItContent">
               <h3 className="about__howWeDoItHeading">Product Design</h3>
               <p className="about__howWeDoItDesc">
-                We work with Design Thinking Methodology and Double Diamond Framework in an agile workflow, focusing on user experience and best UX practices.
+                Design Thinking and Double Diamond in an agile workflow, with a focus on UX.
               </p>
             </div>
           </li>
@@ -216,7 +216,7 @@ function About({ embedded }) {
             <div className="about__howWeDoItContent">
               <h3 className="about__howWeDoItHeading">Technical Assessment</h3>
               <p className="about__howWeDoItDesc">
-                We research and decide the right blend of technologies to implement the solution. We propose a detailed software architecture and integrations with other systems.
+                We choose the right technologies and propose architecture and integrations.
               </p>
             </div>
           </li>
@@ -227,7 +227,7 @@ function About({ embedded }) {
             <div className="about__howWeDoItContent">
               <h3 className="about__howWeDoItHeading">Product Development</h3>
               <p className="about__howWeDoItDesc">
-                We cover big data, powerful visualizations, AI, mobile, web, backend, cloud and infrastructure. Great user experience mixed with state of the art engineering to deliver the best software solution for your target audience in sprints that last 2 weeks.
+                We build across data, AI, mobile, web, backend and cloud in 2-week sprints.
               </p>
             </div>
           </li>
@@ -238,7 +238,7 @@ function About({ embedded }) {
             <div className="about__howWeDoItContent">
               <h3 className="about__howWeDoItHeading">Launch!</h3>
               <p className="about__howWeDoItDesc">
-                We guarantee a high-quality product through automated and manual testing solutions. We can do stress/load testing to ensure high availability and we then automate the deployment process and deliver the software product to your users.
+                We test, run load tests, automate deployment and deliver the product to your users.
               </p>
             </div>
           </li>
