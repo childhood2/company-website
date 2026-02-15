@@ -1,53 +1,59 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="8 12 48 54">
-  <!-- Rocket angle aligned with main logo: up and to the right -->
-  <g transform="rotate(12 32 39)">
+  <!-- Rocket angle a bit more tilted; body drawn thicker -->
+  <g transform="rotate(18 32 39)">
   <path
-    d="M24 42
-       L36 16
-       Q38 12, 43 14
-       Q41 20, 39 26
-       L27 50
+    d="M20 42
+       L42 16
+       Q44 12, 48 14
+       Q46 20, 44 26
+       L24 50
        Z"
     fill="#1565c0"/>
 
   <!-- Rocket window -->
-  <circle cx="34" cy="24" r="2.2" fill="#ffffff" />
+  <circle cx="34" cy="24" r="2.8" fill="#ffffff" />
 
   <!-- Rocket nose highlight -->
   <path
     d="M34 20
-       Q35 18.5, 37 18.8
-       Q35.6 20, 34 20Z"
+       Q35.5 18.5, 38 18.8
+       Q36 20, 34 20Z"
     fill="#bbdefb"/>
 
   <!-- Fins -->
   <path
-    d="M22 44
-       L16 47
-       L19 36
+    d="M20 44
+       L12 48
+       L16 36
+       Z"
+    fill="#1e88e5"/>
+  <path
+    d="M44 44
+       L52 48
+       L48 36
        Z"
     fill="#1e88e5"/>
 
-  <!-- Flame (firing gas), similar angle to main logo -->
+  <!-- Flame (firing gas) -->
   <path
-    d="M25 50
-       Q21 58, 25 63
-       Q29 58, 25 50Z"
+    d="M31 50
+       Q26 58, 31 63
+       Q36 58, 31 50Z"
     fill="#ffb300"/>
 
   <!-- Inner hot flame core -->
   <path
-    d="M25 51
-       Q23 56, 25 60
-       Q27 56, 25 51Z"
+    d="M31 51
+       Q28 56, 31 60
+       Q34 56, 31 51Z"
     fill="#ff7043"/>
 
   <!-- Curved circle wrapping the middle part of the rocket -->
   <path
-    d="M14 38
-       Q20 28, 32 26
-       Q44 28, 50 36
-       Q46 40, 40 38"
+    d="M12 38
+       Q18 26, 32 24
+       Q46 26, 52 36
+       Q48 41, 42 38"
     fill="none"
     stroke="#1e88e5"
     stroke-width="3"
