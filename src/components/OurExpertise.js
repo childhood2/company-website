@@ -59,8 +59,6 @@ function OurExpertise({ embedded }) {
   const [emailError, setEmailError] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
-  const customersTrackWrapRef = useRef(null);
-  const scrollStep = 320; // one card width + gap
 
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
@@ -146,7 +144,7 @@ function OurExpertise({ embedded }) {
         </div>
 
         <section className="expertise__customerSuccess" aria-label="What our clients say about us">
-          <h2 className="expertise__customerSuccessTitle">what our clients say about us</h2>
+          <h2 className="expertise__customerSuccessTitle">What our clients say about us</h2>
           <div className="expertise__customersCarouselWrap">
             <div className="expertise__customersCarousel">
               <div className="expertise__customersSummaryCard expertise__customersSummaryCard--fixed" role="listitem">
