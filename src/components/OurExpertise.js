@@ -181,8 +181,8 @@ function OurExpertise({ embedded }) {
               {CUSTOMER_REVIEWS.map((review, i) => (
                 <div key={i} className="expertise__customersReviewCard" role="listitem">
                   <div className="expertise__customersReviewHeader">
-                    <div className="expertise__customersReviewAvatar" aria-hidden="true">
-                      {review.initial}
+                    <div className="expertise__customersReviewLogo">
+                      <img src={process.env.PUBLIC_URL + review.logo} alt={review.name} />
                     </div>
                     <div className="expertise__customersReviewMeta">
                       <span className="expertise__customersReviewName">{review.name}</span>
