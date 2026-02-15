@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import iconAgile from "../assets/our_expertise/icon-agile.svg";
 import iconAi from "../assets/our_expertise/icon-ai.svg";
 import iconProduct from "../assets/our_expertise/icon-product.svg";
 import iconDevops from "../assets/our_expertise/icon-devops.svg";
 import iconConsulting from "../assets/our_expertise/icon-consulting.svg";
 import iconCloud from "../assets/our_expertise/icon-cloud.svg";
+
+const CUSTOMER_REVIEWS = [
+  { name: "BairesDev", initial: "B", quote: "Apollo Technology delivered exceptional microservices work for our payments integrations. Professional, on time, and a pleasure to work with." },
+  { name: "Exomindset", initial: "E", quote: "Their team brought real expertise to our SaaS platform and digital solutions. We'd recommend them to anyone looking for reliable partners." },
+  { name: "NKey", initial: "N", quote: "The health platform they built with Node.js and NestJS has been rock solid at scale. An excellent partnership from start to finish." },
+  { name: "GLOBAL HITSS", initial: "G", quote: "They helped us automate microservices and cut AWS costs significantly while improving monitoring. A highly skilled team." },
+];
 
 const FAQ_ITEMS = [
   {
@@ -29,7 +36,7 @@ const FAQ_ITEMS = [
     question: "Why Apollo Technology",
     answer: (
       <ul>
-        <li>8+ years of professional software development experience</li>
+        <li>Professional software development experience</li>
         <li>Strong expertise in cloud and distributed systems</li>
         <li>Proven experience with SaaS and fintech platforms</li>
         <li>Focus on scalable, maintainable, and secure solutions</li>
@@ -52,9 +59,20 @@ function OurExpertise({ embedded }) {
   const [emailError, setEmailError] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  const customersCarouselRef = useRef(null);
+
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
+
+  const scrollCustomers = (direction) => {
+    const el = customersCarouselRef.current;
+    if (!el) return;
+    const cardWidth = 320;
+    const gap = 16;
+    const step = (cardWidth + gap) * direction;
+    el.scrollBy({ left: step, behavior: "smooth" });
+  };
 
   return (
     <div>
@@ -135,50 +153,62 @@ function OurExpertise({ embedded }) {
           </div>
         </div>
 
-        <section className="expertise__customerSuccess" aria-label="Customer Success">
-          <h2 className="expertise__customerSuccessTitle">Customer Success</h2>
+        <section className="expertise__customerSuccess" aria-label="Our Customers">
+          <h2 className="expertise__customerSuccessTitle">Our Customers</h2>
           <p className="expertise__customerSuccessSubtitle">
             What our clients say about us
           </p>
-          <div className="expertise__customerSuccessCard">
-          <div className="expertise__customerSuccessLogos">
-            <div className="expertise__customerSuccessItem">
-              <div className="expertise__customerSuccessLogo" title="BairesDev">
-                <img src={process.env.PUBLIC_URL + "/customer-success/bairesdev.svg"} alt="BairesDev" />
+          <div className="expertise__customersCarouselWrap">
+            <button
+              type="button"
+              className="expertise__customersCarouselBtn expertise__customersCarouselBtn--prev"
+              onClick={() => scrollCustomers(-1)}
+              aria-label="Previous reviews"
+            />
+            <div ref={customersCarouselRef} className="expertise__customersCarousel" role="list">
+              <div className="expertise__customersSummaryCard" role="listitem">
+                <div className="expertise__customersSummaryLogo">
+                  <img src={process.env.PUBLIC_URL + "/logo.png"} alt="" />
+                </div>
+                <h3 className="expertise__customersSummaryName">Apollo Technology</h3>
+                <div className="expertise__customersSummaryRating">
+                  <span className="expertise__customersSummaryScore">5.0</span>
+                  <span className="expertise__customersStars" aria-hidden="true">★★★★★</span>
+                </div>
+                <p className="expertise__customersSummaryCount">Based on {CUSTOMER_REVIEWS.length} reviews</p>
+                <p className="expertise__customersSummaryPowered">powered by Google</p>
+                <a
+                  href="https://g.page/r/your-business/review"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="expertise__customersSummaryCta"
+                >
+                  Review us on Google
+                </a>
               </div>
-              <blockquote className="expertise__customerSuccessReview">
-                &ldquo;Apollo Technology delivered exceptional microservices work for our payments integrations. Professional, on time, and a pleasure to work with.&rdquo;
-              </blockquote>
-              <p className="expertise__customerSuccessAttribution">— BairesDev</p>
+              {CUSTOMER_REVIEWS.map((review, i) => (
+                <div key={i} className="expertise__customersReviewCard" role="listitem">
+                  <div className="expertise__customersReviewHeader">
+                    <div className="expertise__customersReviewAvatar" aria-hidden="true">
+                      {review.initial}
+                    </div>
+                    <div className="expertise__customersReviewMeta">
+                      <span className="expertise__customersReviewName">{review.name}</span>
+                      <span className="expertise__customersReviewTime">a year ago</span>
+                    </div>
+                    <span className="expertise__customersReviewGoogle" aria-hidden="true">Google</span>
+                  </div>
+                  <div className="expertise__customersReviewStars" aria-hidden="true">★★★★★</div>
+                  <p className="expertise__customersReviewText">{review.quote}</p>
+                </div>
+              ))}
             </div>
-            <div className="expertise__customerSuccessItem">
-              <div className="expertise__customerSuccessLogo" title="Exomindset">
-                <img src={process.env.PUBLIC_URL + "/customer-success/exomindset.png?v=2"} alt="Exomindset" />
-              </div>
-              <blockquote className="expertise__customerSuccessReview">
-                &ldquo;Their team brought real expertise to our SaaS platform and digital solutions. We&rsquo;d recommend them to anyone looking for reliable partners.&rdquo;
-              </blockquote>
-              <p className="expertise__customerSuccessAttribution">— Exomindset</p>
-            </div>
-            <div className="expertise__customerSuccessItem">
-              <div className="expertise__customerSuccessLogo" title="NKey">
-                <img src={process.env.PUBLIC_URL + "/customer-success/nkey.png?v=2"} alt="NKey" />
-              </div>
-              <blockquote className="expertise__customerSuccessReview">
-                &ldquo;The health platform they built with Node.js and NestJS has been rock solid at scale. An excellent partnership from start to finish.&rdquo;
-              </blockquote>
-              <p className="expertise__customerSuccessAttribution">— NKey</p>
-            </div>
-            <div className="expertise__customerSuccessItem">
-              <div className="expertise__customerSuccessLogo" title="GLOBAL HITSS">
-                <img src={process.env.PUBLIC_URL + "/customer-success/global-hitss.png"} alt="GLOBAL HITSS" />
-              </div>
-              <blockquote className="expertise__customerSuccessReview">
-                &ldquo;They helped us automate microservices and cut AWS costs significantly while improving monitoring. A highly skilled team.&rdquo;
-              </blockquote>
-              <p className="expertise__customerSuccessAttribution">— GLOBAL HITSS</p>
-            </div>
-          </div>
+            <button
+              type="button"
+              className="expertise__customersCarouselBtn expertise__customersCarouselBtn--next"
+              onClick={() => scrollCustomers(1)}
+              aria-label="Next reviews"
+            />
           </div>
         </section>
 

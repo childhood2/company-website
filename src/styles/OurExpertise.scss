@@ -175,78 +175,238 @@
   font-weight: normal;
 }
 
-.expertise__customerSuccessCard {
+// Carousel wrapper: arrows + scrollable track
+.expertise__customersCarouselWrap {
+  position: relative;
   width: 100%;
-  padding: 2rem 1.5rem;
-  background: #ffffff;
-  border-radius: 0;
+  margin-top: 1rem;
+}
+
+.expertise__customersCarousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.expertise__customersCarouselBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   border: 1px solid #d1d5db;
-}
-
-.expertise__customerSuccessLogos {
+  background: #ffffff;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: center;
-  gap: 2rem 2.5rem;
-}
-
-.expertise__customerSuccessItem {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  max-width: 280px;
-  text-align: center;
-}
+  justify-content: center;
 
-.expertise__customerSuccessLogo {
-  display: inline-flex;
-  padding: 0.5rem;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 0;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  flex-shrink: 0;
-  overflow: hidden;
-  line-height: 0;
+  &::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid #374151;
+    border-bottom: 2px solid #374151;
+    transform: rotate(45deg);
+  }
 
   &:hover {
-    border-color: #d1d5db;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: #f4f5f7;
+    border-color: #9ca3af;
   }
+
+  &--prev {
+    left: -12px;
+  }
+
+  &--next {
+    right: -12px;
+
+    &::after {
+      transform: rotate(-135deg);
+    }
+  }
+}
+
+// Summary card (first card: company rating + CTA)
+.expertise__customersSummaryCard {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 280px;
+}
+
+.expertise__customersSummaryLogo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
 
   img {
-    display: block;
-    max-width: 180px;
-    max-height: 56px;
-    width: auto;
-    height: auto;
-    vertical-align: middle;
-    filter: grayscale(0.4);
-    transition: filter 0.2s ease;
-  }
-
-  &:hover img {
-    filter: grayscale(0);
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
   }
 }
 
-.expertise__customerSuccessReview {
-  font-size: 14px;
+.expertise__customersSummaryName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 0.5rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.expertise__customersSummaryRating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.expertise__customersSummaryScore {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #eab308;
+}
+
+.expertise__customersStars {
+  color: #eab308;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.expertise__customersSummaryCount {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0 0 0.75rem 0;
+}
+
+.expertise__customersSummaryPowered {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin: 0 0 1rem 0;
+}
+
+.expertise__customersSummaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: auto;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #1d4ed8;
+  }
+}
+
+// Individual review cards
+.expertise__customersReviewCard {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+}
+
+.expertise__customersReviewHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.expertise__customersReviewAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.expertise__customersReviewMeta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.expertise__customersReviewName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.expertise__customersReviewTime {
+  font-size: 0.8125rem;
+  color: #6c757d;
+  margin-top: 0.125rem;
+}
+
+.expertise__customersReviewGoogle {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.expertise__customersReviewStars {
+  color: #eab308;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.expertise__customersReviewText {
+  font-size: 0.875rem;
   line-height: 1.5;
   color: #374151;
-  margin: 1rem 0 0 0;
-  padding: 0;
-  font-weight: normal;
-  font-style: italic;
-}
-
-.expertise__customerSuccessAttribution {
-  font-size: 13px;
-  color: #6c757d;
-  margin: 0.5rem 0 0 0;
-  padding: 0;
-  font-weight: normal;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 8em;
 }
 
 @media screen and (max-width: 768px) {
@@ -255,25 +415,22 @@
     font-size: 34px;
   }
 
-  .expertise__customerSuccessLogos {
-    gap: 1.5rem 2rem;
+  .expertise__customersCarouselBtn {
+    width: 36px;
+    height: 36px;
+
+    &--prev {
+      left: 4px;
+    }
+
+    &--next {
+      right: 4px;
+    }
   }
 
-  .expertise__customerSuccessItem {
-    max-width: 100%;
-  }
-
-  .expertise__customerSuccessLogo img {
-    max-width: 140px;
-    max-height: 48px;
-  }
-
-  .expertise__customerSuccessReview {
-    font-size: 13px;
-    margin-top: 0.75rem;
-  }
-
-  .expertise__customerSuccessAttribution {
-    font-size: 12px;
+  .expertise__customersSummaryCard,
+  .expertise__customersReviewCard {
+    flex: 0 0 280px;
+    min-height: 260px;
   }
 }

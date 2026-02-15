@@ -154,7 +154,7 @@ function About({ embedded }) {
                 <h1>About Us</h1>
                 <p>
                   Apollo Technology is an IT startup company
-                  founded in June 2019 based in Brazil and
+                  established in 2024, based in Brazil and
                   currently catering to clients in the banking, retail and online
                   retail industries.
                 </p>

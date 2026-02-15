@@ -7,7 +7,7 @@ function Footer() {
     <div className="footer">
       <div className="footer__row">
         <img src={process.env.PUBLIC_URL + "/logo.png"} alt="Apollo Technology" className="footer__logo" />
-        <p>Apollo Technology © 2017</p>
+        <p>Apollo Technology © 2024</p>
       </div>
       <div className="footer__middle">
         <p className="footer__tagline">Building reliable software for businesses worldwide.</p>

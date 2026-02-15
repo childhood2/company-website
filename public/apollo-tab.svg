@@ -1,7 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- White rectangular background, fills almost all favicon area -->
-  <rect x="2" y="2" width="60" height="60" fill="#ffffff" />
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 12 48 54">
   <!-- Launching rocket, pointing up-right, kept bold so it reads at 16x16 -->
   <!-- Rocket body (aligned closer to main logo shape) -->
   <path
