@@ -198,23 +198,16 @@
 .expertise__customersCarouselTrackWrap {
   flex: 1;
   min-width: 0;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .expertise__customersCarouselTrack {
   display: flex;
   gap: 1rem;
   width: max-content;
-  animation: expertise__customersFlow 80s linear infinite;
-}
-
-@keyframes expertise__customersFlow {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-1264px);
-  }
 }
 
 .expertise__customersCarouselBtn {
@@ -250,11 +243,11 @@
   }
 
   &--prev {
-    left: -12px;
+    left: 316px; /* after summary card (300px) + gap (1rem) */
   }
 
   &--next {
-    right: -12px;
+    right: 12px;
 
     &::after {
       transform: rotate(-135deg);
