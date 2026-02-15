@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- White circular background, fills almost all favicon area -->
-  <circle cx="32" cy="32" r="30" fill="#ffffff" />
+  <!-- White rectangular background, fills almost all favicon area -->
+  <rect x="2" y="2" width="60" height="60" fill="#ffffff" />
 
   <!-- Launching rocket, pointing up-right, kept bold so it reads at 16x16 -->
   <!-- Rocket body (aligned closer to main logo shape) -->
