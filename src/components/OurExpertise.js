@@ -175,17 +175,20 @@ function OurExpertise({ embedded }) {
                   <span className="expertise__customersSummaryScore">5.0</span>
                   <span className="expertise__customersStars" aria-hidden="true">★★★★★</span>
                 </div>
+                <p className="expertise__customersSummaryCount">Based on {CUSTOMER_REVIEWS.length} reviews</p>
+                <p className="expertise__customersSummaryPowered">powered by Google</p>
               </div>
               {CUSTOMER_REVIEWS.map((review, i) => (
                 <div key={i} className="expertise__customersReviewCard" role="listitem">
                   <div className="expertise__customersReviewHeader">
-                    <div className="expertise__customersReviewLogo">
-                      <img src={process.env.PUBLIC_URL + review.logo} alt={review.name} />
+                    <div className="expertise__customersReviewAvatar" aria-hidden="true">
+                      {review.initial}
                     </div>
                     <div className="expertise__customersReviewMeta">
                       <span className="expertise__customersReviewName">{review.name}</span>
                       <span className="expertise__customersReviewTime">{review.timeAgo}</span>
                     </div>
+                    <span className="expertise__customersReviewGoogle" aria-hidden="true">Google</span>
                   </div>
                   <div className="expertise__customersReviewStars" aria-hidden="true">★★★★★</div>
                   <p className="expertise__customersReviewText">{review.quote}</p>
