@@ -75,11 +75,15 @@ function OurExpertise({ embedded }) {
     const tick = () => {
       const el = customersTrackWrapRef.current;
       if (el && Date.now() >= autoScrollPausedUntilRef.current) {
-        // One set = 1/4 of track (we render 4 duplicate sets so we never hit the end on wide viewports)
         const oneSetWidth = el.scrollWidth / 4;
+        const maxScroll = el.scrollWidth - el.clientWidth;
         if (oneSetWidth > 0) {
           let next = el.scrollLeft + step;
-          if (next >= oneSetWidth) next = next % oneSetWidth;
+          // Wrap when we pass one set, or when we hit the right edge (browser caps scrollLeft at maxScroll)
+          if (next >= oneSetWidth || next >= maxScroll - 1) {
+            next = next % oneSetWidth;
+            if (next < 0) next += oneSetWidth;
+          }
           el.scrollLeft = next;
         }
       }
