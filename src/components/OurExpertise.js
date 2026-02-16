@@ -75,8 +75,8 @@ function OurExpertise({ embedded }) {
     const tick = () => {
       const el = customersTrackWrapRef.current;
       if (el && Date.now() >= autoScrollPausedUntilRef.current) {
-        // One set = half of total track (we have 2 duplicate sets); use actual width for correct wrap
-        const oneSetWidth = el.scrollWidth / 2;
+        // One set = 1/4 of track (we render 4 duplicate sets so we never hit the end on wide viewports)
+        const oneSetWidth = el.scrollWidth / 4;
         if (oneSetWidth > 0) {
           let next = el.scrollLeft + step;
           if (next >= oneSetWidth) next = next % oneSetWidth;
@@ -215,7 +215,7 @@ function OurExpertise({ embedded }) {
               </div>
               <div className="expertise__customersCarouselTrackWrap" ref={customersTrackWrapRef}>
                 <div className="expertise__customersCarouselTrack" role="list">
-                  {[0, 1].map((segment) => (
+                  {[0, 1, 2, 3].map((segment) => (
                     <React.Fragment key={segment}>
                       {CUSTOMER_REVIEWS.map((review, i) => (
                         <div key={`${segment}-${i}`} className="expertise__customersReviewCard" role="listitem">
