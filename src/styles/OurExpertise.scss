@@ -200,22 +200,27 @@
 .expertise__customersCarouselTrackWrap {
   flex: 1;
   min-width: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  overflow: hidden;
 }
 
 .expertise__customersCarouselTrack {
   display: flex;
   gap: 1rem;
   width: max-content;
+  animation: expertise__customersFlow 80s linear infinite;
+}
+
+.expertise__customersCarouselWrap--paused .expertise__customersCarouselTrack {
+  animation-play-state: paused;
+}
+
+@keyframes expertise__customersFlow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1248px);
+  }
 }
 
 .expertise__customersCarouselBtn {
