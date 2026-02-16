@@ -63,18 +63,59 @@ function OurExpertise({ embedded }) {
   const [submitted, setSubmitted] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
   const [carouselPaused, setCarouselPaused] = useState(false);
+  const customersTrackRef = useRef(null);
+  const customersTrackWrapRef = useRef(null);
 
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
 
-  const handleCarouselArrowClick = () => {
-    // Pause animation so user can read content
+  const handleCarouselArrowClick = (direction) => {
+    const track = customersTrackRef.current;
+    const wrap = customersTrackWrapRef.current;
+    if (!track || !wrap) return;
+    
+    // Pause CSS animation
     setCarouselPaused(true);
-    // Resume after 2 seconds
+    
+    // Get current transform value
+    const style = window.getComputedStyle(track);
+    const matrix = new DOMMatrix(style.transform);
+    const currentX = matrix.m41; // translateX value
+    
+    // Calculate step (one card width)
+    const step = 320;
+    const oneSetWidth = 1248; // 4 cards * 300px + 3 gaps * 16px
+    
+    let newX = currentX;
+    if (direction === "next") {
+      newX = currentX - step; // Move left (negative)
+    } else {
+      newX = currentX + step; // Move right (positive)
+    }
+    
+    // Wrap if needed
+    if (newX <= -oneSetWidth) {
+      newX = newX % (-oneSetWidth);
+    }
+    if (newX > 0) {
+      newX = newX % (-oneSetWidth);
+    }
+    
+    // Apply transform directly (override animation temporarily)
+    track.style.transform = `translateX(${newX}px)`;
+    track.style.transition = "transform 0.3s ease";
+    
+    // Resume animation after scroll completes
     setTimeout(() => {
-      setCarouselPaused(false);
-    }, 2000);
+      track.style.transition = "";
+      // Reset animation by removing and re-adding the class
+      track.style.animation = "none";
+      setTimeout(() => {
+        track.style.animation = "";
+        setCarouselPaused(false);
+      }, 10);
+    }, 300);
   };
 
   return (
@@ -162,14 +203,14 @@ function OurExpertise({ embedded }) {
             <button
               type="button"
               className="expertise__customersCarouselBtn expertise__customersCarouselBtn--prev"
-              onClick={handleCarouselArrowClick}
-              aria-label="Pause reviews"
+              onClick={() => handleCarouselArrowClick("prev")}
+              aria-label="Previous reviews"
             />
             <button
               type="button"
               className="expertise__customersCarouselBtn expertise__customersCarouselBtn--next"
-              onClick={handleCarouselArrowClick}
-              aria-label="Pause reviews"
+              onClick={() => handleCarouselArrowClick("next")}
+              aria-label="Next reviews"
             />
             <div className="expertise__customersCarousel">
               <div className="expertise__customersSummaryCard expertise__customersSummaryCard--fixed" role="listitem">
@@ -184,8 +225,8 @@ function OurExpertise({ embedded }) {
                 <p className="expertise__customersSummaryCount">Based on {CUSTOMER_REVIEWS.length} reviews</p>
                 <p className="expertise__customersSummaryPowered">powered by <img src={process.env.PUBLIC_URL + "/google.svg"} alt="Google" className="expertise__customersGoogleIcon" /></p>
               </div>
-              <div className="expertise__customersCarouselTrackWrap">
-                <div className="expertise__customersCarouselTrack" role="list">
+              <div className="expertise__customersCarouselTrackWrap" ref={customersTrackWrapRef}>
+                <div className="expertise__customersCarouselTrack" ref={customersTrackRef} role="list">
                   {Array.from({ length: CUSTOMER_CAROUSEL_SEGMENTS }, (_, segment) => (
                     <React.Fragment key={segment}>
                       {CUSTOMER_REVIEWS.map((review, i) => (

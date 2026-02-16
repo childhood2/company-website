@@ -207,7 +207,9 @@
   display: flex;
   gap: 1rem;
   width: max-content;
+  will-change: transform;
   animation: expertise__customersFlow 80s linear infinite;
+  animation-fill-mode: both;
 }
 
 .expertise__customersCarouselWrap--paused .expertise__customersCarouselTrack {
