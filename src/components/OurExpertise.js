@@ -62,7 +62,6 @@ function OurExpertise({ embedded }) {
   const customersTrackWrapRef = useRef(null);
   const autoScrollPausedUntilRef = useRef(0);
   const scrollStep = 320;
-  const oneSetWidth = 1264; // 4 cards * (300px + 1rem gap)
   const arrowPauseMs = 800; // pause auto-scroll after arrow click so scroll is visible
 
   useEffect(() => {
@@ -70,16 +69,26 @@ function OurExpertise({ embedded }) {
   }, [embedded]);
 
   useEffect(() => {
-    const el = customersTrackWrapRef.current;
-    if (!el) return;
+    let rafId = null;
     const step = 0.5;
-    const interval = setInterval(() => {
-      if (Date.now() < autoScrollPausedUntilRef.current) return; // paused for arrow
-      // Always wrap within one set so animation never hits the end (unlimited cycles)
-      const next = (el.scrollLeft + step) % oneSetWidth;
-      el.scrollLeft = next < 0 ? next + oneSetWidth : next;
-    }, 20);
-    return () => clearInterval(interval);
+
+    const tick = () => {
+      const el = customersTrackWrapRef.current;
+      if (el && Date.now() >= autoScrollPausedUntilRef.current) {
+        // One set = half of total track (we have 2 duplicate sets); use actual width for correct wrap
+        const oneSetWidth = el.scrollWidth / 2;
+        if (oneSetWidth > 0) {
+          let next = el.scrollLeft + step;
+          if (next >= oneSetWidth) next = next % oneSetWidth;
+          el.scrollLeft = next;
+        }
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+    return () => {
+      if (rafId != null) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
