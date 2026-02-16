@@ -13,8 +13,8 @@ const CUSTOMER_REVIEWS = [
   { name: "GLOBAL HITSS", logo: "/customer-success/global-hitss.png", timeAgo: "5 years ago", quote: "They helped us automate microservices and cut AWS costs significantly while improving monitoring. A highly skilled team." },
 ];
 
-// 2 segments for seamless CSS infinite animation (no edge, never stops)
-const CUSTOMER_CAROUSEL_SEGMENTS = 2;
+// Multiple segments so we always wrap before hitting the edge (never stops)
+const CUSTOMER_CAROUSEL_SEGMENTS = 6;
 
 const FAQ_ITEMS = [
   {
@@ -82,11 +82,10 @@ function OurExpertise({ embedded }) {
         const maxScroll = el.scrollWidth - el.clientWidth;
         if (oneSetWidth > 0 && maxScroll > 0) {
           let next = el.scrollLeft + step;
-          // Always wrap before hitting the edge - wrap when we're within 10px of oneSetWidth or maxScroll
-          if (next >= oneSetWidth - 10 || next >= maxScroll - 10) {
-            next = (next % oneSetWidth);
-            if (next < 0) next += oneSetWidth;
-          }
+          // Always keep scrollLeft in [0, oneSetWidth) using modulo - this ensures we never hit the edge
+          // The modulo operation wraps us back to the start seamlessly since we have duplicate content
+          next = next % oneSetWidth;
+          if (next < 0) next += oneSetWidth;
           el.scrollLeft = next;
         }
       }
@@ -103,22 +102,22 @@ function OurExpertise({ embedded }) {
     if (el) {
       autoScrollPausedUntilRef.current = Date.now() + arrowPauseMs;
       const oneSetWidth = el.scrollWidth / CUSTOMER_CAROUSEL_SEGMENTS;
-      const maxScroll = el.scrollWidth - el.clientWidth;
       const current = el.scrollLeft;
       let target;
       
       if (direction === "next") {
         target = current + scrollStep;
-        if (target >= oneSetWidth - 10 || target >= maxScroll - 10) {
-          target = (target % oneSetWidth);
-        }
-        target = Math.min(target, maxScroll);
+        // Wrap using modulo to keep in [0, oneSetWidth)
+        target = target % oneSetWidth;
+        if (target < 0) target += oneSetWidth;
       } else {
         target = current - scrollStep;
+        // Wrap backwards: if negative, wrap to end of set
         if (target < 0) {
           target = oneSetWidth - (Math.abs(target) % oneSetWidth);
+        } else {
+          target = target % oneSetWidth;
         }
-        target = Math.max(0, target);
       }
       
       el.scrollTo({ left: target, behavior: "smooth" });
