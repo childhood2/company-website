@@ -75,8 +75,9 @@ function OurExpertise({ embedded }) {
     const step = 0.5;
     const interval = setInterval(() => {
       if (Date.now() < autoScrollPausedUntilRef.current) return; // paused for arrow
-      el.scrollLeft += step;
-      if (el.scrollLeft >= oneSetWidth) el.scrollLeft -= oneSetWidth;
+      // Always wrap within one set so animation never hits the end (unlimited cycles)
+      const next = (el.scrollLeft + step) % oneSetWidth;
+      el.scrollLeft = next < 0 ? next + oneSetWidth : next;
     }, 20);
     return () => clearInterval(interval);
   }, []);
