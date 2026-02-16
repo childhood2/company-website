@@ -13,8 +13,8 @@ const CUSTOMER_REVIEWS = [
   { name: "GLOBAL HITSS", logo: "/customer-success/global-hitss.png", timeAgo: "5 years ago", quote: "They helped us automate microservices and cut AWS costs significantly while improving monitoring. A highly skilled team." },
 ];
 
-// Multiple segments for scroll-based infinite loop
-const CUSTOMER_CAROUSEL_SEGMENTS = 4;
+// Many segments so maxScroll is always much larger than oneSetWidth (ensures we can wrap before hitting edge)
+const CUSTOMER_CAROUSEL_SEGMENTS = 10;
 
 const FAQ_ITEMS = [
   {
@@ -81,15 +81,16 @@ function OurExpertise({ embedded }) {
         const oneSetWidth = el.scrollWidth / CUSTOMER_CAROUSEL_SEGMENTS;
         const maxScroll = el.scrollWidth - el.clientWidth;
         if (oneSetWidth > 0 && maxScroll > 0) {
-          let next = el.scrollLeft + step;
           const current = el.scrollLeft;
+          let next = current + step;
           
-          // Wrap BEFORE hitting maxScroll or oneSetWidth - wrap when within 100px of either
-          // This ensures we never hit the edge on left or right side
-          const wrapThreshold = Math.min(oneSetWidth - 100, maxScroll - 100);
+          // Always keep scrollLeft in [0, oneSetWidth) using modulo - this ensures infinite loop
+          // We never exceed oneSetWidth, so we never approach maxScroll
+          next = next % oneSetWidth;
+          if (next < 0) next += oneSetWidth;
           
-          if (current >= wrapThreshold || next >= wrapThreshold) {
-            // Wrap to start of loop (0) for seamless infinite scroll
+          // Safety check: if current position is stuck at edge, force wrap
+          if (current >= maxScroll - 5) {
             next = 0;
           }
           
