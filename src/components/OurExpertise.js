@@ -13,6 +13,8 @@ const CUSTOMER_REVIEWS = [
   { name: "GLOBAL HITSS", logo: "/customer-success/global-hitss.png", timeAgo: "5 years ago", quote: "They helped us automate microservices and cut AWS costs significantly while improving monitoring. A highly skilled team." },
 ];
 
+const CUSTOMER_CAROUSEL_SEGMENTS = 8; // duplicate sets so we always wrap before hitting the edge
+
 const FAQ_ITEMS = [
   {
     question: "What We Do",
@@ -75,15 +77,18 @@ function OurExpertise({ embedded }) {
     const tick = () => {
       const el = customersTrackWrapRef.current;
       if (el && Date.now() >= autoScrollPausedUntilRef.current) {
-        const oneSetWidth = el.scrollWidth / 4;
+        const oneSetWidth = el.scrollWidth / CUSTOMER_CAROUSEL_SEGMENTS;
         const maxScroll = el.scrollWidth - el.clientWidth;
         if (oneSetWidth > 0) {
-          let next = el.scrollLeft + step;
-          // Wrap when we pass one set, or when we hit the right edge (browser caps scrollLeft at maxScroll)
-          if (next >= oneSetWidth || next >= maxScroll - 1) {
-            next = next % oneSetWidth;
-            if (next < 0) next += oneSetWidth;
+          let next;
+          // If we're stuck at the right edge (browser caps scrollLeft), jump back into the loop
+          if (el.scrollLeft >= maxScroll - 2 || el.scrollLeft >= oneSetWidth) {
+            next = el.scrollLeft % oneSetWidth;
+          } else {
+            next = el.scrollLeft + step;
+            if (next >= oneSetWidth) next = next % oneSetWidth;
           }
+          if (next < 0) next += oneSetWidth;
           el.scrollLeft = next;
         }
       }
@@ -219,7 +224,7 @@ function OurExpertise({ embedded }) {
               </div>
               <div className="expertise__customersCarouselTrackWrap" ref={customersTrackWrapRef}>
                 <div className="expertise__customersCarouselTrack" role="list">
-                  {[0, 1, 2, 3].map((segment) => (
+                  {Array.from({ length: CUSTOMER_CAROUSEL_SEGMENTS }, (_, segment) => (
                     <React.Fragment key={segment}>
                       {CUSTOMER_REVIEWS.map((review, i) => (
                         <div key={`${segment}-${i}`} className="expertise__customersReviewCard" role="listitem">
