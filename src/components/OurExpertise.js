@@ -81,11 +81,25 @@ function OurExpertise({ embedded }) {
         const oneSetWidth = el.scrollWidth / CUSTOMER_CAROUSEL_SEGMENTS;
         const maxScroll = el.scrollWidth - el.clientWidth;
         if (oneSetWidth > 0 && maxScroll > 0) {
-          let next = el.scrollLeft + step;
-          // Always keep scrollLeft in [0, oneSetWidth) using modulo - this ensures we never hit the edge
-          // The modulo operation wraps us back to the start seamlessly since we have duplicate content
-          next = next % oneSetWidth;
-          if (next < 0) next += oneSetWidth;
+          const current = el.scrollLeft;
+          let next = current + step;
+          
+          // If we're already stuck at or near maxScroll, force wrap immediately
+          if (current >= maxScroll - 50) {
+            next = current % oneSetWidth;
+            if (next < 0) next += oneSetWidth;
+            if (next > maxScroll - 200) next = 0;
+          }
+          // Wrap BEFORE hitting maxScroll - wrap when we're within 200px of the edge
+          else if (next >= maxScroll - 200 || next >= oneSetWidth) {
+            next = next % oneSetWidth;
+            if (next < 0) next += oneSetWidth;
+            // If wrapped position is still too close to maxScroll, wrap to 0
+            if (next > maxScroll - 200) {
+              next = 0;
+            }
+          }
+          
           el.scrollLeft = next;
         }
       }
