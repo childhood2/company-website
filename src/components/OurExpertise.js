@@ -13,8 +13,8 @@ const CUSTOMER_REVIEWS = [
   { name: "GLOBAL HITSS", logo: "/customer-success/global-hitss.png", timeAgo: "5 years ago", quote: "They helped us automate microservices and cut AWS costs significantly while improving monitoring. A highly skilled team." },
 ];
 
-// Multiple segments so we always wrap before hitting the edge (never stops)
-const CUSTOMER_CAROUSEL_SEGMENTS = 6;
+// Multiple segments for scroll-based infinite loop
+const CUSTOMER_CAROUSEL_SEGMENTS = 4;
 
 const FAQ_ITEMS = [
   {
@@ -81,23 +81,16 @@ function OurExpertise({ embedded }) {
         const oneSetWidth = el.scrollWidth / CUSTOMER_CAROUSEL_SEGMENTS;
         const maxScroll = el.scrollWidth - el.clientWidth;
         if (oneSetWidth > 0 && maxScroll > 0) {
+          let next = el.scrollLeft + step;
           const current = el.scrollLeft;
-          let next = current + step;
           
-          // If we're already stuck at or near maxScroll, force wrap immediately
-          if (current >= maxScroll - 50) {
-            next = current % oneSetWidth;
-            if (next < 0) next += oneSetWidth;
-            if (next > maxScroll - 200) next = 0;
-          }
-          // Wrap BEFORE hitting maxScroll - wrap when we're within 200px of the edge
-          else if (next >= maxScroll - 200 || next >= oneSetWidth) {
-            next = next % oneSetWidth;
-            if (next < 0) next += oneSetWidth;
-            // If wrapped position is still too close to maxScroll, wrap to 0
-            if (next > maxScroll - 200) {
-              next = 0;
-            }
+          // Wrap BEFORE hitting maxScroll or oneSetWidth - wrap when within 100px of either
+          // This ensures we never hit the edge on left or right side
+          const wrapThreshold = Math.min(oneSetWidth - 100, maxScroll - 100);
+          
+          if (current >= wrapThreshold || next >= wrapThreshold) {
+            // Wrap to start of loop (0) for seamless infinite scroll
+            next = 0;
           }
           
           el.scrollLeft = next;
@@ -121,12 +114,10 @@ function OurExpertise({ embedded }) {
       
       if (direction === "next") {
         target = current + scrollStep;
-        // Wrap using modulo to keep in [0, oneSetWidth)
         target = target % oneSetWidth;
         if (target < 0) target += oneSetWidth;
       } else {
         target = current - scrollStep;
-        // Wrap backwards: if negative, wrap to end of set
         if (target < 0) {
           target = oneSetWidth - (Math.abs(target) % oneSetWidth);
         } else {
