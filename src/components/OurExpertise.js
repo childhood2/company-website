@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import iconAgile from "../assets/our_expertise/icon-agile.svg";
 import iconAi from "../assets/our_expertise/icon-ai.svg";
 import iconProduct from "../assets/our_expertise/icon-product.svg";
@@ -62,15 +62,67 @@ function OurExpertise({ embedded }) {
   const [emailError, setEmailError] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
-  const [carouselPaused, setCarouselPaused] = useState(false);
+  const customersTrackWrapRef = useRef(null);
+  const autoScrollPausedUntilRef = useRef(0);
+  const scrollStep = 320;
+  const arrowPauseMs = 1000;
 
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
 
-  const handleCarouselArrowClick = () => {
-    setCarouselPaused(true);
-    setTimeout(() => setCarouselPaused(false), 1200);
+  useEffect(() => {
+    let rafId = null;
+    const step = 0.5;
+
+    const tick = () => {
+      const el = customersTrackWrapRef.current;
+      if (el && Date.now() >= autoScrollPausedUntilRef.current) {
+        const oneSetWidth = el.scrollWidth / CUSTOMER_CAROUSEL_SEGMENTS;
+        const maxScroll = el.scrollWidth - el.clientWidth;
+        if (oneSetWidth > 0 && maxScroll > 0) {
+          let next = el.scrollLeft + step;
+          // Always wrap before hitting the edge - wrap when we're within 10px of oneSetWidth or maxScroll
+          if (next >= oneSetWidth - 10 || next >= maxScroll - 10) {
+            next = (next % oneSetWidth);
+            if (next < 0) next += oneSetWidth;
+          }
+          el.scrollLeft = next;
+        }
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+    return () => {
+      if (rafId != null) cancelAnimationFrame(rafId);
+    };
+  }, []);
+
+  const handleCarouselArrowClick = (direction) => {
+    const el = customersTrackWrapRef.current;
+    if (el) {
+      autoScrollPausedUntilRef.current = Date.now() + arrowPauseMs;
+      const oneSetWidth = el.scrollWidth / CUSTOMER_CAROUSEL_SEGMENTS;
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      const current = el.scrollLeft;
+      let target;
+      
+      if (direction === "next") {
+        target = current + scrollStep;
+        if (target >= oneSetWidth - 10 || target >= maxScroll - 10) {
+          target = (target % oneSetWidth);
+        }
+        target = Math.min(target, maxScroll);
+      } else {
+        target = current - scrollStep;
+        if (target < 0) {
+          target = oneSetWidth - (Math.abs(target) % oneSetWidth);
+        }
+        target = Math.max(0, target);
+      }
+      
+      el.scrollTo({ left: target, behavior: "smooth" });
+    }
   };
 
   return (
@@ -154,17 +206,17 @@ function OurExpertise({ embedded }) {
 
         <section className="expertise__customerSuccess" aria-label="What our clients say about us">
           <h2 className="expertise__customerSuccessTitle">What our clients say about us</h2>
-          <div className={`expertise__customersCarouselWrap ${carouselPaused ? "expertise__customersCarouselWrap--paused" : ""}`}>
+          <div className="expertise__customersCarouselWrap">
             <button
               type="button"
               className="expertise__customersCarouselBtn expertise__customersCarouselBtn--prev"
-              onClick={handleCarouselArrowClick}
+              onClick={() => handleCarouselArrowClick("prev")}
               aria-label="Previous reviews"
             />
             <button
               type="button"
               className="expertise__customersCarouselBtn expertise__customersCarouselBtn--next"
-              onClick={handleCarouselArrowClick}
+              onClick={() => handleCarouselArrowClick("next")}
               aria-label="Next reviews"
             />
             <div className="expertise__customersCarousel">
@@ -180,7 +232,7 @@ function OurExpertise({ embedded }) {
                 <p className="expertise__customersSummaryCount">Based on {CUSTOMER_REVIEWS.length} reviews</p>
                 <p className="expertise__customersSummaryPowered">powered by <img src={process.env.PUBLIC_URL + "/google.svg"} alt="Google" className="expertise__customersGoogleIcon" /></p>
               </div>
-              <div className="expertise__customersCarouselTrackWrap">
+              <div className="expertise__customersCarouselTrackWrap" ref={customersTrackWrapRef}>
                 <div className="expertise__customersCarouselTrack" role="list">
                   {Array.from({ length: CUSTOMER_CAROUSEL_SEGMENTS }, (_, segment) => (
                     <React.Fragment key={segment}>
