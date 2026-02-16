@@ -435,22 +435,71 @@
     font-size: 34px;
   }
 
+  // Mobile: stack summary above track so content is visible; one card at a time in track
+  .expertise__customersCarouselWrap {
+    padding: 0.75rem;
+  }
+
+  .expertise__customersCarousel {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .expertise__customersSummaryCard--fixed {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .expertise__customersCarouselTrackWrap {
+    width: 100%;
+    padding-left: 44px;
+    padding-right: 44px;
+    box-sizing: border-box;
+  }
+
+  .expertise__customersCarouselTrack {
+    gap: 0.75rem;
+  }
+
+  // One review card per view on mobile so text isn’t truncated (visible area ≈ 100vw - wrap padding - arrow padding)
+  .expertise__customersReviewCard {
+    flex: 0 0 calc(100vw - 1.5rem - 88px);
+    min-width: calc(100vw - 1.5rem - 88px);
+    min-height: 200px;
+  }
+
+  .expertise__customersSummaryCard {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 200px;
+  }
+
   .expertise__customersCarouselBtn {
     width: 36px;
     height: 36px;
 
     &--prev {
-      left: 4px;
+      left: 0.5rem;
     }
 
     &--next {
-      right: 4px;
+      right: 0.5rem;
     }
   }
+}
 
-  .expertise__customersSummaryCard,
+@media screen and (max-width: 480px) {
+  .expertise__customerSuccessTitle {
+    font-size: 28px;
+  }
+
+  .expertise__customersCarouselWrap {
+    padding: 0.5rem;
+  }
+
   .expertise__customersReviewCard {
-    flex: 0 0 280px;
-    min-height: 200px;
+    flex: 0 0 calc(100vw - 1rem - 88px);
+    min-width: calc(100vw - 1rem - 88px);
   }
 }
