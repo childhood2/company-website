@@ -159,7 +159,7 @@
   }
 }
 
-// How We Do It section — gradient background white to blue (sits in right column of wrapper)
+// How We Do It section — white background with irregular orange border shape
 .about__howWeDoIt {
   width: 100%;
   min-width: 0;
@@ -167,8 +167,37 @@
   overflow: visible;
   align-self: stretch;
   min-height: 0;
-  background: linear-gradient(to bottom, #ffffff 0%, #e6f2ff 25%, #99caff 55%, #007bff 100%);
+  background: #ffffff;
   border-radius: 0;
+  position: relative;
+  border: 3px solid #2563eb;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 90%,
+    98% 95%,
+    95% 92%,
+    92% 97%,
+    88% 94%,
+    85% 99%,
+    80% 96%,
+    75% 100%,
+    70% 97%,
+    65% 100%,
+    60% 96%,
+    55% 99%,
+    50% 95%,
+    45% 98%,
+    40% 94%,
+    35% 97%,
+    30% 93%,
+    25% 96%,
+    20% 92%,
+    15% 95%,
+    10% 91%,
+    5% 94%,
+    0% 90%
+  );
 }
 
 .about__howWeDoItTitle {
@@ -199,25 +228,10 @@
   padding: 0;
   margin: 0;
   position: relative;
-  padding-left: 3rem;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 1.4rem;
-    top: 2.5rem;
-    bottom: 2.5rem;
-    width: 0;
-    border-left: 2px dashed #007bff;
-    opacity: 0.7;
-  }
+  padding-left: 0;
 
   @media screen and (max-width: 768px) {
-    padding-left: 2.5rem;
-
-    &::before {
-      left: 1rem;
-    }
+    padding-left: 0;
   }
 }
 
@@ -228,6 +242,8 @@
   transform: translateY(120px) scale(0.92);
   transition: none;
   will-change: transform, opacity;
+  display: flex;
+  align-items: flex-start;
 
   .about__howWeDoIt--inView & {
     animation: about__howWeDoItStepIn 1s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
@@ -256,32 +272,35 @@
 }
 
 .about__howWeDoItIconWrap {
-  position: absolute;
-  left: -3rem;
-  top: 0.1rem;
-  width: 2.8rem;
-  height: 2.8rem;
-  display: flex;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: transparent;
-  color: #007bff;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 50%;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
 
   &--launch {
-    color: #007bff;
+    color: #ffffff;
   }
 
   @media screen and (max-width: 768px) {
-    left: -2.5rem;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.75rem;
   }
 }
 
 .about__howWeDoItIcon {
   font-size: 1.4rem !important;
-  color: #007bff;
+  color: #ffffff;
 
   @media screen and (max-width: 768px) {
     font-size: 1.1rem !important;
@@ -289,8 +308,10 @@
 }
 
 .about__howWeDoItContent {
-  padding: 1.25rem 0 0 0;
+  padding: 0;
   border-radius: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .about__howWeDoItHeading {
