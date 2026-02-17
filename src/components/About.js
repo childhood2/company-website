@@ -168,9 +168,6 @@ function About({ embedded }) {
 
       <div className="about__testimonialAndHowWeDoIt">
         <section ref={testimonialRef} className={`about__testimonial${testimonialInView ? " about__testimonial--inView" : ""}`} aria-label="Testimonial">
-          <div className="about__testimonialImageWrap">
-            <img src={`${process.env.PUBLIC_URL}/1.png?v=2`} alt="" className="about__testimonialImage" />
-          </div>
           <div className="about__testimonialContent">
             <blockquote className="about__testimonialQuote">
               &ldquo;Continuously refining processes to deliver globally impactful products using best practices informed by client feedback.&rdquo;
@@ -178,6 +175,9 @@ function About({ embedded }) {
             <div className="about__testimonialAttribution">
               <p className="about__testimonialName">SÓSTENES APOLLO, Founder</p>
             </div>
+          </div>
+          <div className="about__testimonialImageWrap">
+            <img src={`${process.env.PUBLIC_URL}/1.png?v=2`} alt="" className="about__testimonialImage" />
           </div>
         </section>
 
