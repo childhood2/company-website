@@ -133,17 +133,31 @@ function About({ embedded }) {
       )}
 
       <div className="about__testimonialWrapper">
-        <section ref={testimonialRef} className={`about__testimonial${testimonialInView ? " about__testimonial--inView" : ""}`} aria-label="Testimonial">
-          <div className="about__testimonialContent">
-            <blockquote className="about__testimonialQuote">
-              &ldquo;Continuously refining processes to deliver globally impactful products using best practices informed by client feedback.&rdquo;
-            </blockquote>
-            <div className="about__testimonialAttribution">
-              <p className="about__testimonialName">SÓSTENES APOLLO, Founder</p>
+        <section ref={testimonialRef} className={`about__testimonial${testimonialInView ? " about__testimonial--inView" : ""}`} aria-label="About Us">
+          <div className="about__testimonialImageColumn">
+            <div className="about__testimonialImageWrap">
+              <img src={`${process.env.PUBLIC_URL}/1.png?v=2`} alt="Sóstenes Apollo, Founder" className="about__testimonialImage" />
+            </div>
+            <div className="about__testimonialQuoteBelow">
+              <blockquote className="about__testimonialQuoteSmall">
+                &ldquo;Continuously refining processes to deliver globally impactful products using best practices informed by client feedback.&rdquo;
+              </blockquote>
+              <p className="about__testimonialNameSmall">SÓSTENES APOLLO, Founder</p>
             </div>
           </div>
-          <div className="about__testimonialImageWrap">
-            <img src={`${process.env.PUBLIC_URL}/1.png?v=2`} alt="" className="about__testimonialImage" />
+          <div className="about__testimonialContent">
+            <h2 className="about__testimonialTitle">Who We Are</h2>
+            <div className="about__testimonialText">
+              <p>
+                Our journey began with a simple yet powerful principle: <strong>&ldquo;Delivering Superior Customer Satisfaction Through Top-Notch Services And Quality.&rdquo;</strong> Apollo Technology was established in 2024 by seasoned professionals based on technology development, sales, marketing, and first-rate customer service.
+              </p>
+              <p>
+                The core principles of our success have been integrity, transparency, and dependability—values that our founders envisioned for our business. We combine industry-leading technologies with deep engineering expertise to build scalable microservices, cloud-native applications, AI-enabled platforms, and SaaS products that drive innovation, operational efficiency, and sustainable growth for our clients.
+              </p>
+              <p>
+                We work closely with our clients as a long-term technology partner, adapting to their needs and ensuring that solutions remain reliable as their businesses grow. Our mission is to help organizations build and operate dependable software systems that support growth, efficiency, and innovation.
+              </p>
+            </div>
           </div>
         </section>
       </div>
