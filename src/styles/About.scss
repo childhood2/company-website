@@ -42,13 +42,13 @@
   padding: 3rem 0 2rem;
 }
 
-// About Us section — layout: image column (left) with quote below, content (right)
+// About Us section — layout: content (left), image column (right) with quote below
 .about__testimonial {
   width: 100%;
   min-width: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: minmax(200px, 320px) 1fr;
+  grid-template-columns: 1fr minmax(200px, 320px);
   gap: 2rem 3rem;
   align-items: start;
   align-self: stretch;
