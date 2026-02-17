@@ -33,22 +33,13 @@
   }
 }
 
-// Wrapper: testimonial (left) + How We Do It (right) side by side
-.about__testimonialAndHowWeDoIt {
+// Wrapper: testimonial section
+.about__testimonialWrapper {
   width: 94%;
   max-width: 1500px;
   margin-right: auto;
   margin-left: auto;
   padding: 3rem 0 2rem;
-  display: grid;
-  grid-template-columns: minmax(280px, 1fr) minmax(340px, 1.2fr);
-  gap: 3rem;
-  align-items: stretch;
-
-  @media screen and (max-width: 1024px) {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
 }
 
 // Testimonial section — layout: quote + attribution left, image right (sits in left column of wrapper)

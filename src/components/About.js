@@ -1,9 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import DescriptionIcon from "@material-ui/icons/Description";
-import BuildIcon from "@material-ui/icons/Build";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import CodeIcon from "@material-ui/icons/Code";
-import SendIcon from "@material-ui/icons/Send";
 
 const PROJECTS_PER_PAGE = 3;
 
@@ -70,10 +65,8 @@ const EXPERIENCE_PROJECTS = [
 
 function About({ embedded }) {
   const [currentPage, setCurrentPage] = useState(0);
-  const [howWeDoItInView, setHowWeDoItInView] = useState(false);
   const [testimonialInView, setTestimonialInView] = useState(false);
   const experienceRef = useRef(null);
-  const howWeDoItRef = useRef(null);
   const testimonialRef = useRef(null);
   const totalPages = Math.ceil(EXPERIENCE_PROJECTS.length / PROJECTS_PER_PAGE);
   const start = currentPage * PROJECTS_PER_PAGE;
@@ -82,33 +75,6 @@ function About({ embedded }) {
   useEffect(() => {
     if (!embedded) window.scrollTo(0, 0);
   }, [embedded]);
-
-  // How We Do It steps: animate in every time user passes the section (scroll up or down)
-  useEffect(() => {
-    const el = howWeDoItRef.current;
-    if (!el) return;
-    let rafId = null;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            rafId = requestAnimationFrame(() => {
-              requestAnimationFrame(() => setHowWeDoItInView(true));
-            });
-          } else {
-            setHowWeDoItInView(false);
-          }
-          break;
-        }
-      },
-      { threshold: 0.2, rootMargin: "0px 0px 0px 0px" }
-    );
-    observer.observe(el);
-    return () => {
-      if (rafId != null) cancelAnimationFrame(rafId);
-      observer.disconnect();
-    };
-  }, []);
 
   // Testimonial quote: animate in every time user passes the section (scroll up or down)
   useEffect(() => {
@@ -166,7 +132,7 @@ function About({ embedded }) {
         </>
       )}
 
-      <div className="about__testimonialAndHowWeDoIt">
+      <div className="about__testimonialWrapper">
         <section ref={testimonialRef} className={`about__testimonial${testimonialInView ? " about__testimonial--inView" : ""}`} aria-label="Testimonial">
           <div className="about__testimonialContent">
             <blockquote className="about__testimonialQuote">
@@ -179,70 +145,6 @@ function About({ embedded }) {
           <div className="about__testimonialImageWrap">
             <img src={`${process.env.PUBLIC_URL}/1.png?v=2`} alt="" className="about__testimonialImage" />
           </div>
-        </section>
-
-        <section ref={howWeDoItRef} className={`about__howWeDoIt${howWeDoItInView ? " about__howWeDoIt--inView" : ""}`} aria-label="How We Do It">
-        <h2 className="about__howWeDoItTitle">How We Do It</h2>
-        <p className="about__howWeDoItIntro">
-          We combine technical knowledge with clear communication and trust. Here is how we work with you from idea to launch.
-        </p>
-        <ol className="about__howWeDoItSteps">
-          <li className="about__howWeDoItStep">
-            <span className="about__howWeDoItIconWrap" aria-hidden="true">
-              <DescriptionIcon className="about__howWeDoItIcon" />
-            </span>
-            <div className="about__howWeDoItContent">
-              <h3 className="about__howWeDoItHeading">Gathering Requirements</h3>
-              <p className="about__howWeDoItDesc">
-                With our client we define the problem, target audience, key elements, solution and design.
-              </p>
-            </div>
-          </li>
-          <li className="about__howWeDoItStep">
-            <span className="about__howWeDoItIconWrap" aria-hidden="true">
-              <BuildIcon className="about__howWeDoItIcon" />
-            </span>
-            <div className="about__howWeDoItContent">
-              <h3 className="about__howWeDoItHeading">Product Design</h3>
-              <p className="about__howWeDoItDesc">
-                Design Thinking and Double Diamond in an agile workflow, with a focus on UX.
-              </p>
-            </div>
-          </li>
-          <li className="about__howWeDoItStep">
-            <span className="about__howWeDoItIconWrap" aria-hidden="true">
-              <AccountTreeIcon className="about__howWeDoItIcon" />
-            </span>
-            <div className="about__howWeDoItContent">
-              <h3 className="about__howWeDoItHeading">Technical Assessment</h3>
-              <p className="about__howWeDoItDesc">
-                We choose the right technologies and propose architecture and integrations.
-              </p>
-            </div>
-          </li>
-          <li className="about__howWeDoItStep">
-            <span className="about__howWeDoItIconWrap" aria-hidden="true">
-              <CodeIcon className="about__howWeDoItIcon" />
-            </span>
-            <div className="about__howWeDoItContent">
-              <h3 className="about__howWeDoItHeading">Product Development</h3>
-              <p className="about__howWeDoItDesc">
-                We build across data, AI, mobile, web, backend and cloud in 2-week sprints.
-              </p>
-            </div>
-          </li>
-          <li className="about__howWeDoItStep">
-            <span className="about__howWeDoItIconWrap about__howWeDoItIconWrap--launch" aria-hidden="true">
-              <SendIcon className="about__howWeDoItIcon" />
-            </span>
-            <div className="about__howWeDoItContent">
-              <h3 className="about__howWeDoItHeading">Launch!</h3>
-              <p className="about__howWeDoItDesc">
-                We test, run load tests, automate deployment and deliver the product to your users.
-              </p>
-            </div>
-          </li>
-        </ol>
         </section>
       </div>
 
