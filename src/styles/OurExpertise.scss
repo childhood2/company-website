@@ -212,62 +212,12 @@
   animation-fill-mode: both;
 }
 
-.expertise__customersCarouselWrap--paused .expertise__customersCarouselTrack {
-  animation-play-state: paused;
-}
-
 @keyframes expertise__customersFlow {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-1248px);
-  }
-}
-
-.expertise__customersCarouselBtn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid #d1d5db;
-  background: #ffffff;
-  cursor: pointer;
-  z-index: 10;
-  pointer-events: auto;
-  transition: background 0.2s ease, border-color 0.2s ease;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-left: 2px solid #374151;
-    border-bottom: 2px solid #374151;
-    transform: rotate(45deg);
-  }
-
-  &:hover {
-    background: #f4f5f7;
-    border-color: #9ca3af;
-  }
-
-  &--prev {
-    left: 316px; /* after summary card (300px) + gap (1rem) */
-  }
-
-  &--next {
-    right: 12px;
-
-    &::after {
-      transform: rotate(-135deg);
-    }
   }
 }
 
@@ -482,18 +432,6 @@
     min-height: 200px;
   }
 
-  .expertise__customersCarouselBtn {
-    width: 36px;
-    height: 36px;
-
-    &--prev {
-      left: 0.5rem;
-    }
-
-    &--next {
-      right: 0.5rem;
-    }
-  }
 }
 
 @media screen and (max-width: 480px) {
